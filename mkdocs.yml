@@ -46,8 +46,8 @@ theme:
 
 plugins:
   - search
-  # - git-revision-date-localized
-    # type: iso_datetime
+  - git-revision-date-localized:
+      type: iso_datetime
   - minify:
       minify_html: true
 
