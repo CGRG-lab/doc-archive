@@ -1,7 +1,7 @@
 site_name: CGRG Docs
 site_description: Grab your files periodically from a remote FTP or SFTP server easily
 site_author: CGRG members
-site_url: https://CGRG-lab.github.io/doc-archive
+site_url: https://CGRG-lab.github.io/doc-archive/
 copyright: Copyright &copy; 2021 <a href="https://cgrg.synology.me/CGRG/">CGRG</a>
 
 repo_name: CGRG-lab/doc-archive
@@ -61,7 +61,7 @@ extra:
 #     - name: 繁體中文
 #       link: /zh-Hant/
 #       lang: zh-Hant
-  homepage: http://127.0.0.1:8000/
+  homepage: https://cgrg-lab.github.io/doc-archive/
 
 # copy from mkdocs-material
 markdown_extensions:
