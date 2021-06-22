@@ -1,0 +1,122 @@
+site_name: CGRG Docs
+site_description: Grab your files periodically from a remote FTP or SFTP server easily
+site_author: CGRG members
+site_url: https://CGRG-lab.github.io/doc-archive
+copyright: Copyright &copy; 2021 <a href="https://cgrg.synology.me/CGRG/">CGRG</a>
+
+repo_name: CGRG-lab/doc-archive
+repo_url: https://github.com/CGRG-lab/doc-archive
+
+theme:
+  name: material
+  palette:
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: red
+        accent: red
+        toggle:
+          icon: material/weather-night
+          name: Switch to dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: red
+        accent: red
+        toggle:
+          icon: material/weather-sunny
+          name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: en
+  logo: assets/logo.png
+  favicon: assets/CGRG_square_logo.ico
+  features:
+    - content.tabs.link
+    # - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+  include_search_page: false
+  search_index_only: true
+
+plugins:
+  - search
+  # - git-revision-date-localized
+    # type: iso_datetime
+  - minify:
+      minify_html: true
+
+extra:
+#   alternate:
+#     # Switch to English
+#     - name: English
+#       link: /en/
+#       lang: en
+#     # Switch to Traditional Chinese
+#     - name: 繁體中文
+#       link: /zh-Hant/
+#       lang: zh-Hant
+  homepage: http://127.0.0.1:8000/
+
+# copy from mkdocs-material
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-experimental
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Learning Resource:
+    - learning/scientific_computing.md
+  - Best Practice:
+    - best-practice/git.md
+    - best-practice/julia.md
+    - best-practice/matlab.md
+    - best-practice/python.md
