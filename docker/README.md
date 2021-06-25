@@ -11,4 +11,4 @@ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs cgrg/mkdocs
 ```
 
 > :warning: If you use Windows, copy/clone this repository to WSL and run the command in WSL. Under the windows file system, the problem of mkdocs not reloading may be related to the `inotify events` mentioned [here](https://docs.docker.com/docker-for-windows/wsl/#best-practices) \
-> :information_source: [WSL](https://docs.microsoft.com/en-us/windows/wsl/): Windows Subsystem for Linux Documentation
+> :information_source: [WSL](https://docs.microsoft.com/en-us/windows/wsl/): Windows Subsystem for Linux
