@@ -8,4 +8,4 @@
         - add `**/data/*.mat` to exclude any `.mat` files in all folders named `data` (`.mat` files under the subfolders of `data` will NOT be excluded)
         - add `**/data/**/*.mat` to exclude any `.mat` files under all folders named `data` (`.mat` files under the subfolders of `data` will also be excluded)
 - Develop on a branch other than `master` or `main`
-- Don't commit many changes at once, split them in multiple commits
+- Don't commit many unrelated changes at once, split them into multiple commits so that the changes in each commit are related. In this way, the commit message can more accurately describe the change.
