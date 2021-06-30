@@ -120,5 +120,3 @@ nav:
     - best-practice/julia.md
     - best-practice/matlab.md
     - best-practice/python.md
-  - Notebooks:
-    - notebooks/test.md
