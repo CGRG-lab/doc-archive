@@ -54,6 +54,15 @@ The repository publishes the document archive to the Github Pages website, provi
 
 6.  Modify `mkdocs.yml` and the files in `docs/` to make changes.
 
+
+## Contribute your changes to the remote repository on github
+1. If your operating system is Windows, please open "Anaconda Powershell Prompt" (if your operating system is Linux, please open "Anaconda Prompt") and use `cd` command to change the current working directory to the `doc-archive` directory.
+    - For example, if your `doc-archive` directory is in the path `D:\project\doc-archive`, then you can use `cd D:\project\doc-archive` in "Anaconda Powershell Prompt" to change the current working directory.
+2. Use `git pull` to update the remote repository version to the local.
+3. Use `git add .` to add all changed file contents to the index.
+4. Use `git commit -m "your commit message"` to commit changes. For example, `git commit -m "Update mkdocs.yml"`
+5. Use `git push` to update remote repository on github.
+
 ## References
 - [mkdocs](https://www.mkdocs.org/)
 - [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
