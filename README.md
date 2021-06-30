@@ -38,21 +38,22 @@ The repository publishes the document archive to the Github Pages website, provi
 ### Python environment has been established
 1. If your operating system is Windows, please open "Anaconda Powershell Prompt" (if your operating system is Linux, please open "Anaconda Prompt") and use `cd` command to change the current working directory to the `doc-archive` directory.
     - For example, if your `doc-archive` directory is in the path `D:\project\doc-archive`, then you can use `cd D:\project\doc-archive` in "Anaconda Powershell Prompt" to change the current working directory.
-2.  (🏷️optional) If you want to update the python environment of `doc-archive`, use the following command in "Anaconda Powershell Prompt".
+2. Use `git pull` to update the remote repository version to the local.
+3.  (🏷️optional) If you want to update the python environment of `doc-archive`, use the following command in "Anaconda Powershell Prompt".
     ```shell
     conda env update --prune --file environment.yml
     ```
-3. In "Anaconda Powershell Prompt", use the following command to activate `doc-archive` environment.
+4. In "Anaconda Powershell Prompt", use the following command to activate `doc-archive` environment.
     ```shell
     conda activate doc-archive
     ```
-4. In "Anaconda Powershell Prompt", use the following command to serve the website locally.
+5. In "Anaconda Powershell Prompt", use the following command to serve the website locally.
     ```shell
     mkdocs serve
     ```
-5. Navigate to `localhost:8000` in a browser and you should see a preview of any modifications you make locally.
+6. Navigate to `localhost:8000` in a browser and you should see a preview of any modifications you make locally.
 
-6.  Modify `mkdocs.yml` and the files in `docs/` to make changes.
+7.  Modify `mkdocs.yml` and the files in `docs/` to make changes.
 
 
 ## Contribute your changes to the remote repository on github
