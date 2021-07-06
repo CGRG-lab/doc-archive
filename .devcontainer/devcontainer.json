@@ -1,0 +1,7 @@
+{
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "mhutchie.git-graph",
+    ],
+}
