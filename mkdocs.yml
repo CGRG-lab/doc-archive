@@ -113,9 +113,12 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Learning Resource:
+  - Tools:
+    - tools/geoscience.md
+  - Learning resource:
     - learning/scientific_computing.md
-  - Best Practice:
+    - learning/inverse_problem.md
+  - Best practice:
     - best-practice/git.md
     - best-practice/julia.md
     - best-practice/matlab.md
