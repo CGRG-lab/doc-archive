@@ -1,5 +1,5 @@
 # doc-archive
-
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/CGRG-lab/doc-archive)
 [![ci](https://github.com/CGRG-lab/doc-archive/actions/workflows/ci.yml/badge.svg)](https://github.com/CGRG-lab/doc-archive/actions/workflows/ci.yml)
 
 The [doc-archive](https://github.com/CGRG-lab/doc-archive/) repository publishes the document archive to the Github Pages website, providing a quick start for new members of CGRG.
