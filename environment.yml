@@ -1,8 +1,0 @@
-name: doc-archive
-channels:
-  - defaults
-dependencies:
-  - python=3
-  - pip
-  - pip:
-    - -r requirements.txt
