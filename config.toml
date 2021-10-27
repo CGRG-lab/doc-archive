@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://CGRG-lab.github.io/doc-archive/'
 languageCode = 'en-us'
 title = 'doc-archive'
 theme = "docsy"
