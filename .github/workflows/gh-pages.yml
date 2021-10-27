@@ -36,6 +36,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+      
+      - name: Install node.js packages
+        run: npm install
 
       - name: Cache dependencies
         uses: actions/cache@v2.1.6
