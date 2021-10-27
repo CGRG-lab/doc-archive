@@ -18,7 +18,7 @@ languageName ="English"
 weight = 1
 [languages.zh]
 description = "Docsy does docs"
-languageName ="中文"
+languageName ="正體中文"
 contentDir = "content/zh"
 
 
