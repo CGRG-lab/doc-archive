@@ -1,0 +1,21 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – Best practices</title><link>https://CGRG-lab.github.io/doc-archive/docs/best-practices/</link><description>Recent content in Best practices on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/best-practices/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Git</title><link>https://CGRG-lab.github.io/doc-archive/docs/best-practices/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/best-practices/git/</guid><description>
+&lt;ul>
+&lt;li>Use &lt;code>.gitignore&lt;/code> to exclude files from git tracking
+&lt;ul>
+&lt;li>for example, in a new line of the &lt;code>.gitignore&lt;/code> file,
+&lt;ul>
+&lt;li>add &lt;code>*.png&lt;/code> to exclude all files suffixed by &lt;code>.png&lt;/code>&lt;/li>
+&lt;li>add &lt;code>temp/&lt;/code> to exclude all files under the folder named &lt;code>temp&lt;/code> that is exactly under the same directory as the &lt;code>.gitignore&lt;/code>&lt;/li>
+&lt;li>add &lt;code>**/temp/&lt;/code> to exclude all files and folders in any folder named &lt;code>temp&lt;/code>&lt;/li>
+&lt;li>add &lt;code>**/data/*.mat&lt;/code> to exclude any &lt;code>.mat&lt;/code> files in all folders named &lt;code>data&lt;/code> (&lt;code>.mat&lt;/code> files under the subfolders of &lt;code>data&lt;/code> will NOT be excluded)&lt;/li>
+&lt;li>add &lt;code>**/data/**/*.mat&lt;/code> to exclude any &lt;code>.mat&lt;/code> files under all folders named &lt;code>data&lt;/code> (&lt;code>.mat&lt;/code> files under the subfolders of &lt;code>data&lt;/code> will also be excluded)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Develop on a branch other than &lt;code>master&lt;/code> or &lt;code>main&lt;/code>&lt;/li>
+&lt;li>Don&amp;rsquo;t commit many unrelated changes at once, split them into multiple commits so that the changes in each commit are related. In this way, the commit message can more accurately describe the change.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Matlab</title><link>https://CGRG-lab.github.io/doc-archive/docs/best-practices/matlab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/best-practices/matlab/</guid><description>
+&lt;ul>
+&lt;li>Use &lt;a href="https://github.com/davidvarga/MBeautifier">MBeautifier&lt;/a> or &lt;a href="https://github.com/florianschanda/miss_hit">MISS_HIT&lt;/a> to format code.&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,0 +1,13 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – Learning resources</title><link>https://CGRG-lab.github.io/doc-archive/zh/docs/learning-resources/</link><description>Recent content in Learning resources on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/zh/docs/learning-resources/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Scientific computing</title><link>https://CGRG-lab.github.io/doc-archive/zh/docs/learning-resources/scientific_computing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/zh/docs/learning-resources/scientific_computing/</guid><description>
+&lt;h2 id="basic">Basic&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best practices for scientific computing&lt;/a> - Helpful suggestions for good computing practice.&lt;/li>
+&lt;li>&lt;a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510">Good enough practices in scientific computing&lt;/a> - Helpful suggestions for good computing practice.&lt;/li>
+&lt;/ul>
+&lt;h2 id="numerical-linear-algebra-applied-linear-algebra">Numerical linear algebra (Applied linear algebra)&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://vmls-book.stanford.edu/">Introduction to Applied Linear Algebra – Vectors, Matrices, and Least Squares&lt;/a> - Entry-level textbook.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Inverse problem</title><link>https://CGRG-lab.github.io/doc-archive/zh/docs/learning-resources/inverse_problem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/zh/docs/learning-resources/inverse_problem/</guid><description>
+&lt;ul>
+&lt;li>&lt;a href="https://giftoolscookbook.readthedocs.io/en/latest/content/fundamentals/index.html">GIFtoolsCookbook - Fundamentals of Inversions&lt;/a> - Briefly describe the basic concepts of inversion, readers can further study the keywords mentioned in the article.&lt;/li>
+&lt;/ul></description></item></channel></rss>
