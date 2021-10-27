@@ -4,13 +4,16 @@ on:
     branches:
       - master  # Set a branch to deploy
       - main
+    paths:
+      - 'content/**'
+      - 'config.toml'
   pull_request:
     branches:
       - master
       - main
-  paths:
-      - 'content/**'
-      - 'config.toml'
+    paths:
+        - 'content/**'
+        - 'config.toml'
 
 jobs:
   deploy:
