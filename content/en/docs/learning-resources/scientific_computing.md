@@ -10,3 +10,6 @@ weight: 5
 
 ## Numerical linear algebra (Applied linear algebra)
 - [Introduction to Applied Linear Algebra – Vectors, Matrices, and Least Squares](http://vmls-book.stanford.edu/) - Entry-level textbook.
+
+## Differential equation
+- [Solving PDEs in parallel on GPUs with Julia](https://eth-vaw-glaciology.github.io/course-101-0250-00/)
