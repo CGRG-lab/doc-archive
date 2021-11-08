@@ -10,7 +10,7 @@
 &lt;/ul>
 &lt;h2 id="differential-equation">Differential equation&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://eth-vaw-glaciology.github.io/course-101-0250-00/">Solving PDEs in parallel on GPUs with Julia&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://eth-vaw-glaciology.github.io/course-101-0250-00/">Solving PDEs in parallel on GPUs with Julia&lt;/a> - This course aims to cover state-of-the-art methods in modern parallel GPU computing, supercomputing and code development with applications to natural sciences and engineering.&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Inverse problem</title><link>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/inverse_problem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/inverse_problem/</guid><description>
 &lt;ul>
 &lt;li>&lt;a href="https://giftoolscookbook.readthedocs.io/en/latest/content/fundamentals/index.html">GIFtoolsCookbook - Fundamentals of Inversions&lt;/a> - Briefly describe the basic concepts of inversion, readers can further study the keywords mentioned in the article.&lt;/li>
