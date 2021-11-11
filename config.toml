@@ -53,13 +53,23 @@ sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
 navbar_logo = false
 
-[params.katex]
+[params.katex] # supporting latex math
 enable = true
 html_dom_element = "document.body"
 
 # enable display of chemical equations and physical units via mhchem extension
 [params.katex.mhchem]
 enable = true
+
+[[params.katex.options.delimiters]]
+  left = "$"
+  right = "$"
+  display = false
+  
+[[params.katex.options.delimiters]]
+  left = "$$"
+  right = "$$"
+  display = true # whether to show in display mode
 
 [params.print]
 disable_toc = false
@@ -75,3 +85,16 @@ enable = true
 [taxonomies]
 tag = "tags"
 category = "categories"
+
+
+[markup]
+  [markup.goldmark]
+  # This allows html code in markdown be directly rendered
+  # (conventionally you should use [shortcodes](https://gohugo.io/content-management/shortcodes/))
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight] # This changes the background color of the code block
+    # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+    style = "tango"
+    # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+    # guessSyntax = "true"
