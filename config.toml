@@ -2,6 +2,8 @@ baseURL = 'https://CGRG-lab.github.io/doc-archive/'
 languageCode = 'en-us'
 title = 'doc-archive'
 theme = "docsy"
+# Will give values to .Lastmod etc. This must be put at the very beginning
+enableGitInfo = true
 
 
 # Language settings
@@ -34,14 +36,12 @@ contentDir = "content/zh"
   url = "https://github.com/CGRG-lab/doc-archive/"
   pre = "<i class='fab fa-github'></i>" 
 
-# Will give values to .Lastmod etc.
-enableGitInfo = true
 
-github_repo = "https://github.com/CGRG-lab/doc-archive"
+
 
 [params]
 copyright = "CGRG"
-
+github_repo = "https://github.com/CGRG-lab/doc-archive"
 
 # User interface configuration
 [params.ui]
