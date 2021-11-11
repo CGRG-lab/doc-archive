@@ -1,17 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 26 Jul 2021 15:07:50 +0800</lastBuildDate><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: MagTIP (2021) Documentation</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/usermanual-and-docs/</link><pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/usermanual-and-docs/</guid><description>
-&lt;p>[TOC]&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!-- TODO: git commit and push unpredictable-life
 FIXME: Delete the following in the future
 `cd` to the folder where there is `.jmd`, and
 ```
 lazyhugo();
-cp2content("D:\\GoogleDrive\\Sites\\unpredictable-life\\content\\en\\my-project\\MagTIP")
+cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\usermanual-and-docs")
 ``` -->
-&lt;h1 id="hello">Hello&lt;/h1>
-&lt;p>Test LaTeX math:&lt;/p>
-&lt;p>$$F = ma$$&lt;/p>
-&lt;p>and inline math: $F=ma$.&lt;/p>
-&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h1 id="introduction">Introduction&lt;/h1>
 &lt;p>MagTIP calculates the TIP (Time of Increased Probability) of earthquakes basing on the geomagnetic records of Central Weather Bureau of Taiwan.
 The algorithm allows for the optimization of the model parameters, and gives the overall TIP (named joint-station TIP).
 The probability of capturing a target event in space and time can be derived based on the joint-station TIP, by considering the results from a large set of randomly permuted of model parameters simultaneously.&lt;/p>
@@ -19,11 +14,11 @@ The probability of capturing a target event in space and time can be derived bas
 As a result, either the conversion for fitting new data to old format (where some information must lose), or an extra waiting period (e.g. 7 years) for re-training models with new data, is required.
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.&lt;/p>
 &lt;p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.&lt;/p>
-&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;h1 id="getting-started">Getting Started&lt;/h1>
 &lt;p>The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as &amp;ldquo;.mat&amp;rdquo; files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by &lt;code>dir_&lt;/code>; for example, &lt;code>dir_data&lt;/code> is the directory for the formatted geomagnetic data, and &lt;code>dir_stat&lt;/code> is the directory for statistic indices.
 The &lt;code>dir_&lt;/code>-prefixed variables are each a sequence of characters being something like &lt;code>'D:\MagTIP-2021\output_var\StatisticIndex'&lt;/code>.&lt;/p>
-&lt;h4 id="the-sample-script-for-everything">The Sample Script for Everything&lt;/h4>
+&lt;h2 id="the-sample-script-for-everything">The Sample Script for Everything&lt;/h2>
 &lt;p>There is a script &lt;strong>&amp;ldquo;MagTIP_2021b.m&amp;rdquo;&lt;/strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:&lt;/p>
 &lt;ul>
 &lt;li>switch current directory to the folder named &amp;ldquo;MagTIP-2021&amp;rdquo;&lt;/li>
@@ -31,7 +26,7 @@ The &lt;code>dir_&lt;/code>-prefixed variables are each a sequence of characters
 &lt;/ul>
 &lt;p>In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (&lt;code>dir_data&lt;/code>) and loading the toolbox (&lt;code>dir_toolbox&lt;/code>).
 Select the right folders as instructed, and they will be automatically added to path and be ready to use.&lt;/p>
-&lt;h3 id="inputoutput-directories">Input/Output Directories&lt;/h3>
+&lt;h2 id="inputoutput-directories">Input/Output Directories&lt;/h2>
 &lt;p>Assigning directories for input/output data or variables is necessary before running any application.
 For example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">dir_catalog&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;data\spreadsheet&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span>
@@ -63,7 +58,8 @@ For more information, see &amp;ldquo;MagTIP_2021b.m&amp;rdquo; and &amp;ldquo;di
 &lt;li>The order of column names can be arbitrarily arranged, but the strings have to be exactly the same as above.&lt;/li>
 &lt;li>Geomagnetic time series in &lt;code>dir_data&lt;/code> should be converted to the standard format. For more information, see &lt;code>convdata0&lt;/code>.&lt;/li>
 &lt;/ol>
-&lt;h4 id="the-format-of-station-list-and-earthquake-catalog">The Format of Station list and Earthquake Catalog&lt;/h4>
+&lt;h1 id="prepare-your-data">Prepare Your Data&lt;/h1>
+&lt;h2 id="format-of-station-list-and-earthquake-catalog">Format of Station list and Earthquake Catalog&lt;/h2>
 &lt;p>The &lt;code>station_location.csv&lt;/code> specifies the location of every station;
 here is an example for &lt;code>station_location.csv&lt;/code>:&lt;/p>
 &lt;table>
@@ -151,7 +147,7 @@ here is an example for &lt;code>catalog.csv&lt;/code>:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="the-standard-data-format">The Standard Data Format&lt;/h3>
+&lt;h2 id="format-of-geomagnetic-data">Format of Geomagnetic Data&lt;/h2>
 &lt;p>All original files of geomagnetic timeseries have to be converted to the new format before any function that takes &lt;code>dir_data&lt;/code> as an input argument.
 You can convert the data by simply applying:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">convdata0&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_originalfiles&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">dir_data&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
@@ -163,16 +159,16 @@ You can convert the data by simply applying:&lt;/p>
 &lt;li>The process of conversion may take very long if the number of files to be converted is large. Use the option &lt;code>'ContinueFromLast'&lt;/code> and &lt;code>'FilterByDatetime'&lt;/code> to avoid repeatedly converting the files that have already been converted before.&lt;/li>
 &lt;li>For more information, see &amp;ldquo;convdata0.m&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;h3 id="the-main-process">The Main Process&lt;/h3>
+&lt;h1 id="the-main-process">The Main Process&lt;/h1>
 &lt;p>After all data are prepared (those in &lt;code>dir_data&lt;/code> and &lt;code>dir_spreadsheet&lt;/code>), you can run the whole forecasting process simply with:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">statind&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_data&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_stat&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;span style="color:#000">anomalyind&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_stat&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;span style="color:#000">molscore&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;span style="color:#000">molscore3&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_jointstation&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In which, &lt;code>statind&lt;/code> calculates specific statistical quantities of each day; &lt;code>anomalyind&lt;/code> calculates anomaly index according to different $A_\text{thr}$ threshold; &lt;code>molscore&lt;/code> gives optimized models; and &lt;code>molscore3&lt;/code> use optimized models to calculate probability forecasts.&lt;/p>
-&lt;h3 id="visualization-of-the-results">Visualization of the Results&lt;/h3>
-&lt;p>There are several tools provided for visualizing the result.&lt;/p>
-&lt;h4 id="probability-forecast">Probability Forecast&lt;/h4>
+&lt;h2 id="visualization-of-the-results">Visualization of the Results&lt;/h2>
+&lt;p>There are several tools provided for visualizing the result. For detailed information about these tools, please refer to the &lt;a href="../doc_library/#plotting">Library/Tools/Plotting&lt;/a>.&lt;/p>
+&lt;h3 id="probability-forecast">Probability Forecast&lt;/h3>
 &lt;p>&lt;code>plotProbability&lt;/code> visualizes the probability of the calculated results (which is stored in &lt;code>dir_jointstation&lt;/code> in default), with options for whether to plot epicenters of target events (目標地震) and for specifying the date time to plot, as an example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">dir_prob&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">fullfile&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_jointstation&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;png&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;prob&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;span style="color:#000">dates2plot&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#000">datetime&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2020&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">):&lt;/span>&lt;span style="color:#000">calmonths&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">6&lt;/span>&lt;span style="color:#000;font-weight:bold">):&lt;/span>&lt;span style="color:#000">datetime&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2021&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#000;font-weight:bold">)];&lt;/span>
@@ -182,7 +178,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the triangle denotes the location of station; circle(s) around each station denote the maximum and minimum range of detection ($R_C$) of the models that are responsible for calculating the TIPs; the filled color of the triangle denotes the ratio of valid models of the day; and hollow triangle denotes the station that cannot provide TIP for the day.&lt;/p>
 &lt;/blockquote>
-&lt;h4 id="the-matching-diagram">The Matching Diagram&lt;/h4>
+&lt;h3 id="the-matching-diagram">The Matching Diagram&lt;/h3>
 &lt;p>&lt;code>plotEQKTIP1&lt;/code> provides the 1-dimensional match diagram of a specific model.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">dir_png&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">fullfile&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;png&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;EQKTIP&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;span style="color:#000">plotEQKTIP1&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_png&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#8f5902;font-style:italic">...&lt;/span>
@@ -191,13 +187,20 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="plotEQKTIP_ex1.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="documentation">Documentation&lt;/h2>
+&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
+&lt;!--
+`cd` to the folder where there is `.jmd`, and
+```
+cd("doc_library")
+lazyhugo();
+cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_library")
+``` -->
+&lt;!-- # Documentation -->
 &lt;p>&lt;strong>⚠Warning:&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Please don&amp;rsquo;t assign undocumented name-value pair parameters to the functions. For example, &lt;code>'CreateInfoOnly'&lt;/code> and &lt;code>'InParforLoop'&lt;/code>, which are preserved for parallel computing, and you will never need to set them manually.&lt;/li>
 &lt;/ul>
-&lt;h3 id="main-functions">Main Functions&lt;/h3>
+&lt;h2 id="main-functions">Main Functions&lt;/h2>
 &lt;p>There are roughly four stages in the MagTIP forecasting process:&lt;/p>
 &lt;ol>
 &lt;li>the calculation of statistical index&lt;/li>
@@ -207,7 +210,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/ol>
 &lt;p>The four stages is wrapped by four functions with keyword options that we can customize the parameters related to model optimization and probability forecast.
 The four main functions are wrapper functions for routine training and forecasting process. As follow:&lt;/p>
-&lt;h4 id="data-preprocessing-convdata0">Data Preprocessing (&lt;code>convdata0&lt;/code>)&lt;/h4>
+&lt;h3 id="data-preprocessing-convdata0">Data Preprocessing (&lt;code>convdata0&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>The original geomagnetic data &amp;#40;which are those in &amp;quot;.csv&amp;quot; format being something like &amp;quot;2008010300.KM&amp;quot; or &amp;quot;20190307.LY&amp;quot;&amp;#41; should be converted to a standard format before any calculation. &lt;code>convdata0&amp;#40;dir_originalfiles, dir_data&amp;#41;&lt;/code> read original data in &lt;code>dir_originalfiles&lt;/code> and save them in the standard format at the directory &lt;code>dir_data&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Keyword Argument:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -235,7 +238,7 @@ datetime&amp;#40;2013,12,10&amp;#41;, datetime&amp;#40;2017,10,10&amp;#41;&amp;#
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="statistical-index-calculation-statind">Statistical Index Calculation (&lt;code>statind&lt;/code>)&lt;/h4>
+&lt;h3 id="statistical-index-calculation-statind">Statistical Index Calculation (&lt;code>statind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>statind&amp;#40;dir_data,dir_output&amp;#41;&lt;/code> calculate daily statistics &amp;#40;a statistical quantity as an index of the day&amp;#41; of the daily timeseries in &lt;code>dir_data&lt;/code>. The output variables are stored in &lt;code>dir_output&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Example&lt;/strong>:&lt;/p>
 &lt;pre>&lt;code class="language-matlab">statind&amp;#40;dir_data,dir_output,&amp;#39;StatName&amp;#39;,&amp;#39;S&amp;#39;,&amp;#39;StatFunction&amp;#39;,@skewness, &amp;#39;Filter&amp;#39;, &amp;#123;&amp;#39;ULF-A&amp;#39;,&amp;#39;ULF-B&amp;#39;&amp;#125;&amp;#41;;&lt;/code>&lt;/pre>
@@ -296,7 +299,7 @@ datetime&amp;#40;2013,12,10&amp;#41;, datetime&amp;#40;2017,10,10&amp;#41;&amp;#
 &lt;li>The output directory and data structure is:
 &lt;img src="struct_stat.png" alt="">&lt;/li>
 &lt;/ul>
-&lt;h4 id="anomaly-index-number-calculation-anomalyind">Anomaly Index Number Calculation (&lt;code>anomalyind&lt;/code>)&lt;/h4>
+&lt;h3 id="anomaly-index-number-calculation-anomalyind">Anomaly Index Number Calculation (&lt;code>anomalyind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>anomalyind&amp;#40;dir_stat,dir_output&amp;#41;&lt;/code> calculates anomaly index number &amp;#40;AIN&amp;#41; according to a list of &amp;#36;A_\text&amp;#123;thr&amp;#125;&amp;#36;; &lt;code>dir_out&lt;/code> is where the output variables stored. &lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>anomalyind&amp;#40;dir_stat,dir_tsAIN&amp;#41;;&lt;/code>&lt;/pre>
@@ -331,7 +334,7 @@ datetime&amp;#40;2013,12,10&amp;#41;, datetime&amp;#40;2017,10,10&amp;#41;&amp;#
 &lt;li>The output directory and data structure is:
 &lt;img src="struct_tsAIN.png" alt="">&lt;/li>
 &lt;/ul>
-&lt;h4 id="tip-and-molchan-score-calculation-molscore">TIP and Molchan Score Calculation (&lt;code>molscore&lt;/code>)&lt;/h4>
+&lt;h3 id="tip-and-molchan-score-calculation-molscore">TIP and Molchan Score Calculation (&lt;code>molscore&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>molscore&amp;#40;dir_tsAIN,dir_catalog,dir_molchan&amp;#41;&lt;/code> is responsible for single station&amp;#39;s TIP &amp;amp; Molchan score calculation. &lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>dir_catalog &amp;#61; &amp;#39;\MagTIP-2021\spreadsheet&amp;#39;;
@@ -387,7 +390,7 @@ calyears&amp;#40;7&amp;#41;,datetime&amp;#40;2010,11,11&amp;#41;&amp;#125;;&lt;/
 &lt;li>The output directory and data structure is:
 &lt;img src="struct_molchan.png" alt="">&lt;/li>
 &lt;/ul>
-&lt;h4 id="joint-station-3-d-tip-and-molchan-score-calculation-molscore3">Joint-station (3-D) TIP and Molchan Score Calculation (&lt;code>molscore3&lt;/code>)&lt;/h4>
+&lt;h3 id="joint-station-3-d-tip-and-molchan-score-calculation-molscore3">Joint-station (3-D) TIP and Molchan Score Calculation (&lt;code>molscore3&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>molscore3&lt;/code> calculates the joint-station TIP, the Molchan score between EQK and TIP, the Hit rate, and the earthquake probability. The calculation is based on optimized model given by &lt;code>molscore&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>dir_catalog &amp;#61; &amp;#39;\MagTIP-2021\spreadsheet&amp;#39;;
@@ -460,9 +463,9 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;li>The output directory and data structure is:
 &lt;img src="struct_jointstation.png" alt="">&lt;/li>
 &lt;/ul>
-&lt;h3 id="subfunctions">Subfunctions&lt;/h3>
+&lt;h2 id="subfunctions">Subfunctions&lt;/h2>
 &lt;p>Subfunctions are those a user normally do not have a chance to use. However, if you are a developer, the information will be very helpful.&lt;/p>
-&lt;h4 id="sum-of-anomaly-indices-convain">Sum of Anomaly Indices (&lt;code>convAIN&lt;/code>)&lt;/h4>
+&lt;h3 id="sum-of-anomaly-indices-convain">Sum of Anomaly Indices (&lt;code>convAIN&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>Calculate the total amount of anomaly indices of each day. That is, saying we have two statistical indices &lt;code>S&lt;/code> and &lt;code>K&lt;/code>, and the total amount of anomaly indices is less or equal than 2. It is the &amp;#39;update_tsAIN&amp;#39; of the previous version.&lt;/p>
 &lt;p>&lt;strong>Example&lt;/strong>:&lt;/p>
 &lt;pre>&lt;code>&amp;#91;sum_tsAIN, sum_validateIndex&amp;#93; &amp;#61; convAIN&amp;#40;tsAIN.Athr, tsAIN.validateIndex&amp;#41;&lt;/code>&lt;/pre>
@@ -478,7 +481,7 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="sum-of-anomaly-days-sumanomalyind">Sum of Anomaly Days (&lt;code>sumanomalyind&lt;/code>)&lt;/h4>
+&lt;h3 id="sum-of-anomaly-days-sumanomalyind">Sum of Anomaly Days (&lt;code>sumanomalyind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;DateTimeSAT,vlSAT&amp;#93; &amp;#61; sumanomalyind&amp;#40;DateTime_j,sum_tsAIN_k,Nthr_array,Tobs_i&amp;#41;&lt;/code> calculate sum of anomaly day &amp;#40;&lt;code>vlSAT&lt;/code>&amp;#41; and its corresponding datetime series &amp;#40;&lt;code>DateTimeSAT&lt;/code>&amp;#41;. It is simply the moving-window sum of the &lt;code>sum_tsAIN_k&lt;/code> timeseries, where the moving-window length is &lt;code>Tobs_i&lt;/code>; in which, &lt;code>i&lt;/code> stands for &amp;#36;i_&amp;#123;th&amp;#125;&amp;#36; model, &lt;code>j&lt;/code> for &amp;#36;j_&amp;#123;th&amp;#125;&amp;#36; station, and &lt;code>k&lt;/code> for &amp;#36;k_&amp;#123;th&amp;#125;&amp;#36; threshold &amp;#36;A_&amp;#123;thr&amp;#125;&amp;#36;. Of coursely, the number of elements of the output timeseires &amp;#40;&lt;code>DateTimeSAT&lt;/code>&amp;#41; will be &lt;code>Tobs_i - 1&lt;/code> less than the input timeseries &amp;#40;&lt;code>DateTime_j&lt;/code> or &lt;code>DateTime_dti&lt;/code>&amp;#41;; i.e., &lt;code>length&amp;#40;sum_tsAIN_k&amp;#41; - length&amp;#40;vlSAT&amp;#41; &amp;#61; Tobs_i - 1&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Input arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -504,7 +507,7 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="the-date-time-at-which-tip-is-true-dt_tip_true">The Date Time at Which TIP is True (&lt;code>dt_TIP_true&lt;/code>)&lt;/h4>
+&lt;h3 id="the-date-time-at-which-tip-is-true-dt_tip_true">The Date Time at Which TIP is True (&lt;code>dt_TIP_true&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;dt_TIPtrue,TIPtime,TIP&amp;#93; &amp;#61; dt_TIP_true&amp;#40;DateTimeSAT,vlSAT, Tthr,Tlead,Tpred&amp;#41;&lt;/code> return the datetime where TIP is true.&lt;/p>
 &lt;p>&lt;strong>Input arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -542,7 +545,7 @@ TIPtime/TIP |Tobs || Tlead ||--------------------------------------|
 ↑ |Tobs || Tlead ||Tpred|
 Tpred start ↑ last AIN data ↑ Tpred end ↑ &lt;/code>&lt;/pre>
 &lt;/div>
-&lt;h4 id="the-date-time-at-which-tip-is-valid-dt_tip_valid">The Date Time at Which TIP is Valid (&lt;code>dt_TIP_valid&lt;/code>)&lt;/h4>
+&lt;h3 id="the-date-time-at-which-tip-is-valid-dt_tip_valid">The Date Time at Which TIP is Valid (&lt;code>dt_TIP_valid&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>dt_TIP_valid&lt;/code> gives loosely valid TIP time and strictly invalid TIP time. There are two possibilities for a TIP false: one is that the anomaly index number &amp;#40;AIN&amp;#41; is below the threshold, and the other is that AIN is NaN since anything in comparison with a NaN results in a false. The later we called it an &amp;#39;invalid&amp;#39; TIP time/day.&lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;pre>&lt;code>&amp;#91;TIPtime1,TIP_valid,dates_TIPvalid_st,dates_TIPinvalid_st&amp;#93; &amp;#61; ...
@@ -596,7 +599,7 @@ dt_TIPvalid = unique(TIPtime([1:3,2:4,3:5,&amp;hellip;.]))&lt;/p>
 % dt_AIN_valid is DateTimeSAT(sum_AIN_valid), and sum_AIN_valid is a.k.a Tobs_TF.
 % TIPvalid_0 (_1) is a.k.a. TIP_TF_0 (_1)&lt;/code>&lt;/pre>&lt;/p>
 &lt;/div>
-&lt;h4 id="1-d-eqk-and-tip-eqktip1">1-d EQK and TIP (&lt;code>eqktip1&lt;/code>)&lt;/h4>
+&lt;h3 id="1-d-eqk-and-tip-eqktip1">1-d EQK and TIP (&lt;code>eqktip1&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;EQK,TIP, TIPtime&amp;#93; &amp;#61; eqktip1&amp;#40;eqMR,eqDateTime, DateTimeSAT,vlSAT, Tthr_iMod,Tlead_iMod,Tpred_iMod, Mc_iMod,Rc_iMod&amp;#41;&lt;/code> provides 1 dimensional logical array of target earthquakes &amp;#40;&lt;code>EQK&lt;/code>&amp;#41; and Time of Increased Probability &amp;#40;&lt;code>TIP&lt;/code>&amp;#41;, corresponding to the 1-d datetime array &lt;code>TIPtime&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Input arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -630,7 +633,7 @@ dt_TIPvalid = unique(TIPtime([1:3,2:4,3:5,&amp;hellip;.]))&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="joint-station-probability-jointstation">Joint-station Probability (&lt;code>jointstation&lt;/code>)&lt;/h4>
+&lt;h3 id="joint-station-probability-jointstation">Joint-station Probability (&lt;code>jointstation&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>jointstation&lt;/code> calculates hit rates, alarmed rates, and spatial probability.&lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;p>When it is applied for calculating the hit rates of the training phase:&lt;/p>
@@ -713,7 +716,7 @@ CWBcatalog,&amp;#39;CalculateHitRate&amp;#39;,true,...
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="anomaly-index-number-of-each-day-loadain">Anomaly Index Number of each day (&lt;code>loadAIN&lt;/code>)&lt;/h4>
+&lt;h3 id="anomaly-index-number-of-each-day-loadain">Anomaly Index Number of each day (&lt;code>loadAIN&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;pre>&lt;code>&amp;#91;sum_tsAINs,sum_validateInds,DateTime_dti,AthrList&amp;#93; &amp;#61;
 loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;p>load tsAIN, calculate the summation of anomaly index of each day, and truncate the time series to &lt;code>TimeRange&lt;/code>. &lt;/p>
@@ -735,7 +738,7 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="the-best-models-bestmodel">The Best Models (&lt;code>bestmodel&lt;/code>)&lt;/h4>
+&lt;h3 id="the-best-models-bestmodel">The Best Models (&lt;code>bestmodel&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;BestModels,BestModelNames,idPermute,molList&amp;#93; &amp;#61; bestmodel&amp;#40;molList,BestN,totalM,StationLocation&amp;#41;&lt;/code> filters the best N models out based on fitting degree and perform random permutation of total M combination of them. That is, &lt;code>bestmodel&amp;#40;&amp;#41;&lt;/code> save the best N &amp;#40;at most&amp;#41; models for each station in &lt;code>BestModels&lt;/code>, and gives an array of M elements that are randomly picked from the set of the ranking numbers of the best N &amp;#40;at most&amp;#41; models. &lt;/p>
 &lt;p>&lt;strong>Input arguments&lt;/strong>:&lt;/p>
 &lt;ul>
@@ -777,13 +780,13 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="station-list-formatting-checkstation">Station List Formatting (&lt;code>checkstation&lt;/code>)&lt;/h4>
+&lt;h3 id="station-list-formatting-checkstation">Station List Formatting (&lt;code>checkstation&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;isvalid, msg&amp;#93; &amp;#61; checkcatalog&amp;#40;dir_catalog&amp;#41;&lt;/code> check if &lt;code>station_location.mat/csv&lt;/code> exist in &lt;code>dir_catalog&lt;/code>, and convert the &lt;code>station_location.csv&lt;/code> to &lt;code>station_location.mat&lt;/code>. If the &lt;code>station_location.csv&lt;/code> does not meet the required format, error will occur.&lt;/p>
 &lt;/div>
-&lt;h4 id="earthquake-catalog-formatting-checkcatalog">Earthquake Catalog Formatting (&lt;code>checkcatalog&lt;/code>)&lt;/h4>
+&lt;h3 id="earthquake-catalog-formatting-checkcatalog">Earthquake Catalog Formatting (&lt;code>checkcatalog&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;isvalid, msg&amp;#93; &amp;#61; checkcatalog&amp;#40;dir_catalog&amp;#41;&lt;/code> check if &lt;code>catalog.mat/csv&lt;/code> exist in &lt;code>dir_catalog&lt;/code>, and convert the &lt;code>catalog.csv&lt;/code> to &lt;code>catalog.mat&lt;/code>. If the &lt;code>catalog.csv&lt;/code> does not meet the required format, error will occur.&lt;/p>
 &lt;/div>
-&lt;h4 id="generate-model-parameters-modparam">Generate Model Parameters (&lt;code>modparam&lt;/code>)&lt;/h4>
+&lt;h3 id="generate-model-parameters-modparam">Generate Model Parameters (&lt;code>modparam&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>In MagTIP, model parameters defines TIP and target earthquakes &amp;#40;EQK&amp;#41;. &lt;code>&amp;#91;PredParam,varargout&amp;#93;&amp;#61;modparam&amp;#40;&amp;#41;&lt;/code> generate the whole set of model parameters that are going to be used in the training phase by &lt;code>molscore&lt;/code>. &lt;/p>
 &lt;p>&lt;strong>Keyword Arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -841,8 +844,9 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/ul>
 &lt;p>&lt;strong>Examples:&lt;/strong> - &lt;code>&amp;#91;PredParam, columnNames&amp;#93; &amp;#61; modparam&amp;#40;&amp;#39;OutputFormat&amp;#39;,&amp;#39;double&amp;#39;&amp;#41;;&lt;/code> - &lt;code>&amp;#91;PredParam_table&amp;#93; &amp;#61; modparam&amp;#40;&amp;#39;OutputFormat&amp;#39;,&amp;#39;table&amp;#39;&amp;#41;;&lt;/code>&lt;/p>
 &lt;/div>
-&lt;h3 id="tools">Tools&lt;/h3>
+&lt;h2 id="tools">Tools&lt;/h2>
 &lt;p>All Tools are not necessary for the MagTIP algorithm; they are invented, for example, to demonstrate the results in figure or for generating/selecting directories in a convenient way.&lt;/p>
+&lt;h3 id="plotting">Plotting&lt;/h3>
 &lt;h4 id="overview-of-all-geomagnetic-data-plot_dataoverview">Overview of All Geomagnetic Data (&lt;code>plot_dataoverview&lt;/code>)&lt;/h4>
 &lt;div class="markdown">&lt;p>&lt;code>plot_dataoverview&amp;#40;dir_stat&amp;#41;&lt;/code> plot an overview of all data. &lt;strong>Keyword Arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -858,7 +862,7 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="probability-forecast-plot-plotprobability">Probability Forecast Plot (&lt;code>plotProbability&lt;/code>)&lt;/h4>
+&lt;h4 id="probability-forecast-map-plotprobability">Probability Forecast Map (&lt;code>plotProbability&lt;/code>)&lt;/h4>
 &lt;div class="markdown">&lt;p>&lt;code>plotProbability&amp;#40;dir_jointstation,dir_catalog,dir_out&amp;#41;&lt;/code> plots two-dimensional probability forecasting maps; the results are saved as png files in &lt;code>dir_output&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Keyword Arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -882,10 +886,10 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h4 id="plot-fitting-degree-and-molchan-diagram-plotfittingdegree">Plot Fitting Degree and Molchan Diagram (&lt;code>plotFittingDegree&lt;/code>)&lt;/h4>
+&lt;h4 id="fitting-degree-and-molchan-diagram-plotfittingdegree">Fitting Degree and Molchan Diagram (&lt;code>plotFittingDegree&lt;/code>)&lt;/h4>
 &lt;div class="markdown">&lt;p>&lt;code>plotFittingDegree&amp;#40;dir_jointstation,dir_catalog,dir_png&amp;#41;&lt;/code> gives fitting degree analysis and molchan diagrams for each training-forecasting phase pair according to the results from &lt;code>molscore3&lt;/code>.&lt;/p>
 &lt;/div>
-&lt;h4 id="visualize-1-d-eqk-and-tip-ploteqktip1">Visualize 1-d EQK and TIP (&lt;code>plotEQKTIP1&lt;/code>)&lt;/h4>
+&lt;h4 id="visualization-of-1-d-eqk-and-tip-ploteqktip1">Visualization of 1-d EQK and TIP (&lt;code>plotEQKTIP1&lt;/code>)&lt;/h4>
 &lt;div class="markdown">&lt;p>&lt;code>plotEQKTIP1&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_output&amp;#41;&lt;/code> plot one-dimensional TIP time series for each station with target earthquakes &amp;#40;EQK&amp;#41; scattered over the diagram; the results are saved as png files in &lt;code>dir_output&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Keyword Arguments:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -903,10 +907,11 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
+&lt;h3 id="others">Others&lt;/h3>
 &lt;h4 id="reconstruct-molchaninformationmat-constructmolinfo">Reconstruct &lt;code>[Molchan]Information.mat&lt;/code> (&lt;code>constructMolInfo&lt;/code>)&lt;/h4>
 &lt;div class="markdown">&lt;p>&lt;code>constructMolInfo&amp;#40;dir_molchan,InfoId&amp;#41;&lt;/code> construct the &amp;#39;&amp;#91;MolchanScore&amp;#93;Information.mat&amp;#39; according to existing &amp;#91;Molchanscore&amp;#93;___.mat files if possible. Use this function only if instructed by error message.&lt;/p>
 &lt;/div>
-&lt;h4 id="for-calculating-fitting-degrees">For Calculating Fitting Degrees&lt;/h4>
+&lt;h4 id="calculating-fitting-degrees">Calculating Fitting Degrees&lt;/h4>
 &lt;h5 id="calcfittingdegree">&lt;code>calcFittingDegree&lt;/code>&lt;/h5>
 &lt;div class="markdown">&lt;p>&lt;code>calcFittingDegree&amp;#40;jpathlist&amp;#41;&lt;/code> according to the given files &amp;#40;&lt;code>jpathlist&lt;/code>&amp;#41; provides the overall alarmed rate, missing rate that allows the calculation of the overall fitting degree. Make sure to provide correct input list of the &lt;code>&amp;#91;JointStation&amp;#93;&lt;/code> variable , for example, those have the same ID and are not overlapped in forecasting time interval for each group; otherwise the calculated fitting degree can be unreasonable.&lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
