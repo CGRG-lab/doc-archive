@@ -1,184 +1,26 @@
 ---
 author: "Tsung-Hsi, Wu"
-title: "MagTIP (2021) Documentation"
+title: "Library"
 date: "2021-11-11"
-linkTitle: "User manual and documentation"
+linkTitle: "Library"
 ---
 
-[TOC]
-<!-- TODO: git commit and push unpredictable-life
-FIXME: Delete the following in the future 
-
+<!-- 
 `cd` to the folder where there is `.jmd`, and 
 ```
+cd("doc_library")
 lazyhugo();
-cp2content("D:\\GoogleDrive\\Sites\\unpredictable-life\\content\\en\\my-project\\MagTIP")
+cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_library")
 ``` -->
 
 
 
 
-# Hello
-
-Test LaTeX math:
-
-$$F = ma$$
-
-and inline math: $F=ma$.
-
-## Introduction
-
-MagTIP calculates the TIP (Time of Increased Probability) of earthquakes basing on the geomagnetic records of Central Weather Bureau of Taiwan. 
-The algorithm allows for the optimization of the model parameters, and gives the overall TIP (named joint-station TIP). 
-The probability of capturing a target event in space and time can be derived based on the joint-station TIP, by considering the results from a large set of randomly permuted of model parameters simultaneously.
-
-In the traditional TIP forecasting, the type and the number of input data have to be uniquely formatted otherwise re-training according to the new format is required. 
-As a result, either the conversion for fitting new data to old format (where some information must lose), or an extra waiting period (e.g. 7 years) for re-training models with new data, is required. 
-The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system. 
-
-The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.
-
-## Getting Started
-The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as ".mat" files.
-In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by `dir_`; for example, `dir_data` is the directory for the formatted geomagnetic data, and `dir_stat` is the directory for statistic indices. 
-The `dir_`-prefixed variables are each a sequence of characters being something like `'D:\MagTIP-2021\output_var\StatisticIndex'`. 
-
-#### The Sample Script for Everything
-There is a script **"MagTIP_2021b.m"** contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:
-- switch current directory to the folder named "MagTIP-2021"
-- run section(s) in the script of "MagTIP_2021b.m"
-
-In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (`dir_data`) and loading the toolbox (`dir_toolbox`). 
-Select the right folders as instructed, and they will be automatically added to path and be ready to use.
-
-### Input/Output Directories
-Assigning directories for input/output data or variables is necessary before running any application. 
-For example:
-
-```matlab
-dir_catalog = 'data\spreadsheet'; 
-        % directory of event catalog & station location
-dir_data = 'data\geomag_1'; 
-        % directory of geomagnetic timeseries
-dir_stat = 'output_var\StatisticIndex'; 
-        % directory of statistic indices
-dir_tsAIN = 'output_var\tsAIN'; 
-        % directory for storing anomaly index number (AIN)
-dir_molchan = 'output_var\Molchan'; 
-        % directory for storing Molchan scores
-dir_jointstation = 'output_var\JointStation'; 
-        % directory for the time series of EQK, TIP and probability
-```
-
-This can be done alternatively using `mkdir_default()` to create the set of empty folders with each folder name never repeats. 
-That is, the code chunk above is equivalent to
-
-```matlab
-dir_catalog = 'data\spreadsheet'; 
-dir_data = 'data\geomag_1';
-[dir_stat, dir_tsAIN, dir_molchan, dir_jointstation] = mkdir_default('output_var')
-```
-
-
-Here is an overview of this default directory structure: 
-![](dirtree.svg)
-<!-- `LaTeX Error: Cannot determine size of graphic in ../fig/dirtree.svg (no Bound ingBox).` when doctype is "md2pdf" -->
-
-You can create this directory structure manually by adding new folders using your OS's interface. 
-You can also assign the `dir_`-prefixed variables by using `dirselectassign(...)`, where windows pop out for selecting existing directory. 
-For more information, see "MagTIP_2021b.m" and "dirselectassign.m".
-
-**⚠Notice:** 
-
-1. `dir_spreadsheet` must contain `catalog.csv` and `station_location.csv`, with the first row (column names) being 'code', 'format', 'Lon', 'Lat' for `station_location.csv`, and 'time', 'Lon', 'Lat', 'Depth', and 'Mag' for `catalog.csv`.
-2. The order of column names can be arbitrarily arranged, but the strings have to be exactly the same as above.
-3. Geomagnetic time series in `dir_data` should be converted to the standard format. For more information, see `convdata0`.
-
-#### The Format of Station list and Earthquake Catalog
-
-The `station_location.csv` specifies the location of every station;
-here is an example for `station_location.csv`: 
-
-| code | format | Lon      | Lat      |
-| ---- | ------ | -------- | -------- |
-| MS   | 馬仕   | 120.633  | 22.61089 |
-| TW   | 灣丘   | 120.5286 | 23.18502 |
-| ...  | ...    | ...      | ...      |
-| XC   | 新城   | 121.6095 | 24.0383  |
-| SM   | 日月潭 | 120.9076 | 23.881   |
-
-The `catalog.csv` is the catalog covering at least the entire range of all training phases; 
-here is an example for `catalog.csv`:
-
-| time            | Lon    | Lat   | Depth  | Mag  |
-| --------------- | ------ | ----- | ------ | ---- |
-| 2020/8/10 06:41 | 121.59 | 23.81 | 29.86  | 3.41 |
-| 2020/8/10 06:29 | 120.57 | 22.18 | 43.54  | 3.02 |
-| 2020/8/10 06:14 | 121.7  | 22.17 | 124.78 | 4.13 |
-| ...             | ...    | ...   | ...    | ...  |
-
-### The Standard Data Format
-
-All original files of geomagnetic timeseries have to be converted to the new format before any function that takes `dir_data` as an input argument.
-You can convert the data by simply applying:
-
-```matlab
-convdata0(dir_originalfiles, dir_data)
-```
-In which, 
-- `convdata0` takes two required input argument. The first is the directory of original files, and the second is the output folder for the new files.
-- The naming of original files should be "yyyymmdd.StationCode" or "yyyymmddHH.StationCode". For example, "20150202.MS" and  "2015020223.MS", respectively.
-- The naming criteria for new files is "stn[StationCode]dt[yyyymmdd]type[DataType].mat". For example, "stn[MS]dt[20150202]type[full].mat" is the formatted geomagnetic data converted from "20150202.MS", which is a one-component time series. 
-- The process of conversion may take very long if the number of files to be converted is large. Use the option `'ContinueFromLast'` and `'FilterByDatetime'` to avoid repeatedly converting the files that have already been converted before.
-- For more information, see "convdata0.m".
-
-
-### The Main Process
-After all data are prepared (those in `dir_data` and `dir_spreadsheet`), you can run the whole forecasting process simply with:
-```matlab
-statind(dir_data,dir_stat); 
-anomalyind(dir_stat,dir_tsAIN); 
-molscore(dir_tsAIN,dir_catalog,dir_molchan);
-molscore3(dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation);
-```
-In which, `statind` calculates specific statistical quantities of each day; `anomalyind` calculates anomaly index according to different $A_\text{thr}$ threshold; `molscore` gives optimized models; and `molscore3` use optimized models to calculate probability forecasts.
-
-### Visualization of the Results
-There are several tools provided for visualizing the result.
-
-#### Probability Forecast
-`plotProbability` visualizes the probability of the calculated results (which is stored in `dir_jointstation` in default), with options for whether to plot epicenters of target events (目標地震) and for specifying the date time to plot, as an example:
-
-```matlab
-dir_prob = fullfile(dir_jointstation,'png','prob');
-dates2plot = [datetime(2020,3,1):calmonths(6):datetime(2021,3,1)];
-plotProbability(dir_jointstation,dir_catalog,dir_prob,...
-    'TimeRange',dates2plot,'PlotEpicenter','all');
-```
-![](plotProb_ex1.png)
-
-> In this figure, the triangle denotes the location of station; circle(s) around each station denote the maximum and minimum range of detection ($R_C$) of the models that are responsible for calculating the TIPs; the filled color of the triangle denotes the ratio of valid models of the day; and hollow triangle denotes the station that cannot provide TIP for the day.
-
-
-#### The Matching Diagram
-`plotEQKTIP1` provides the 1-dimensional match diagram of a specific model.
-
-```matlab
-dir_png = fullfile(dir_molchan,'png','EQKTIP');
-plotEQKTIP1(dir_tsAIN,dir_molchan,dir_catalog,dir_png,...
-            'ForecastingPhase',calyears(1),'ShowTrainingPhase',1,'Rank',1,...
-            'ForceMagnitude',-0.5,'scatter',1);
-```
-![](plotEQKTIP_ex1.png)
-
-> In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.
-
-
-## Documentation
+<!-- # Documentation -->
 **⚠Warning:**
 - Please don't assign undocumented name-value pair parameters to the functions. For example, `'CreateInfoOnly'` and `'InParforLoop'`, which are preserved for parallel computing, and you will never need to set them manually.
 
-### Main Functions
+## Main Functions
 
 There are roughly four stages in the MagTIP forecasting process: 
 
@@ -191,7 +33,7 @@ The four stages is wrapped by four functions with keyword options that we can cu
 The four main functions are wrapper functions for routine training and forecasting process. As follow:
 
 
-#### Data Preprocessing (`convdata0`)
+### Data Preprocessing (`convdata0`)
 
 <div class="markdown"><p>The original geomagnetic data  &#40;which are those in &quot;.csv&quot; format being something like &quot;2008010300.KM&quot; or &quot;20190307.LY&quot;&#41; should be converted to a standard format before any calculation.  <code>convdata0&#40;dir_originalfiles, dir_data&#41;</code> read original data in <code>dir_originalfiles</code> and save them in the standard format at the directory <code>dir_data</code>.</p>
 <p><strong>Keyword Argument:</strong></p>
@@ -223,7 +65,7 @@ The four main functions are wrapper functions for routine training and forecasti
 
 
 
-#### Statistical Index Calculation (`statind`)
+### Statistical Index Calculation (`statind`)
 
 <div class="markdown"><p><code>statind&#40;dir_data,dir_output&#41;</code> calculate daily statistics &#40;a statistical  quantity as an index of the day&#41; of the daily timeseries in <code>dir_data</code>.  The output variables are stored in <code>dir_output</code>.</p>
 <p><strong>Example</strong>:</p>
@@ -287,7 +129,7 @@ The four main functions are wrapper functions for routine training and forecasti
   ![](struct_stat.png)
 
 
-#### Anomaly Index Number Calculation (`anomalyind`)
+### Anomaly Index Number Calculation (`anomalyind`)
 
 <div class="markdown"><p><code>anomalyind&#40;dir_stat,dir_output&#41;</code> calculates anomaly index number &#40;AIN&#41;  according to a list of &#36;A_\text&#123;thr&#125;&#36;; <code>dir_out</code> is where the output  variables stored. </p>
 <p><strong>Example:</strong></p>
@@ -326,7 +168,7 @@ The four main functions are wrapper functions for routine training and forecasti
   ![](struct_tsAIN.png)
 
 
-#### TIP and Molchan Score Calculation (`molscore`)
+### TIP and Molchan Score Calculation (`molscore`)
 
 <div class="markdown"><p><code>molscore&#40;dir_tsAIN,dir_catalog,dir_molchan&#41;</code> is responsible for single station&#39;s TIP &amp; Molchan score calculation. </p>
 <p><strong>Example:</strong></p>
@@ -385,7 +227,7 @@ molscore&#40;dir_tsAIN,dir_catalog,dir_molchan&#41;;</code></pre>
   ![](struct_molchan.png)
 
 
-#### Joint-station (3-D) TIP and Molchan Score Calculation (`molscore3`)
+### Joint-station (3-D) TIP and Molchan Score Calculation (`molscore3`)
 
 <div class="markdown"><p><code>molscore3</code> calculates the joint-station TIP, the Molchan score  between EQK and TIP, the Hit rate, and the earthquake probability. The calculation is based on optimized model given by <code>molscore</code>.</p>
 <p><strong>Example:</strong></p>
@@ -460,11 +302,11 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 - The output directory and data structure is:
   ![](struct_jointstation.png)
   
-### Subfunctions
+## Subfunctions
 Subfunctions are those a user normally do not have a chance to use. However, if you are a developer, the information will be very helpful.
 
 
-#### Sum of Anomaly Indices (`convAIN`)
+### Sum of Anomaly Indices (`convAIN`)
 
 <div class="markdown"><p>Calculate the total amount of anomaly indices of each day.  That is, saying we have two statistical indices <code>S</code> and <code>K</code>, and the  total amount of anomaly indices is less or equal than 2. It is the &#39;update_tsAIN&#39; of the previous version.</p>
 <p><strong>Example</strong>:</p>
@@ -484,7 +326,7 @@ Subfunctions are those a user normally do not have a chance to use. However, if 
 
 
 
-#### Sum of Anomaly Days (`sumanomalyind`)
+### Sum of Anomaly Days (`sumanomalyind`)
 
 <div class="markdown"><p><code>&#91;DateTimeSAT,vlSAT&#93; &#61; sumanomalyind&#40;DateTime_j,sum_tsAIN_k,Nthr_array,Tobs_i&#41;</code> calculate sum of anomaly day &#40;<code>vlSAT</code>&#41; and its corresponding datetime  series &#40;<code>DateTimeSAT</code>&#41;. It is simply the moving-window sum of the <code>sum_tsAIN_k</code> timeseries, where the moving-window length is <code>Tobs_i</code>; in which, <code>i</code> stands for &#36;i_&#123;th&#125;&#36;  model, <code>j</code> for &#36;j_&#123;th&#125;&#36; station, and <code>k</code> for &#36;k_&#123;th&#125;&#36; threshold &#36;A_&#123;thr&#125;&#36;. Of coursely, the number of elements of the output timeseires &#40;<code>DateTimeSAT</code>&#41; will be <code>Tobs_i - 1</code> less than the input timeseries &#40;<code>DateTime_j</code> or <code>DateTime_dti</code>&#41;;  i.e., <code>length&#40;sum_tsAIN_k&#41; - length&#40;vlSAT&#41; &#61;  Tobs_i - 1</code>.</p>
 <p><strong>Input arguments:</strong></p>
@@ -514,7 +356,7 @@ Subfunctions are those a user normally do not have a chance to use. However, if 
 
 
 
-#### The Date Time at Which TIP is True (`dt_TIP_true`)
+### The Date Time at Which TIP is True (`dt_TIP_true`)
 
 <div class="markdown"><p><code>&#91;dt_TIPtrue,TIPtime,TIP&#93; &#61; dt_TIP_true&#40;DateTimeSAT,vlSAT, Tthr,Tlead,Tpred&#41;</code> return the datetime where TIP is true.</p>
 <p><strong>Input arguments:</strong></p>
@@ -555,7 +397,7 @@ TIPtime/TIP    |Tobs || Tlead ||--------------------------------------|
 </div>
 
 
-#### The Date Time at Which TIP is Valid (`dt_TIP_valid`)
+### The Date Time at Which TIP is Valid (`dt_TIP_valid`)
 
 <div class="markdown"><p><code>dt_TIP_valid</code> gives loosely valid TIP time and strictly invalid TIP time.  There are two possibilities for a TIP false: one is that the anomaly  index number &#40;AIN&#41; is below the threshold, and the other is that AIN is NaN since anything in comparison with a NaN results in a false.  The later we called it an &#39;invalid&#39; TIP time/day.</p>
 <p><strong>Example:</strong></p>
@@ -615,7 +457,7 @@ dt_TIPvalid &#61; unique&#40;TIPtime&#40;&#91;1:3,2:4,3:5,....&#93;&#41;&#41;
 
 
 
-#### 1-d EQK and TIP (`eqktip1`)
+### 1-d EQK and TIP (`eqktip1`)
 
 <div class="markdown"><p><code>&#91;EQK,TIP, TIPtime&#93; &#61; eqktip1&#40;eqMR,eqDateTime, DateTimeSAT,vlSAT,                    Tthr_iMod,Tlead_iMod,Tpred_iMod, Mc_iMod,Rc_iMod&#41;</code> provides 1 dimensional logical array of target earthquakes &#40;<code>EQK</code>&#41; and  Time of Increased Probability &#40;<code>TIP</code>&#41;, corresponding to the 1-d datetime array <code>TIPtime</code>.</p>
 <p><strong>Input arguments:</strong></p>
@@ -653,7 +495,7 @@ dt_TIPvalid &#61; unique&#40;TIPtime&#40;&#91;1:3,2:4,3:5,....&#93;&#41;&#41;
 
 
 
-#### Joint-station Probability (`jointstation`)
+### Joint-station Probability (`jointstation`)
 
 <div class="markdown"><p><code>jointstation</code> calculates hit rates, alarmed rates, and spatial probability.</p>
 <p><strong>Example:</strong></p>
@@ -740,7 +582,7 @@ dt_TIPvalid &#61; unique&#40;TIPtime&#40;&#91;1:3,2:4,3:5,....&#93;&#41;&#41;
 
 
 
-#### Anomaly Index Number of each day (`loadAIN`)
+### Anomaly Index Number of each day (`loadAIN`)
 
 <div class="markdown"><pre><code>&#91;sum_tsAINs,sum_validateInds,DateTime_dti,AthrList&#93; &#61;
 loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
@@ -766,7 +608,7 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 
 
 
-#### The Best Models (`bestmodel`)
+### The Best Models (`bestmodel`)
 
 <div class="markdown"><p><code>&#91;BestModels,BestModelNames,idPermute,molList&#93; &#61; bestmodel&#40;molList,BestN,totalM,StationLocation&#41;</code> filters the best N models out based on fitting degree and perform random permutation of total M combination of them.  That is, <code>bestmodel&#40;&#41;</code> save the best N &#40;at most&#41; models for each station in  <code>BestModels</code>, and gives an array of M elements that are randomly picked  from the set of the ranking numbers of the best N &#40;at most&#41; models. </p>
 <p><strong>Input arguments</strong>:</p>
@@ -812,21 +654,21 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 
 
 
-#### Station List Formatting (`checkstation`)
+### Station List Formatting (`checkstation`)
 
 <div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>station_location.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>station_location.csv</code> to <code>station_location.mat</code>.  If the <code>station_location.csv</code> does not meet the required format, error will occur.</p>
 </div>
 
 
 
-#### Earthquake Catalog Formatting (`checkcatalog`)
+### Earthquake Catalog Formatting (`checkcatalog`)
 
 <div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  If the <code>catalog.csv</code> does not meet the required format, error will occur.</p>
 </div>
 
 
 
-#### Generate Model Parameters (`modparam`)
+### Generate Model Parameters (`modparam`)
 
 <div class="markdown"><p>In MagTIP, model parameters defines TIP and target earthquakes &#40;EQK&#41;.  <code>&#91;PredParam,varargout&#93;&#61;modparam&#40;&#41;</code> generate the whole set of model parameters  that are going to be used in the training phase by <code>molscore</code>. </p>
 <p><strong>Keyword Arguments:</strong></p>
@@ -890,10 +732,11 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 
 
 
-### Tools
+## Tools
 
 All Tools are not necessary for the MagTIP algorithm; they are invented, for example, to demonstrate the results in figure or for generating/selecting directories in a convenient way.
 
+### Plotting
 #### Overview of All Geomagnetic Data (`plot_dataoverview`)
 
 <div class="markdown"><p><code>plot_dataoverview&#40;dir_stat&#41;</code> plot an overview of all data. <strong>Keyword Arguments:</strong></p>
@@ -913,7 +756,7 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 
 
 
-#### Probability Forecast Plot (`plotProbability`)
+#### Probability Forecast Map (`plotProbability`)
 
 <div class="markdown"><p><code>plotProbability&#40;dir_jointstation,dir_catalog,dir_out&#41;</code> plots two-dimensional probability forecasting maps; the results are saved as png files in <code>dir_output</code>.</p>
 <p><strong>Keyword Arguments:</strong></p>
@@ -941,13 +784,13 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 
 
 
-#### Plot Fitting Degree and Molchan Diagram (`plotFittingDegree`)
+#### Fitting Degree and Molchan Diagram (`plotFittingDegree`)
 
 <div class="markdown"><p><code>plotFittingDegree&#40;dir_jointstation,dir_catalog,dir_png&#41;</code> gives  fitting degree analysis and molchan diagrams for each  training-forecasting phase pair according to the results from <code>molscore3</code>.</p>
 </div>
 
 
-#### Visualize 1-d EQK and TIP (`plotEQKTIP1`)
+#### Visualization of 1-d EQK and TIP (`plotEQKTIP1`)
 
 <div class="markdown"><p><code>plotEQKTIP1&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_output&#41;</code> plot  one-dimensional TIP time series for each station with target earthquakes &#40;EQK&#41; scattered over the diagram; the results are saved as png files in <code>dir_output</code>.</p>
 <p><strong>Keyword Arguments:</strong></p>
@@ -968,6 +811,8 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 </div>
 
 
+
+### Others
 #### Reconstruct `[Molchan]Information.mat` (`constructMolInfo`)
 
 <div class="markdown"><p><code>constructMolInfo&#40;dir_molchan,InfoId&#41;</code> construct the &#39;&#91;MolchanScore&#93;Information.mat&#39; according to existing &#91;Molchanscore&#93;___.mat files if possible. Use this function only if instructed by error message.</p>
@@ -975,7 +820,7 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 
 
 
-#### For Calculating Fitting Degrees
+#### Calculating Fitting Degrees
 ##### `calcFittingDegree`
 
 <div class="markdown"><p><code>calcFittingDegree&#40;jpathlist&#41;</code> according to the given files &#40;<code>jpathlist</code>&#41; provides the overall alarmed rate, missing rate that allows the calculation of the overall fitting degree.  Make sure to provide correct input list of the <code>&#91;JointStation&#93;</code> variable , for example, those have the same ID and are not overlapped in  forecasting time interval for each group;  otherwise the calculated fitting degree can be unreasonable.</p>

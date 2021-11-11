@@ -1,4 +1,7 @@
 # doc-archive
+DO THIS!
+`git clone --recursive https://github.com/CGRG-lab/doc-archive.git`
+
 TODO: migrate to hugo/docsy
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/CGRG-lab/doc-archive)

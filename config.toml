@@ -37,8 +37,11 @@ contentDir = "content/zh"
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 
+github_repo = "https://github.com/CGRG-lab/doc-archive"
+
 [params]
 copyright = "CGRG"
+
 
 # User interface configuration
 [params.ui]
