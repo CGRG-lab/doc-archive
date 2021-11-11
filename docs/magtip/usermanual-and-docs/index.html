@@ -1,0 +1,1194 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.89.2">
+<link rel=alternate type=application/rss+xml href=https://CGRG-lab.github.io/doc-archive/docs/magtip/usermanual-and-docs/index.xml>
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/doc-archive/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/doc-archive/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/doc-archive/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/doc-archive/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/doc-archive/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/doc-archive/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/doc-archive/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/doc-archive/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/doc-archive/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/doc-archive/favicons/android-192x192.png sizes=192x192>
+<title>MagTIP (2021) Documentation | doc-archive</title>
+<meta name=description content="[TOC]
+">
+<meta property="og:title" content="MagTIP (2021) Documentation">
+<meta property="og:description" content="Docsy does docs">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://CGRG-lab.github.io/doc-archive/docs/magtip/usermanual-and-docs/">
+<meta itemprop=name content="MagTIP (2021) Documentation">
+<meta itemprop=description content="Docsy does docs"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="MagTIP (2021) Documentation">
+<meta name=twitter:description content="Docsy does docs">
+<link rel=preload href=/doc-archive/scss/main.min.bd5285b713d3061549a6bfd34e5f4ec6775ede36672a3088260f0d420050647f.css as=style>
+<link href=/doc-archive/scss/main.min.bd5285b713d3061549a6bfd34e5f4ec6775ede36672a3088260f0d420050647f.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+</head>
+<body class=td-section>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/doc-archive/>
+<span class=navbar-logo></span><span class="text-uppercase font-weight-bold">doc-archive</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/doc-archive/docs/><i class="fas fa-book"></i><span class=active>Documentation</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/doc-archive/docs/magtip/><span class=active>MagTIP</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=https://cgrg.synology.me/CGRG/ target=_blank><i class="fas fa-external-link-alt"></i><span>CGRG website</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=https://github.com/CGRG-lab/doc-archive/ target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
+</li>
+<li class="nav-item dropdown mr-4 d-none d-lg-block">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+English
+</a>
+<div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink>
+<a class=dropdown-item href=/doc-archive/zh/>正體中文</a>
+</div>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<script>$(function(){$("#td-section-nav a").removeClass("active"),$("#td-section-nav #m-doc-archivedocsmagtipusermanual-and-docs").addClass("active"),$("#td-section-nav #m-doc-archivedocsmagtipusermanual-and-docs-li span").addClass("td-sidebar-nav-active-item"),$("#td-section-nav #m-doc-archivedocsmagtipusermanual-and-docs").parents("li").addClass("active-path"),$("#td-section-nav li.active-path").addClass("show"),$("#td-section-nav li.active-path").children("input").prop('checked',!0),$("#td-section-nav #m-doc-archivedocsmagtipusermanual-and-docs-li").siblings("li").addClass("show"),$("#td-section-nav #m-doc-archivedocsmagtipusermanual-and-docs-li").children("ul").children("li").addClass("show"),$("#td-sidebar-menu").toggleClass("d-none")})</script>
+<div id=td-sidebar-menu class="td-sidebar__inner d-none">
+<form class="td-sidebar__search d-flex align-items-center">
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+<nav class="collapse td-sidebar-nav foldable-nav" id=td-section-nav>
+<div class="nav-item dropdown d-block d-lg-none">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+English
+</a>
+<div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink>
+<a class=dropdown-item href=/doc-archive/zh/docs/best-practices/git/>正體中文</a>
+</div>
+</div>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocs-li>
+<a href=/doc-archive/docs/ title=doc-archive class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-doc-archivedocs><span>Documentation</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocsbest-practices-li>
+<input type=checkbox id=m-doc-archivedocsbest-practices-check>
+<label for=m-doc-archivedocsbest-practices-check><a href=/doc-archive/docs/best-practices/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsbest-practices><span>Best practices</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsbest-practicesgit-li>
+<input type=checkbox id=m-doc-archivedocsbest-practicesgit-check>
+<label for=m-doc-archivedocsbest-practicesgit-check><a href=/doc-archive/docs/best-practices/git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocsbest-practicesgit><span>Git</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsbest-practicesmatlab-li>
+<input type=checkbox id=m-doc-archivedocsbest-practicesmatlab-check>
+<label for=m-doc-archivedocsbest-practicesmatlab-check><a href=/doc-archive/docs/best-practices/matlab/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocsbest-practicesmatlab><span>Matlab</span></a></label>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocslearning-resources-li>
+<input type=checkbox id=m-doc-archivedocslearning-resources-check>
+<label for=m-doc-archivedocslearning-resources-check><a href=/doc-archive/docs/learning-resources/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocslearning-resources><span>Learning resources</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocslearning-resourcesscientific_computing-li>
+<input type=checkbox id=m-doc-archivedocslearning-resourcesscientific_computing-check>
+<label for=m-doc-archivedocslearning-resourcesscientific_computing-check><a href=/doc-archive/docs/learning-resources/scientific_computing/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocslearning-resourcesscientific_computing><span>Scientific computing</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocslearning-resourcesinverse_problem-li>
+<input type=checkbox id=m-doc-archivedocslearning-resourcesinverse_problem-check>
+<label for=m-doc-archivedocslearning-resourcesinverse_problem-check><a href=/doc-archive/docs/learning-resources/inverse_problem/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocslearning-resourcesinverse_problem><span>Inverse problem</span></a></label>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocstools-li>
+<input type=checkbox id=m-doc-archivedocstools-check>
+<label for=m-doc-archivedocstools-check><a href=/doc-archive/docs/tools/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocstools><span>Tools</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocstoolsearth_science-li>
+<input type=checkbox id=m-doc-archivedocstoolsearth_science-check>
+<label for=m-doc-archivedocstoolsearth_science-check><a href=/doc-archive/docs/tools/earth_science/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocstoolsearth_science><span>Earth science</span></a></label>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocsmagtip-li>
+<input type=checkbox id=m-doc-archivedocsmagtip-check>
+<label for=m-doc-archivedocsmagtip-check><a href=/doc-archive/docs/magtip/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtip><span>MagTIP</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipusermanual-and-docs-li>
+<input type=checkbox id=m-doc-archivedocsmagtipusermanual-and-docs-check>
+<label for=m-doc-archivedocsmagtipusermanual-and-docs-check><a href=/doc-archive/docs/magtip/usermanual-and-docs/ title="MagTIP (2021) Documentation" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipusermanual-and-docs><span>User manual and documentation</span></a></label>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+</div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#getting-started>Getting Started</a>
+<ul>
+<li></li>
+<li><a href=#inputoutput-directories>Input/Output Directories</a></li>
+<li><a href=#the-standard-data-format>The Standard Data Format</a></li>
+<li><a href=#the-main-process>The Main Process</a></li>
+<li><a href=#visualization-of-the-results>Visualization of the Results</a></li>
+</ul>
+</li>
+<li><a href=#documentation>Documentation</a>
+<ul>
+<li><a href=#main-functions>Main Functions</a></li>
+<li><a href=#subfunctions>Subfunctions</a></li>
+<li><a href=#tools>Tools</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
+<ol class="breadcrumb spb-1">
+<li class=breadcrumb-item>
+<a href=https://CGRG-lab.github.io/doc-archive/docs/>Documentation</a>
+</li>
+<li class=breadcrumb-item>
+<a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/>MagTIP</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/usermanual-and-docs/>User manual and documentation</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>MagTIP (2021) Documentation</h1>
+<header class=article-meta>
+</header>
+<p>[TOC]</p>
+<h1 id=hello>Hello</h1>
+<p>Test LaTeX math:</p>
+<p>$$F = ma$$</p>
+<p>and inline math: $F=ma$.</p>
+<h2 id=introduction>Introduction</h2>
+<p>MagTIP calculates the TIP (Time of Increased Probability) of earthquakes basing on the geomagnetic records of Central Weather Bureau of Taiwan.
+The algorithm allows for the optimization of the model parameters, and gives the overall TIP (named joint-station TIP).
+The probability of capturing a target event in space and time can be derived based on the joint-station TIP, by considering the results from a large set of randomly permuted of model parameters simultaneously.</p>
+<p>In the traditional TIP forecasting, the type and the number of input data have to be uniquely formatted otherwise re-training according to the new format is required.
+As a result, either the conversion for fitting new data to old format (where some information must lose), or an extra waiting period (e.g. 7 years) for re-training models with new data, is required.
+The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.</p>
+<p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.</p>
+<h2 id=getting-started>Getting Started</h2>
+<p>The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as &ldquo;.mat&rdquo; files.
+In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by <code>dir_</code>; for example, <code>dir_data</code> is the directory for the formatted geomagnetic data, and <code>dir_stat</code> is the directory for statistic indices.
+The <code>dir_</code>-prefixed variables are each a sequence of characters being something like <code>'D:\MagTIP-2021\output_var\StatisticIndex'</code>.</p>
+<h4 id=the-sample-script-for-everything>The Sample Script for Everything</h4>
+<p>There is a script <strong>&ldquo;MagTIP_2021b.m&rdquo;</strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:</p>
+<ul>
+<li>switch current directory to the folder named &ldquo;MagTIP-2021&rdquo;</li>
+<li>run section(s) in the script of &ldquo;MagTIP_2021b.m&rdquo;</li>
+</ul>
+<p>In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (<code>dir_data</code>) and loading the toolbox (<code>dir_toolbox</code>).
+Select the right folders as instructed, and they will be automatically added to path and be ready to use.</p>
+<h3 id=inputoutput-directories>Input/Output Directories</h3>
+<p>Assigning directories for input/output data or variables is necessary before running any application.
+For example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>dir_catalog</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;data\spreadsheet&#39;</span><span style=color:#000;font-weight:700>;</span> 
+        <span style=color:#8f5902;font-style:italic>% directory of event catalog &amp; station location</span>
+<span style=color:#000>dir_data</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;data\geomag_1&#39;</span><span style=color:#000;font-weight:700>;</span> 
+        <span style=color:#8f5902;font-style:italic>% directory of geomagnetic timeseries</span>
+<span style=color:#000>dir_stat</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;output_var\StatisticIndex&#39;</span><span style=color:#000;font-weight:700>;</span> 
+        <span style=color:#8f5902;font-style:italic>% directory of statistic indices</span>
+<span style=color:#000>dir_tsAIN</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;output_var\tsAIN&#39;</span><span style=color:#000;font-weight:700>;</span> 
+        <span style=color:#8f5902;font-style:italic>% directory for storing anomaly index number (AIN)</span>
+<span style=color:#000>dir_molchan</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;output_var\Molchan&#39;</span><span style=color:#000;font-weight:700>;</span> 
+        <span style=color:#8f5902;font-style:italic>% directory for storing Molchan scores</span>
+<span style=color:#000>dir_jointstation</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;output_var\JointStation&#39;</span><span style=color:#000;font-weight:700>;</span> 
+        <span style=color:#8f5902;font-style:italic>% directory for the time series of EQK, TIP and probability</span>
+</code></pre></div><p>This can be done alternatively using <code>mkdir_default()</code> to create the set of empty folders with each folder name never repeats.
+That is, the code chunk above is equivalent to</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>dir_catalog</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;data\spreadsheet&#39;</span><span style=color:#000;font-weight:700>;</span> 
+<span style=color:#000>dir_data</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;data\geomag_1&#39;</span><span style=color:#000;font-weight:700>;</span>
+<span style=color:#000;font-weight:700>[</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>]</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000>mkdir_default</span><span style=color:#000;font-weight:700>(</span><span style=color:#4e9a06>&#39;output_var&#39;</span><span style=color:#000;font-weight:700>)</span>
+</code></pre></div><p>Here is an overview of this default directory structure:
+<img src=dirtree.svg alt></p>
+<p>You can create this directory structure manually by adding new folders using your OS&rsquo;s interface.
+You can also assign the <code>dir_</code>-prefixed variables by using <code>dirselectassign(...)</code>, where windows pop out for selecting existing directory.
+For more information, see &ldquo;MagTIP_2021b.m&rdquo; and &ldquo;dirselectassign.m&rdquo;.</p>
+<p><strong>⚠Notice:</strong></p>
+<ol>
+<li><code>dir_spreadsheet</code> must contain <code>catalog.csv</code> and <code>station_location.csv</code>, with the first row (column names) being &lsquo;code&rsquo;, &lsquo;format&rsquo;, &lsquo;Lon&rsquo;, &lsquo;Lat&rsquo; for <code>station_location.csv</code>, and &lsquo;time&rsquo;, &lsquo;Lon&rsquo;, &lsquo;Lat&rsquo;, &lsquo;Depth&rsquo;, and &lsquo;Mag&rsquo; for <code>catalog.csv</code>.</li>
+<li>The order of column names can be arbitrarily arranged, but the strings have to be exactly the same as above.</li>
+<li>Geomagnetic time series in <code>dir_data</code> should be converted to the standard format. For more information, see <code>convdata0</code>.</li>
+</ol>
+<h4 id=the-format-of-station-list-and-earthquake-catalog>The Format of Station list and Earthquake Catalog</h4>
+<p>The <code>station_location.csv</code> specifies the location of every station;
+here is an example for <code>station_location.csv</code>:</p>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>format</th>
+<th>Lon</th>
+<th>Lat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MS</td>
+<td>馬仕</td>
+<td>120.633</td>
+<td>22.61089</td>
+</tr>
+<tr>
+<td>TW</td>
+<td>灣丘</td>
+<td>120.5286</td>
+<td>23.18502</td>
+</tr>
+<tr>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+</tr>
+<tr>
+<td>XC</td>
+<td>新城</td>
+<td>121.6095</td>
+<td>24.0383</td>
+</tr>
+<tr>
+<td>SM</td>
+<td>日月潭</td>
+<td>120.9076</td>
+<td>23.881</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>catalog.csv</code> is the catalog covering at least the entire range of all training phases;
+here is an example for <code>catalog.csv</code>:</p>
+<table>
+<thead>
+<tr>
+<th>time</th>
+<th>Lon</th>
+<th>Lat</th>
+<th>Depth</th>
+<th>Mag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020/8/10 06:41</td>
+<td>121.59</td>
+<td>23.81</td>
+<td>29.86</td>
+<td>3.41</td>
+</tr>
+<tr>
+<td>2020/8/10 06:29</td>
+<td>120.57</td>
+<td>22.18</td>
+<td>43.54</td>
+<td>3.02</td>
+</tr>
+<tr>
+<td>2020/8/10 06:14</td>
+<td>121.7</td>
+<td>22.17</td>
+<td>124.78</td>
+<td>4.13</td>
+</tr>
+<tr>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+<td>&mldr;</td>
+</tr>
+</tbody>
+</table>
+<h3 id=the-standard-data-format>The Standard Data Format</h3>
+<p>All original files of geomagnetic timeseries have to be converted to the new format before any function that takes <code>dir_data</code> as an input argument.
+You can convert the data by simply applying:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>convdata0</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_originalfiles</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>dir_data</span><span style=color:#000;font-weight:700>)</span>
+</code></pre></div><p>In which,</p>
+<ul>
+<li><code>convdata0</code> takes two required input argument. The first is the directory of original files, and the second is the output folder for the new files.</li>
+<li>The naming of original files should be &ldquo;yyyymmdd.StationCode&rdquo; or &ldquo;yyyymmddHH.StationCode&rdquo;. For example, &ldquo;20150202.MS&rdquo; and &ldquo;2015020223.MS&rdquo;, respectively.</li>
+<li>The naming criteria for new files is &ldquo;stn[StationCode]dt[yyyymmdd]type[DataType].mat&rdquo;. For example, &ldquo;stn[MS]dt[20150202]type[full].mat&rdquo; is the formatted geomagnetic data converted from &ldquo;20150202.MS&rdquo;, which is a one-component time series.</li>
+<li>The process of conversion may take very long if the number of files to be converted is large. Use the option <code>'ContinueFromLast'</code> and <code>'FilterByDatetime'</code> to avoid repeatedly converting the files that have already been converted before.</li>
+<li>For more information, see &ldquo;convdata0.m&rdquo;.</li>
+</ul>
+<h3 id=the-main-process>The Main Process</h3>
+<p>After all data are prepared (those in <code>dir_data</code> and <code>dir_spreadsheet</code>), you can run the whole forecasting process simply with:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>statind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_data</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>);</span> 
+<span style=color:#000>anomalyind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>);</span> 
+<span style=color:#000>molscore</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>);</span>
+<span style=color:#000>molscore3</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>);</span>
+</code></pre></div><p>In which, <code>statind</code> calculates specific statistical quantities of each day; <code>anomalyind</code> calculates anomaly index according to different $A_\text{thr}$ threshold; <code>molscore</code> gives optimized models; and <code>molscore3</code> use optimized models to calculate probability forecasts.</p>
+<h3 id=visualization-of-the-results>Visualization of the Results</h3>
+<p>There are several tools provided for visualizing the result.</p>
+<h4 id=probability-forecast>Probability Forecast</h4>
+<p><code>plotProbability</code> visualizes the probability of the calculated results (which is stored in <code>dir_jointstation</code> in default), with options for whether to plot epicenters of target events (目標地震) and for specifying the date time to plot, as an example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>dir_prob</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000>fullfile</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;png&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;prob&#39;</span><span style=color:#000;font-weight:700>);</span>
+<span style=color:#000>dates2plot</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000;font-weight:700>[</span><span style=color:#000>datetime</span><span style=color:#000;font-weight:700>(</span><span style=color:#0000cf;font-weight:700>2020</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>3</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>):</span><span style=color:#000>calmonths</span><span style=color:#000;font-weight:700>(</span><span style=color:#0000cf;font-weight:700>6</span><span style=color:#000;font-weight:700>):</span><span style=color:#000>datetime</span><span style=color:#000;font-weight:700>(</span><span style=color:#0000cf;font-weight:700>2021</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>3</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>)];</span>
+<span style=color:#000>plotProbability</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_prob</span><span style=color:#000;font-weight:700>,</span><span style=color:#8f5902;font-style:italic>...</span>
+    <span style=color:#4e9a06>&#39;TimeRange&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dates2plot</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;PlotEpicenter&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;all&#39;</span><span style=color:#000;font-weight:700>);</span>
+</code></pre></div><p><img src=plotProb_ex1.png alt></p>
+<blockquote>
+<p>In this figure, the triangle denotes the location of station; circle(s) around each station denote the maximum and minimum range of detection ($R_C$) of the models that are responsible for calculating the TIPs; the filled color of the triangle denotes the ratio of valid models of the day; and hollow triangle denotes the station that cannot provide TIP for the day.</p>
+</blockquote>
+<h4 id=the-matching-diagram>The Matching Diagram</h4>
+<p><code>plotEQKTIP1</code> provides the 1-dimensional match diagram of a specific model.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>dir_png</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000>fullfile</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;png&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;EQKTIP&#39;</span><span style=color:#000;font-weight:700>);</span>
+<span style=color:#000>plotEQKTIP1</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_png</span><span style=color:#000;font-weight:700>,</span><span style=color:#8f5902;font-style:italic>...</span>
+            <span style=color:#4e9a06>&#39;ForecastingPhase&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>calyears</span><span style=color:#000;font-weight:700>(</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>),</span><span style=color:#4e9a06>&#39;ShowTrainingPhase&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;Rank&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>,</span><span style=color:#8f5902;font-style:italic>...</span>
+            <span style=color:#4e9a06>&#39;ForceMagnitude&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#ce5c00;font-weight:700>-</span><span style=color:#0000cf;font-weight:700>0.5</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;scatter&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#0000cf;font-weight:700>1</span><span style=color:#000;font-weight:700>);</span>
+</code></pre></div><p><img src=plotEQKTIP_ex1.png alt></p>
+<blockquote>
+<p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.</p>
+</blockquote>
+<h2 id=documentation>Documentation</h2>
+<p><strong>⚠Warning:</strong></p>
+<ul>
+<li>Please don&rsquo;t assign undocumented name-value pair parameters to the functions. For example, <code>'CreateInfoOnly'</code> and <code>'InParforLoop'</code>, which are preserved for parallel computing, and you will never need to set them manually.</li>
+</ul>
+<h3 id=main-functions>Main Functions</h3>
+<p>There are roughly four stages in the MagTIP forecasting process:</p>
+<ol>
+<li>the calculation of statistical index</li>
+<li>the calculation of anomaly index number according to 1.</li>
+<li>the calculation of TIP and the Molchan score according to 2.</li>
+<li>probability forecasts according to 2. and 3.</li>
+</ol>
+<p>The four stages is wrapped by four functions with keyword options that we can customize the parameters related to model optimization and probability forecast.
+The four main functions are wrapper functions for routine training and forecasting process. As follow:</p>
+<h4 id=data-preprocessing-convdata0>Data Preprocessing (<code>convdata0</code>)</h4>
+<div class=markdown><p>The original geomagnetic data (which are those in ".csv" format being something like "2008010300.KM" or "20190307.LY") should be converted to a standard format before any calculation. <code>convdata0(dir_originalfiles, dir_data)</code> read original data in <code>dir_originalfiles</code> and save them in the standard format at the directory <code>dir_data</code>.</p>
+<p><strong>Keyword Argument:</strong></p>
+<ul>
+<li><p>'ContinueFromLast': Default is <code>false</code>. If <code>true</code>, it compares the names of all old files in the <code>dir_originalfiles</code> and the new files in <code>dir_data</code> before conversion to avoid files that are already being converted to be converted again. This additional procedure may take several hours depending on the size of database; a more efficient way for avoiding repeated processing is to manually specify 'FilterByDatetime'. See below.</p>
+</li>
+<li><p>'FilterByDatetime': Only convert the files in the assigned time range(s). It supports: </p>
+<ul>
+<li><p>A datetime. For example, when <code>'FilterByDatetime', datetime(2010,10,10)</code>, only files with time tag being or after 2010-Oct-10 will be converted.</p>
+</li>
+<li><p>N by 2 datetime array, for example, </p>
+<pre><code>&#39;FilterByDatetime&#39;, &#91;datetime&#40;2009,12,10&#41;, datetime&#40;2010,10,10&#41;;...
+                     datetime&#40;2013,12,10&#41;, datetime&#40;2017,10,10&#41;&#93;;</code></pre>
+<p>, only the files in the two time ranges [2009-Dec-10, 2010-Oct-10] and [2013-Dec-10, 2017-Oct-10] will be converted; ohterwise, ignored.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>NOTICE:</strong></p>
+<ul>
+<li><p>Files in the original format must be uniquely named as '20200101.HC' or '2020010109.HC' for example.</p>
+</li>
+<li><p>If not uniquely named, such as '..\HC\20200101.txt', '..\CS\20200101.txt', the second one will be regarded as a duplicated file and be moved out to an alternative folder (<code>dir_alt</code>)</p>
+</li>
+<li><p>every file should have its extension as the code of the corresponding station, e.g. '20200101.HC' is correct; '20200101.txt' is not valid and an error will occur.</p>
+</li>
+</ul>
+</div>
+<h4 id=statistical-index-calculation-statind>Statistical Index Calculation (<code>statind</code>)</h4>
+<div class=markdown><p><code>statind(dir_data,dir_output)</code> calculate daily statistics (a statistical quantity as an index of the day) of the daily timeseries in <code>dir_data</code>. The output variables are stored in <code>dir_output</code>.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class=language-matlab>statind&#40;dir_data,dir_output,&#39;StatName&#39;,&#39;S&#39;,&#39;StatFunction&#39;,@skewness, &#39;Filter&#39;, &#123;&#39;ULF-A&#39;,&#39;ULF-B&#39;&#125;&#41;;</code></pre>
+<p>In which, <code>dir_data</code> is the directory for the time series in the standard format; <code>dir_output</code> is the <code>dir_stat</code> mentioned before.</p>
+<p><strong>Keyword Arguments</strong>:</p>
+<ul>
+<li><p><code>'StatName'</code></p>
+<ul>
+<li><p>The abbreviations for the name of statistical indices. They can be arbitrarily defined but have to be the same number of elements as that of <code>'StatFunction'</code>.</p>
+</li>
+<li><p>Default is <code>{'S','K'}</code> (for Skewness and Kurtosis).</p>
+</li>
+</ul>
+</li>
+<li><p><code>'StatFunction'</code></p>
+<ul>
+<li><p>The function handle for calculating statistical index.</p>
+</li>
+<li><p>It has to be of the same number of elements as that of <code>'StatName'</code></p>
+</li>
+<li><p>Default is <code>{@skewness,@kurtosis}</code> for calling the <code>skewness()</code> and <code>kurtosis()</code> functions.</p>
+</li>
+</ul>
+</li>
+<li><p><code>'Filter'</code></p>
+<ul>
+<li><p>Apply filter(s) to time series loaded from <code>dir_data</code>. Generally applying a filter very largely increase the computing time, so you may consider <code>'SaveFilteredData'</code>.</p>
+</li>
+<li><p>Default is <code>{'no'}</code>, where no filter will be applied.</p>
+</li>
+<li><p>Supported arguments are <code>'no'</code>, <code>'ULF-A'</code> (a band pass filter of frequency range <code>[0.001 0.003]</code> Hz), <code>'ULF-B'</code> (<code>[0.001 0.01]</code> Hz), and <code>'ULF-C'</code> (<code>[0.001 0.1]</code> Hz).</p>
+</li>
+<li><p>Also see <code>filterthedata()</code>.</p>
+</li>
+<li><p>If multiple filters are applied, for example <code>{'no', 'ULF-A'}</code>, then two sets of result according to no-filter data and ULF-A band passed data are going to be produced. </p>
+</li>
+</ul>
+</li>
+<li><p><code>'SaveFilteredData'</code></p>
+<ul>
+<li><p>Save the filtered data to an alternative folder. Their directory is parallel to that of no-filter data.</p>
+</li>
+</ul>
+</li>
+<li><p><code>'FilterByDatetime'</code></p>
+<ul>
+<li><p>It should be a two element datetime array.</p>
+</li>
+<li><p>If applied, all files with date time tag not in the range will be ignored.</p>
+</li>
+<li><p>Default is <code>[datetime(0001,1,1), datetime(2999,12,31)]</code>, resulting in no data selection by date time tag.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul>
+<li>The output directory and data structure is:
+<img src=struct_stat.png alt></li>
+</ul>
+<h4 id=anomaly-index-number-calculation-anomalyind>Anomaly Index Number Calculation (<code>anomalyind</code>)</h4>
+<div class=markdown><p><code>anomalyind(dir_stat,dir_output)</code> calculates anomaly index number (AIN) according to a list of $A_\text{thr}$; <code>dir_out</code> is where the output variables stored. </p>
+<p><strong>Example:</strong></p>
+<pre><code>anomalyind&#40;dir_stat,dir_tsAIN&#41;;</code></pre>
+<p><strong>Keyword Arguments</strong>:</p>
+<ul>
+<li><p><code>'AthrList'</code>:</p>
+<ul>
+<li><p>the list of $A_\text{thr}$ (the multiplier of the median value of the statistical indices within the moving time window)</p>
+</li>
+<li><p>default is <code>[1:10]</code></p>
+</li>
+</ul>
+</li>
+<li><p><code>'MovingWindow'</code></p>
+<ul>
+<li><p>the moving-window length for calculating the median value mentioned above</p>
+</li>
+<li><p>default is <code>1000</code> (days)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Input and output:</strong></p>
+<ul>
+<li><p><code>anomalyind</code> takes the statistic index output from <code>statind</code> by loading them from <code>dir_stat</code>.</p>
+</li>
+<li><p>The calculated anomaly index is saved in <code>dir_tsAIN</code>.</p>
+</li>
+</ul>
+</div>
+<ul>
+<li>The output directory and data structure is:
+<img src=struct_tsAIN.png alt></li>
+</ul>
+<h4 id=tip-and-molchan-score-calculation-molscore>TIP and Molchan Score Calculation (<code>molscore</code>)</h4>
+<div class=markdown><p><code>molscore(dir_tsAIN,dir_catalog,dir_molchan)</code> is responsible for single station's TIP & Molchan score calculation. </p>
+<p><strong>Example:</strong></p>
+<pre><code>dir_catalog &#61; &#39;\MagTIP-2021\spreadsheet&#39;;
+dir_tsAIN &#61; &#39;\MagTIP-2021\output_var\tsAIN-J13-TZ2&#39;;
+dir_molchan &#61; &#39;\MagTIP-2021\output_var\MolchanScore-J13-TZ2&#39;;
+molscore&#40;dir_tsAIN,dir_catalog,dir_molchan&#41;;</code></pre>
+<p><strong>Keyword Arguments</strong>:</p>
+<ul>
+<li><p>'TrainingPhase'</p>
+<ul>
+<li><p>Assigns a (set of) training phase(s). It should be of type <code>'calendarDuration'</code>, <code>'duration'</code>, an N by 2 array of <code>'datetime'</code>, or an N by 2 cell array, where N is the number of the training phases. If given an N by 2 array specifying N training phases, then N sets of results will be produced separately, with output format being <code>'[MolScore]stn[%x]ID[%s]filt[%s]dt[%s-%s].mat'</code>.</p>
+</li>
+<li><p>For example, a 4 by 2 datetime array <code>reshape(datetime(2009:2016,2,1),[],2)</code> specifies the start and end date of 4 training phases, with the first column being the datetime of the start and the second column being the end of each training phases.</p>
+</li>
+<li><p>For example, a 3 by 2 cell array </p>
+<pre><code>&#123;calyears&#40;7&#41;,datetime&#40;2012,11,11&#41;;...
+ calyears&#40;7&#41;,datetime&#40;2011,11,11&#41;;...
+ calyears&#40;7&#41;,datetime&#40;2010,11,11&#41;&#125;;</code></pre>
+<p>specifies the end day of the training phases as 2010-Nov-11, 2011-Nov-11 and 2012-Nov-11, all having a length of 7-year-long training period (i.e. <code>calyears(7)</code>). If the duration is negative (e.g. <code>-calyears(7)</code>), the datetime of the second column become the first day of each training phase.</p>
+</li>
+<li><p>Default is <code>calyears(7)</code>, which specifies the end day of training phase the day before the last day of statistical indices or anomaly index number, with a length of 7 year period. That is, in default it "trains" and gives the best models according to the most recent 7-year data.</p>
+</li>
+</ul>
+</li>
+<li><p>'modparam'</p>
+<ul>
+<li><p>Specify the model parameters for grid search. It should be a cell array; all elements in the cell array will be directly passed into <code>modparam()</code> as input arguments.</p>
+</li>
+<li><p>For example, {<code>'Athr',[1:2:10],'Rc',[20, 30]</code>}.</p>
+</li>
+<li><p>Default is <code>{}</code>.</p>
+</li>
+</ul>
+</li>
+<li><p>'AdditionalCheck'</p>
+<ul>
+<li><p>Apply some additional check and tests. This option is for developer.</p>
+</li>
+<li><p>Default is <code>false</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Input and output:</strong></p>
+<ul>
+<li><p><code>molscore</code> takes anomaly indices from <code>dir_tsAIN</code> and earthquake catalog and station information from <code>dir_catalog</code>.</p>
+</li>
+<li><p>The output ranked models are saved in <code>dir_molchan</code>.</p>
+</li>
+</ul>
+</div>
+<ul>
+<li>The output directory and data structure is:
+<img src=struct_molchan.png alt></li>
+</ul>
+<h4 id=joint-station-3-d-tip-and-molchan-score-calculation-molscore3>Joint-station (3-D) TIP and Molchan Score Calculation (<code>molscore3</code>)</h4>
+<div class=markdown><p><code>molscore3</code> calculates the joint-station TIP, the Molchan score between EQK and TIP, the Hit rate, and the earthquake probability. The calculation is based on optimized model given by <code>molscore</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code>dir_catalog &#61; &#39;\MagTIP-2021\spreadsheet&#39;;
+dir_tsAIN &#61; &#39;\MagTIP-2021\output_var\tsAIN-J13-TZ2&#39;;
+dir_molchan &#61; &#39;\MagTIP-2021\output_var\MolchanScore-J13-TZ2&#39;;
+dir_jointstation &#61; &#39;\MagTIP-2021\output_var\JointStation-J13-TZ2&#39;;
+molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pre>
+<p><strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'ForecastingPhase'</p>
+<ul>
+<li><p>It can be a N by 2 datetime array with its size identical to the training phases (<code>trnphase</code>), specifying the time ranges of N forecasting phases.</p>
+</li>
+<li><p>It can be 'calendarDuration' or 'duration', saying <code>T</code>. In this case, saying the last day of the training phase is <code>trnphase(i, end)</code>, the forecasting phases are set to start from <code>trnphase(i, end) + 1</code>, and end at <code>trnphase(i, end) + T</code>.</p>
+</li>
+<li><p>'auto'. In this case, forecasting phases are set to be as long as possible. That is, until the last day where tsAIN is available.</p>
+</li>
+<li><p>Default is one calendar year: <code>calyears(1)</code>.</p>
+</li>
+<li><p>Also see <code>formatForecastingPhase()</code>.</p>
+</li>
+</ul>
+</li>
+<li><p>'OverwriteFile' </p>
+<ul>
+<li><p>Whether to overwrite existing output files or not.</p>
+</li>
+<li><p>Default is <code>true</code>.</p>
+</li>
+</ul>
+</li>
+<li><p>'ModelSelect'</p>
+<ul>
+<li><p>see <code>bestmodel()</code></p>
+</li>
+</ul>
+</li>
+<li><p>'ModelSelectOP'</p>
+<ul>
+<li><p>see <code>bestmodel()</code></p>
+</li>
+</ul>
+</li>
+<li><p>'ChooseBest'</p>
+<ul>
+<li><p>Define the number of maximum best models for each station to be applied. </p>
+</li>
+<li><p>Default is 10, which means we pick the models of top 10 fitting degrees each station for calculating predicted TIP(s).</p>
+</li>
+</ul>
+</li>
+<li><p>'CombinationNumber'</p>
+<ul>
+<li><p>Define the total number of random combinations among the best models of each station for joint-station TIP calculation. </p>
+</li>
+<li><p>Default is 500, which means for every station a random permutation of ranking numbers (based on the fitting degree) of the best models is performed with each sequence of ranking number having 500 elements, and the ith joint-station model parameter combination is thus from the best models of each station indexed by the ith element of each permutation. </p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Input and output:</strong></p>
+<ul>
+<li><p><code>molscore3</code> takes anomaly indices from <code>dir_tsAIN</code>, earthquake catalog and station information from <code>dir_catalog</code>, and ranked model form <code>dir_molchan</code>.</p>
+</li>
+<li><p>The output probability is saved in <code>dir_jointstation</code>.</p>
+</li>
+</ul>
+</div>
+<ul>
+<li>The output directory and data structure is:
+<img src=struct_jointstation.png alt></li>
+</ul>
+<h3 id=subfunctions>Subfunctions</h3>
+<p>Subfunctions are those a user normally do not have a chance to use. However, if you are a developer, the information will be very helpful.</p>
+<h4 id=sum-of-anomaly-indices-convain>Sum of Anomaly Indices (<code>convAIN</code>)</h4>
+<div class=markdown><p>Calculate the total amount of anomaly indices of each day. That is, saying we have two statistical indices <code>S</code> and <code>K</code>, and the total amount of anomaly indices is less or equal than 2. It is the 'update_tsAIN' of the previous version.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>&#91;sum_tsAIN, sum_validateIndex&#93; &#61; convAIN&#40;tsAIN.Athr, tsAIN.validateIndex&#41;</code></pre>
+<p>For each Athr we have one anomaly index (true or false) and validation index (true or false) per day per variable, and the output is the number of "trues" per day. Usually Athr = 1:10, so the output will be a 10 by 1 cell in each there is a N by 1 double; N is the length of the DateTime series.</p>
+<p><strong>Input arguments</strong>:</p>
+<ul>
+<li><p><code>tsAIN.Athr</code> or <code>tsAIN.validateIndex</code>: A 1-by-10 structure array. See <code>anomalyind</code> for more information.</p>
+</li>
+</ul>
+<p><strong>Output arguments</strong>:</p>
+<ul>
+<li><p><code>sum_tsAIN</code> or <code>sum_validateIndex</code>: A 10-by-1 cell array corresponding to $A_{thr} = 1:10$. In each cell, there is a N-by-1 double array being the sum of anomaly indices or the sum of valid indices of N days. </p>
+</li>
+</ul>
+</div>
+<h4 id=sum-of-anomaly-days-sumanomalyind>Sum of Anomaly Days (<code>sumanomalyind</code>)</h4>
+<div class=markdown><p><code>[DateTimeSAT,vlSAT] = sumanomalyind(DateTime_j,sum_tsAIN_k,Nthr_array,Tobs_i)</code> calculate sum of anomaly day (<code>vlSAT</code>) and its corresponding datetime series (<code>DateTimeSAT</code>). It is simply the moving-window sum of the <code>sum_tsAIN_k</code> timeseries, where the moving-window length is <code>Tobs_i</code>; in which, <code>i</code> stands for $i_{th}$ model, <code>j</code> for $j_{th}$ station, and <code>k</code> for $k_{th}$ threshold $A_{thr}$. Of coursely, the number of elements of the output timeseires (<code>DateTimeSAT</code>) will be <code>Tobs_i - 1</code> less than the input timeseries (<code>DateTime_j</code> or <code>DateTime_dti</code>); i.e., <code>length(sum_tsAIN_k) - length(vlSAT) = Tobs_i - 1</code>.</p>
+<p><strong>Input arguments:</strong></p>
+<ul>
+<li><p><code>DateTime_j</code>: the datetime array for <code>sum_tsAIN</code>.</p>
+</li>
+<li><p><code>sum_tsAIN_k</code>: the sum of anomaly statistical indices each day.</p>
+</li>
+<li><p><code>Nthr_array</code>: The thresholds for <code>sum_tsAIN_k</code> calculated according to <code>NthrRatio</code>. <code>Nthr</code> is known as the threshold of the total daily amount of anomaly statistical indices.</p>
+</li>
+<li><p><code>Tobs_i</code>: the observation window of model i.</p>
+</li>
+</ul>
+<p><strong>Output arguments:</strong></p>
+<ul>
+<li><p><code>DateTimeSAT</code>: M-by-1 datetime array for sum of anomaly days</p>
+</li>
+<li><p><code>vlSAT</code>: M-by-1 double array for the values of sum of anomaly days (the anomaly days is summed in the moving window of <code>Tobs</code>)</p>
+</li>
+</ul>
+<p><strong>See also:</strong></p>
+<ul>
+<li><p><code>convAIN</code> for more details about <code>sum_tsAIN_k</code>.</p>
+</li>
+</ul>
+</div>
+<h4 id=the-date-time-at-which-tip-is-true-dt_tip_true>The Date Time at Which TIP is True (<code>dt_TIP_true</code>)</h4>
+<div class=markdown><p><code>[dt_TIPtrue,TIPtime,TIP] = dt_TIP_true(DateTimeSAT,vlSAT, Tthr,Tlead,Tpred)</code> return the datetime where TIP is true.</p>
+<p><strong>Input arguments:</strong></p>
+<ul>
+<li><p><code>DateTimeSAT</code>: M-by-1 datetime array for sum of anomaly days</p>
+</li>
+<li><p><code>vlSAT</code>: M-by-1 double array for the values of sum of anomaly days (the anomaly days is summed in the moving window of <code>Tobs</code>)</p>
+</li>
+<li><p><code>Tthr</code>: the threshold related to the number of anomaly days in <code>Tobs</code></p>
+</li>
+<li><p><code>Tlead</code>: the leading window right before the prediction window</p>
+</li>
+<li><p><code>Tpred</code>: the window of prediction (where TIP is true or false according to the number of anmalies in the corresponding Tobs window)</p>
+</li>
+</ul>
+<p><strong>Output arguments:</strong></p>
+<ul>
+<li><p><code>dt_TIPtrue</code>: the datetime where <code>TIP</code> is true</p>
+</li>
+<li><p><code>TIPtime</code>: an N-by-1 datetime array paired with the <code>TIP</code> array</p>
+</li>
+<li><p><code>TIP</code>: an N-by-1 logical array of Time of Increased Probability</p>
+</li>
+</ul>
+<p>The variable <code>dt_TIPtrue</code> may exceeds the last day of <code>DateTimeSAT</code>, while <code>TIPtime</code> is truncated to not exceed <code>DateTimeSAT(end)</code> in <code>molscore</code>, because in training phase datetime out of <code>DateTimeSAT</code> is assumed to be out of the time range of available earthquake catalog.</p>
+<p><strong>A schematic illustration of the input/output variables:</strong></p>
+<pre><code>sum_validateIndex_all_a_dti &#40;2nd input argument in sumanomalyind&#41;
+               1100111011000001010010000000001010000000 &#40;for example&#41; 
+DateTime_dti   tttttttttttttttttttttttttttttttttttttttt
+Tobs length    |-----|  &#40;Tobs&#61;7, for example&#41; 
+Tlead length          |-------| &#40;Tlead&#61;9, for example&#41; 
+vlSAT                5445543222122233222221112122344332 &#40;for example&#41; 
+DateTimeSAT index    123456789.........................         
+DateTimeSAT    |Tobs |--------------------------------|         
+TIPtime/TIP    |Tobs || Tlead ||--------------------------------------|
+                               ↑                |Tobs || Tlead ||Tpred| 
+                   Tpred start ↑        last AIN data ↑     Tpred end ↑    </code></pre>
+</div>
+<h4 id=the-date-time-at-which-tip-is-valid-dt_tip_valid>The Date Time at Which TIP is Valid (<code>dt_TIP_valid</code>)</h4>
+<div class=markdown><p><code>dt_TIP_valid</code> gives loosely valid TIP time and strictly invalid TIP time. There are two possibilities for a TIP false: one is that the anomaly index number (AIN) is below the threshold, and the other is that AIN is NaN since anything in comparison with a NaN results in a false. The later we called it an 'invalid' TIP time/day.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&#91;TIPtime1,TIP_valid,dates_TIPvalid_st,dates_TIPinvalid_st&#93; &#61; ...
+dt_TIP_valid&#40;DateTimeSAT,sum_validateIndex_all_a_dti,Tobs,Tlead,Tpred&#41;</code></pre>
+<p>This gives the datetime where there is at least one data in the <code>Tobs</code> and hence TIP false is a valid false.</p>
+<p><strong>Input arguments:</strong></p>
+<ul>
+<li><p><code>DateTimeSAT</code>: see <code>sumanomalyind()</code></p>
+</li>
+<li><p><code>sum_validateIndex_all_a_dti</code>: the <code>sum_validateIndex</code> in <code>convAIN()</code></p>
+</li>
+<li><p><code>Tobs</code>: the observation time window right before the leading window (<code>Tlead</code>). </p>
+</li>
+<li><p><code>Tlead</code>: the leading window right before the prediction window</p>
+</li>
+<li><p><code>Tpred</code>: the window of prediction (where TIP is true or false according to the number of anmalies in the corresponding Tobs window)</p>
+</li>
+</ul>
+<p><strong>Output arguments:</strong></p>
+<ul>
+<li><p><code>TIPtime1</code>: a 1-d datetime array for <code>TIP_valid</code></p>
+</li>
+<li><p><code>TIP_valid</code>: a 1-d logical array indicating whether the TIP is valid or not. </p>
+</li>
+<li><p><code>dates_TIPvalid_st</code>: Returns the datetimes of where the TIP have a meaningful <code>true</code>/<code>false</code>.</p>
+</li>
+<li><p><code>dates_TIPinvalid_st</code>: Returns the datetimes of where the TIP have a meaningless <code>false</code>. (If TIP is true, then the day should always be valid)</p>
+</li>
+</ul>
+<p>About the meaningful and meaningless 'false', see the comments in <code>anomalyind()</code></p>
+<p>Recalling that sum of AIN is the sum of anomaly index calculated in the moving time window of length Tobs, and the dates <code>DateTimeSAT(sum_AIN_valid)</code> denotes the end day of Tobs where at least one of the anomaly index in the Tobs window is meaningful, we have the following example where Tlead = 9, Tobs = 7, and Tpred = 3, for explicitly demonstrates how the TIP's valid times are calculated:</p>
+<pre><code>sum_validateIndex_all_a_dti
+              &#39;1100111011000001010010000000001010000000&#39; &#40;for example&#41; 
+DateTime_dti   tttttttttttttttttttttttttttttttttttttttt|
+DateTimeSAT          tttttttttttttttttttttttttttttttttt|
+sum_AIN_valid        1111111111111111111110001111111110|
+dt_AIN_valid         ttttttttttttttttttttt   ttttttttt |
+               |Tobs ||&lt;--a---&gt;|                       |&lt;--b-----&gt;|
+TIPtime                        tttttttttttttttttttttttttttttttttttt
+Tpred moving window            |c|                              |c|
+                               | the same length as DateTimeSAT |
+TIPvalid_0                     123456789........................
+                                \\\\\\\
+TIPvalid_1                       3456789..........................
+<p>Therefore,
+dt_TIPvalid = unique(TIPtime([1:3,2:4,3:5,&hellip;.]))</p>
+<p>% t denotes a datetime object
+% a = Tlead+1 = idinc2predstart
+% b = Tlead+Tpred = idinc2predend
+% c = Tred
+% dt_AIN_valid is DateTimeSAT(sum_AIN_valid), and sum_AIN_valid is a.k.a Tobs_TF.
+% TIPvalid_0 (_1) is a.k.a. TIP_TF_0 (_1)</code></pre></p>
+</div>
+<h4 id=1-d-eqk-and-tip-eqktip1>1-d EQK and TIP (<code>eqktip1</code>)</h4>
+<div class=markdown><p><code>[EQK,TIP, TIPtime] = eqktip1(eqMR,eqDateTime, DateTimeSAT,vlSAT, Tthr_iMod,Tlead_iMod,Tpred_iMod, Mc_iMod,Rc_iMod)</code> provides 1 dimensional logical array of target earthquakes (<code>EQK</code>) and Time of Increased Probability (<code>TIP</code>), corresponding to the 1-d datetime array <code>TIPtime</code>.</p>
+<p><strong>Input arguments:</strong></p>
+<ul>
+<li><p><code>eqMR</code>: a N by 2 array of all-combination of model magnitudes and radii of detection, with the first column being magnitude and second column the radius of detection.</p>
+</li>
+<li><p><code>eqDateTime</code>: a N by 1 cell array. Each cell contains the datetime of target earthquakes satisfying the corresponding row of <code>eqMR</code>; i.e., being larger than eqMR(i,1) and within eqMR(i,2).</p>
+</li>
+<li><p><code>DateTimeSAT</code>, <code>vlSAT</code>: see <code>sumanomalyind</code>.</p>
+</li>
+<li><p><code>Tthr</code>, <code>Tlead</code>, <code>Tpred</code>: see <code>dt_TIP_true</code>.</p>
+</li>
+<li><p><code>Mc_iMod</code>: the current model magnitude.</p>
+</li>
+<li><p><code>Rc_iMod</code>: the current model radius of detection.</p>
+</li>
+</ul>
+<p><strong>Output arguments:</strong></p>
+<ul>
+<li><p><code>EQK</code>: the M-by-1 logical array for whether there is/are target earthquakes in the day.</p>
+</li>
+<li><p><code>TIP</code>: an M-by-1 logical array of Time of Increased Probability</p>
+</li>
+<li><p><code>TIPtime</code>: an M-by-1 datetime array paired with the <code>TIP</code> and <code>EQK</code> array</p>
+</li>
+</ul>
+<p><strong>See also:</strong></p>
+<ul>
+<li><p><code>[~,eqMR,eqDateTime] = isearthquakeinrange(...)</code> in <code>molscore</code></p>
+</li>
+<li><p><code>[DateTimeSAT,vlSAT] = sumanomalyind(...)</code> in <code>molscore</code></p>
+</li>
+</ul>
+</div>
+<h4 id=joint-station-probability-jointstation>Joint-station Probability (<code>jointstation</code>)</h4>
+<div class=markdown><p><code>jointstation</code> calculates hit rates, alarmed rates, and spatial probability.</p>
+<p><strong>Example:</strong></p>
+<p>When it is applied for calculating the hit rates of the training phase:</p>
+<pre><code>HitRates_trn &#61; jointstation&#40;BestModels,BestModelNames,idPermute,...
+             sum_tsAINs,sum_validateInds,DateTime_dti,...
+             CWBcatalog,&#39;CalculateHitRate&#39;,true&#41;;</code></pre>
+<p>When it is applied for calculating the forecasting probabilities:</p>
+<pre><code>&#91;HitRates_frc, AlarmedRates_frc, SpatialProbability, xLon, yLat, ...
+    validStationTime, ProbTime, TIP3, TIPvalid3, EQKs&#93;...
+    &#61; jointstation&#40;BestModels,BestModelNames,idPermute,...
+         sum_tsAINs,sum_validateInds,DateTime_dti,...
+         CWBcatalog,&#39;CalculateHitRate&#39;,true,...
+         &#39;CalculateAlarmedRate&#39;,true,&#39;CalculateProbability&#39;,HitRates_trn,...
+         &#39;StationLocation&#39;,StationLocation&#41;;</code></pre>
+<p><strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'CalculateHitRate': Whether to calculate the hit rates. Default is <code>false</code>.</p>
+</li>
+<li><p>'CalculateAlarmedRate': Whether to calculate the alarmed rates. Default is <code>false</code>.</p>
+<ul>
+<li><p>If 'CalculateProbability' is true, 'CalculateAlarmedRate' will be automatically set to be true since alarmed rates are essential to probability calculation.</p>
+</li>
+</ul>
+</li>
+<li><p>'CalculateProbability': Whether to calculate the spatial probability. Default is <code>false</code>.</p>
+</li>
+<li><p>'StationLocation': </p>
+<ul>
+<li><p>A J by 3 table with the column names being 'format', 'Lon', 'Lat' and row names (i.e. <code>StationLocation.Properties.RowNames</code>) the station codes (e.g. 'TW', 'CS',...) of the total J stations.</p>
+</li>
+<li><p>If 'CalculateAlarmedRate' is true, 'StationLocation' must be specified; otherwise it is impossible to obtain alarm rates.</p>
+</li>
+<li><p>Default is <code>0</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Input arguments:</strong></p>
+<ul>
+<li><p><code>BestModels</code>: A J-by-1 cell array containing the best models of total J stations. In each cell there is a table model parameters.</p>
+</li>
+<li><p><code>BestModelNames</code>: An J-by-1 cell array containing station names corresponding to <code>BestModels</code> (also J-by-1 cell array).</p>
+</li>
+<li><p><code>idPermute</code>: The randomly permuted indices for the best models. See <code>bestmodel()</code>.</p>
+</li>
+<li><p><code>sum_tsAINs</code>: A J-by-1 cell array with each cell corresponding to <code>BestmodelNames</code>. See <code>loadAIN()</code>.</p>
+</li>
+<li><p><code>sum_validateInds</code>: A J-by-1 cell array with each cell corresponding to <code>BestmodelNames</code>. See <code>loadAIN()</code>.</p>
+</li>
+<li><p><code>DateTime_dti</code>: A T by 1 datetime array for the time series in <code>sum_tsAINs</code> and the <code>sum_validateInds</code>.</p>
+</li>
+<li><p><code>CWBcatalog</code>: A table of earthquake catalog. You may load <code>CWBcatalog</code> using <code>only1field([dir_catalog filesep 'catalog.mat'])</code>.</p>
+</li>
+</ul>
+<p><strong>Output arguments:</strong></p>
+<ul>
+<li><p><code>HitRates</code>, <code>AlarmedRates</code>: M by 1 array, being the hit rates (alarmed rates) of each combination of best models. M is the amounts of total combinations (the <code>totalM</code> in <code>bestmodel()</code>). They are <code>AlarmedRateForecasting</code> and <code>HitRatesForecasting</code> of <code>molscore3</code>'s output.</p>
+</li>
+<li><p><code>SpatialProbability</code>: A S by T array of the temporal-spatial forecasting probabilities. It is the output variable <code>Probability</code> of <code>molscore3()</code>. </p>
+</li>
+<li><p><code>xLon</code> (<code>yLat</code>): The longitudes (latitudes) of all spatial points as a S by 1 array. It is the output variable <code>ProbabilityLon</code> (<code>ProbabilityLat</code>) of <code>molscore3()</code>.</p>
+</li>
+<li><p><code>validStationTime</code>: A T by J table of the ratio of valid models each day each station. This is for <code>plotProbability()</code>, that the ratio will be demonstrated as gradient color in the marker of each station. If the ratio is zero, the marker on map will be hollow. It is the output variable <code>validStationTime</code> of <code>molscore3()</code>.</p>
+</li>
+<li><p><code>TIP3</code>: A S by T TIP array for the first model (out of the total M models). Since the first element of each cell in <code>idPermute</code> is always 1, indicating the best model, <code>TIP3</code> is essentially the TIP array calculated according to the best model parameter. </p>
+</li>
+<li><p><code>TIPvalid3</code>: A spatial-temporal logical array indicating whether a point (s,t) of TIP true or false is meaningful or not. This is also a S by T array. </p>
+</li>
+<li><p><code>ProbTime</code>: A 1 by T datetime array for <code>TIP3</code>, <code>TIPvalid3</code> and <code>SpatialProbability</code>. This is the <code>ProbabilityTime</code> of <code>molscore3</code>'s output. </p>
+</li>
+<li><p><code>EQKs</code>: The list of target earthquake, with each column</p>
+<ul>
+<li><p><code>time</code>, <code>Lon</code>, <code>Lat</code>, <code>Depth</code>, <code>Mag</code>: The time, longitude, latitude, depth and magnitude ($M_L$) of the target earthquake.</p>
+</li>
+<li><p><code>InStation</code>: Indicates the target earthquake is of which station.</p>
+</li>
+<li><p><code>EqkDist</code>: The distance between the station (as specified by <code>InStation</code>) and hypocenter of the target earthquake. Also see <code>simpleStationEQKdist3D</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id=anomaly-index-number-of-each-day-loadain>Anomaly Index Number of each day (<code>loadAIN</code>)</h4>
+<div class=markdown><pre><code>&#91;sum_tsAINs,sum_validateInds,DateTime_dti,AthrList&#93; &#61;
+loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
+<p>load tsAIN, calculate the summation of anomaly index of each day, and truncate the time series to <code>TimeRange</code>. </p>
+<p>If <code>class(BestModelNames) == 'char'</code>, for example, 'CS', the output <code>sum_tsAINs</code> and <code>sum_validateInds</code> are the 10 by 1 cell array directly, instead of a M by 1 cell array inside the J by 1 cell array where J = 1.</p>
+<p><strong>Input arguments:</strong>:</p>
+<ul>
+<li><p><code>dir_tsAIN</code>: the directory for the saved AIN data. See <code>anomalyind()</code>.</p>
+</li>
+<li><p><code>BestModelNames</code>: an J-by-1 cell array containing station names corresponding to <code>BestModels</code> (also J-by-1 cell array).</p>
+</li>
+<li><p><code>TimeRange</code>: a two-element datetime array.</p>
+</li>
+</ul>
+<p><strong>Output arguments:</strong>:</p>
+<ul>
+<li><p><code>sum_tsAINs</code>: a J-by-1 cell array with each cell corresponding to <code>BestmodelNames</code>. In each cell there is a 10-by-1 cell corresponding to the list of $A_{thr}$ (<code>AthrList = 1:10</code>), being the timeseries of the summation of anomaly index of each day.</p>
+</li>
+<li><p><code>sum_validateInds</code>: a J-by-1 cell array with each cell corresponding to <code>BestmodelNames</code>. In each cell there is a 10-by-1 cell corresponding to the list of $A_{thr}$ (<code>AthrList = 1:10</code>), being the summation of the indicators for the valid statistical indices of each day.</p>
+</li>
+</ul>
+</div>
+<h4 id=the-best-models-bestmodel>The Best Models (<code>bestmodel</code>)</h4>
+<div class=markdown><p><code>[BestModels,BestModelNames,idPermute,molList] = bestmodel(molList,BestN,totalM,StationLocation)</code> filters the best N models out based on fitting degree and perform random permutation of total M combination of them. That is, <code>bestmodel()</code> save the best N (at most) models for each station in <code>BestModels</code>, and gives an array of M elements that are randomly picked from the set of the ranking numbers of the best N (at most) models. </p>
+<p><strong>Input arguments</strong>:</p>
+<ul>
+<li><p><code>molList</code>: The list of paths to the files of ranked models, which are produced by <code>molscore</code>. Get the <code>molList</code> using <code>datalist(...)</code>.</p>
+</li>
+<li><p><code>BestN</code>: The number the models of highest molchan score.</p>
+</li>
+<li><p><code>totalM</code>: The amount of randomly permuted combinations of the best N models. That is, M is the number of joint-station models. Noted that the first model combination is forced to be the combination of the best model of each station.</p>
+</li>
+<li><p><code>StationLocation</code>: A J by 3 table with the column names being 'format', 'Lon', 'Lat' and row names (i.e. <code>StationLocation.Properties.RowNames</code>) the station codes (e.g. 'TW', 'CS',...) of the total J stations.</p>
+</li>
+</ul>
+<p><strong>Output arguments</strong>:</p>
+<ul>
+<li><p><code>BestModels</code>: A J-by-1 cell array containing the best models of total J stations. In each cell there is a table model parameters.</p>
+</li>
+<li><p><code>BestModelNames</code>: An J-by-1 cell array containing station names corresponding to <code>BestModels</code> (also J-by-1 cell array).</p>
+</li>
+<li><p><code>idPermute</code>: The randomly permuted indices for the best models. It is a J by 1 cell array, where each cell contains a M by 1 double array being the indices for the Jth <code>BestModels</code>. Noted that the first element in the M by 1 double array is always <code>1</code>, which force the first model combination in <code>jointstation()</code> to be the combination of the best model of each station (SEE <code>molscore3()</code>).</p>
+</li>
+<li><p><code>molList</code>: The list of paths to the files of ranked models, where the files having all molchan scores to be NaN (hence model parameters cannot be ranked) are excluded.</p>
+</li>
+</ul>
+<p><strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'NearbyThreshold': For some reasons (e.g. no target earthquakes at all in the training phase) models cannot be ranked (optimized) for a station (saying 'MS') because all molchan scores are NaN. In this situation, <code>bestmodel</code> will try to find if there is a near-by station within 15 km (in default). If there is, for example, a station 'PT' nearby within 15km of 'MS', then the ranked model 'PT' will be taken instead. That is, in the following process in <code>molscore3</code>, the best models of 'PT' and the AIN based on the geomagnetic data of 'MS' are applied for calculating the probabilities around the station of 'MS'.</p>
+</li>
+<li><p>'ModelSelect': You may filter the table of Molchan scores by using this option. For example, with <code>'ModelSelect', {'Tpred', 5}</code>, all rows whose <code>Tpred</code> is not <code>5</code> will be discard. </p>
+</li>
+<li><p>'ModelSelectOP'</p>
+<ul>
+<li><p>The operator function for model selecting if <code>'ModelSelect'</code> have multiple pairs of input argument. </p>
+</li>
+<li><p>For example, with <code>'ModelSelect', {'Tpred', 5, 'Tlead', 5}, 'ModelSelectOP', @or</code>, all rows with <code>Tpred=5</code> or <code>Tlead=5</code> was kept; others, discarded. </p>
+</li>
+<li><p>Default is <code>@or</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id=station-list-formatting-checkstation>Station List Formatting (<code>checkstation</code>)</h4>
+<div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>station_location.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>station_location.csv</code> to <code>station_location.mat</code>. If the <code>station_location.csv</code> does not meet the required format, error will occur.</p>
+</div>
+<h4 id=earthquake-catalog-formatting-checkcatalog>Earthquake Catalog Formatting (<code>checkcatalog</code>)</h4>
+<div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>catalog.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>. If the <code>catalog.csv</code> does not meet the required format, error will occur.</p>
+</div>
+<h4 id=generate-model-parameters-modparam>Generate Model Parameters (<code>modparam</code>)</h4>
+<div class=markdown><p>In MagTIP, model parameters defines TIP and target earthquakes (EQK). <code>[PredParam,varargout]=modparam()</code> generate the whole set of model parameters that are going to be used in the training phase by <code>molscore</code>. </p>
+<p><strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'Rc': Radius (range) of detection in unit kilometer. Default is <code>[20:10:100])</code></p>
+</li>
+<li><p>'NthrRatio': </p>
+<ul>
+<li><p>The ratio threshold to be converted to the number of anomalous statistic index every day. </p>
+</li>
+<li><p>'NthrRatio' should be calculated automatically in <code>molscore()</code> according to the maximum possible number of statistic indices among the anomaly index calculated by <code>anomalyind()</code>.</p>
+</li>
+<li><p><code>Nthr</code> is the threshold (integer) for the number of anomalous statistic indices each day.</p>
+</li>
+<li><p>Default is <code>[0.01, 0.99]</code>, which is for the situation where the maximum possible <code>Nthr</code> is $\leq 2$ (i.e., to be [0, 1]). If you have the maximum possible <code>Nthr</code> to be $\leq 3$ (i.e, <code>Nthr = [0 1 2]</code>), 'NthrRatio' should be assigned to be <code>[0.01, 0.49, 0.99]</code> for example. </p>
+</li>
+</ul>
+</li>
+<li><p>'Ptthr': <code>Ptthr</code> defines <code>Tobs</code> through <code>Ptthr = Tthr/Tobs</code>. Default is <code>[0.1:0.1:0.5]</code>.</p>
+</li>
+<li><p>'Tobs': The length of observation moving window. Default is <code>[5:5:100]</code>;</p>
+</li>
+<li><p>'Tpred': The length of prediction moving window.</p>
+</li>
+<li><p>'Tlead': The length of leading window, the time gap that is for the period of silent (no-anomaly) right before big earthquakes. </p>
+<ul>
+<li><p>Default is [0:5:100]. </p>
+</li>
+</ul>
+</li>
+<li><p>'Mc': The magnitude threshold. Default is <code>5</code>, which means only events of $M_L \geq 5$ will be considered as target earthquakes.</p>
+</li>
+<li><p>'Test':</p>
+<ul>
+<li><p>If true or 1, then the PredParam is reduced to 1000 randomly picked models from the default combination.</p>
+</li>
+<li><p>If it is a positive integer N other than 1, the predParam is reduced to N randomly picked models.</p>
+</li>
+<li><p>Default is 0.</p>
+</li>
+</ul>
+</li>
+<li><p>'Seed': the seed for the random selection while 'Test' is enable. </p>
+<ul>
+<li><p>Seed must be a nonnegative integer seed less than 2^32.</p>
+</li>
+<li><p>If seed is less than zero, the random selection has its result different everytime.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<ul>
+<li><p><code>PredParam</code>: The GEMSTIP/MagTIP models of total 8 free parameters: <code>G = [Mag,Rad,NthrRatio,Athr,Tthr,Tobs,Tpred,Tlead]</code>. </p>
+</li>
+</ul>
+<p><strong>Examples:</strong> - <code>[PredParam, columnNames] = modparam('OutputFormat','double');</code> - <code>[PredParam_table] = modparam('OutputFormat','table');</code></p>
+</div>
+<h3 id=tools>Tools</h3>
+<p>All Tools are not necessary for the MagTIP algorithm; they are invented, for example, to demonstrate the results in figure or for generating/selecting directories in a convenient way.</p>
+<h4 id=overview-of-all-geomagnetic-data-plot_dataoverview>Overview of All Geomagnetic Data (<code>plot_dataoverview</code>)</h4>
+<div class=markdown><p><code>plot_dataoverview(dir_stat)</code> plot an overview of all data. <strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'SaveFigureTo': the output path</p>
+</li>
+<li><p>'BackgroundColor': Background color; default is white (<code>[1,1,1]</code>)</p>
+</li>
+<li><p>'DatetimeTicks': The format of datetime ticks on the x-axis. </p>
+<ul>
+<li><p>Default is <code>{'yyyy-mm',6,'Months'}</code>, which means tick labels are in the format of <code>yyyy-mm</code> and interspaced every 6 months.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id=probability-forecast-plot-plotprobability>Probability Forecast Plot (<code>plotProbability</code>)</h4>
+<div class=markdown><p><code>plotProbability(dir_jointstation,dir_catalog,dir_out)</code> plots two-dimensional probability forecasting maps; the results are saved as png files in <code>dir_output</code>.</p>
+<p><strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'LongitudeLimit': The longitude limits of the displayed map. Default is <code>[119 122.5]</code>.</p>
+</li>
+<li><p>'LatitudeLimit': The latitude limits of the displayed map. Default is <code>[21.5 26]</code>.</p>
+</li>
+<li><p>'TimeRange': Manually assign time ranges or specific dates that must lay in the forecasting phase to plotting probability forecast. If not set, the probability forecast of every available dates will be plotted. The assigned datetime array must be either: </p>
+<ol>
+<li><p>An N by 2 datetime array specifying N ranges at one time.</p>
+</li>
+<li><p>An N by 1 datetime array specifying N days to be plot.</p>
+</li>
+</ol>
+</li>
+<li><p>'PlotEpicenter': Whether to plot the epicenter(s) of the target earthquakes on the map.</p>
+</li>
+<li><p>'Rigorous': Whether to drop (ignore) the probability forecasts that are not in the range of the forecasting phases. Default is true. Generally the leading time window (<code>Tlead</code>) is different among models, and the probability can be calculated as far as the <code>Tlead</code> of at least one model covered. However, for the dates out of the forecasting phase, only part of the models are applied thus the probability forecast is weaker.</p>
+</li>
+<li><p>'TargetPattern': the pattern for filtering the files in <code>dir_jointstation</code>. Default is to look up all files that fits the pattern "[JointStation]<em>.mat". For example, you can manually specify it as "</em>[ULF-A]" to give plots of that based on ULF-A only. The pattern should always begin with "<em>" and the last cahracter can never be "</em>". For multiple filtering at once (e.g., <code>'*[ULF-B]*[Tpred-1]'</code>), join the pattern with "*" and the order is important.</p>
+</li>
+</ul>
+</div>
+<h4 id=plot-fitting-degree-and-molchan-diagram-plotfittingdegree>Plot Fitting Degree and Molchan Diagram (<code>plotFittingDegree</code>)</h4>
+<div class=markdown><p><code>plotFittingDegree(dir_jointstation,dir_catalog,dir_png)</code> gives fitting degree analysis and molchan diagrams for each training-forecasting phase pair according to the results from <code>molscore3</code>.</p>
+</div>
+<h4 id=visualize-1-d-eqk-and-tip-ploteqktip1>Visualize 1-d EQK and TIP (<code>plotEQKTIP1</code>)</h4>
+<div class=markdown><p><code>plotEQKTIP1(dir_tsAIN,dir_molchan,dir_catalog,dir_output)</code> plot one-dimensional TIP time series for each station with target earthquakes (EQK) scattered over the diagram; the results are saved as png files in <code>dir_output</code>.</p>
+<p><strong>Keyword Arguments:</strong></p>
+<ul>
+<li><p>'ShowTrainingPhase': Whether to show the EQK and TIP on the plot. Default is false. </p>
+</li>
+<li><p>'scatter': Set it <code>true</code> to plot an additional layer of <code>TIP==1</code> as scattered circles. This makes visually inspecting whether target earthquakes lay in the area of <code>TIP==1</code> much easier. Default is <code>false</code>.</p>
+</li>
+<li><p>'Rank': Choose the model by fitting degree ranking for defining EQK and TIP. Default is <code>1</code> (plot the EQK and TIP that are defined by the rank 1 model).</p>
+</li>
+<li><p>'OnlyStations': Specify only a subset of station to be displayed on the plot; for example, for <code>'OnlyStations',{'MS','TW'}</code> only the results of these two stations will be displayed. In default, results of all stations will be displayed.</p>
+</li>
+<li><p>'datetimeTickArguments': Manually define the datetime format of the X tick labels. For example, for <code>'datetimeTickArguments', {"yy' mmm.", 1,'months'}</code> the datetime 2012-Nov-12 will be printed as "12' Nov.". For more information, see <code>datetime_ticks()</code>.</p>
+</li>
+<li><p>'TargetPattern': See the documentation in <code>plotProbability()</code>.</p>
+</li>
+</ul>
+</div>
+<h4 id=reconstruct-molchaninformationmat-constructmolinfo>Reconstruct <code>[Molchan]Information.mat</code> (<code>constructMolInfo</code>)</h4>
+<div class=markdown><p><code>constructMolInfo(dir_molchan,InfoId)</code> construct the '[MolchanScore]Information.mat' according to existing [Molchanscore]___.mat files if possible. Use this function only if instructed by error message.</p>
+</div>
+<h4 id=for-calculating-fitting-degrees>For Calculating Fitting Degrees</h4>
+<h5 id=calcfittingdegree><code>calcFittingDegree</code></h5>
+<div class=markdown><p><code>calcFittingDegree(jpathlist)</code> according to the given files (<code>jpathlist</code>) provides the overall alarmed rate, missing rate that allows the calculation of the overall fitting degree. Make sure to provide correct input list of the <code>[JointStation]</code> variable , for example, those have the same ID and are not overlapped in forecasting time interval for each group; otherwise the calculated fitting degree can be unreasonable.</p>
+<p><strong>Example:</strong></p>
+<pre><code class=language-matlab>dir_png &#61; &#39;D:\GoogleDrive\0MyResearch\CWB_project\CWB2021\Figures&#39;;
+jpathlist &#61; datalist&#40;&#39;&#91;JointStation&#93;ID&#91;ou7ud&#93;filt&#91;ULF-B&#93;*.mat&#39;, dir_jointstation&#41;.fullpath;
+&#91;AlarmedRate, MissingRate, xticklabel, EQKs, TIP3s, TIPv3s,TIPTimes,LatLons&#93; &#61; calcFittingDegree&#40;jpathlist&#41;;
+FittingDegrees &#61; 1 - AlarmedRate - MissingRate;
+plotEQKTIP3&#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&#41;;</code></pre>
+<p><strong>Input Arguments</strong>:</p>
+<ul>
+<li><p><code>jpathlist</code>: a cell array of the full paths of <code>[JointStation]</code> files that are produced by <code>molscore3</code>. You can simpliy obtain the path list by <code>jpathlist = datalist('[JointStation]ID[ou7ud]*filt[ULF-A]*slc[Tpred-10]*.mat',dir_jointstation).fullpath;</code></p>
+</li>
+</ul>
+<p><strong>Keyword Arguments</strong>:</p>
+<ul>
+<li><p>'GroupTag': The tag for grouping the files in <code>jpathlist</code>.</p>
+</li>
+<li><p>'GroupNames': Results are calculated separately according to the assigned group names; alarmed rate, missing rate and so on are only calculated if the file name contains the assigned group names. For example, for <code>...,'GroupNames',{'Tpred-1', 'Tpred-5'},'GroupTag', 'slc',...</code>, only the files with their names containing tag 'slc[Tpred-1]' and 'slc[Tpred-5]' are selected, and the results of those being 'Tpred-1' and 'Tpred-5' are separately calculated. That is, the output <code>xlabel</code> is <code>{'Tpred-1', 'Tpred-5'}</code> and other output arguments (e.g. <code>AlarmedRate</code>) are all cell array of the same dimension as <code>xlabel</code> containing the results of the groups that are calculated separately. </p>
+</li>
+<li><p>Noted that You cannot assign 'GroupName' without assigning 'GroupTag', but assigning 'GroupTag' without assigning 'GroupName' is OK, in this case the group names will automatically generated and sorted. </p>
+</li>
+</ul>
+</div>
+<h4 id=retrieve-model-parameter-get_modelparam>Retrieve Model Parameter (<code>get_modelparam</code>)</h4>
+<div class=markdown><p>Use <code>[var1, var2, ...] = get_modelparam(BestModels, 'name1', 'name2',...)</code> to get specific model parameters uniquely. <code>BestModels</code> is the output of <code>bestmodel()</code>.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><p><code>Tpreds, Tleads = get_modelparam(BestModels, 'Tpred', 'Tlead')</code></p>
+</li>
+</ul>
+</div>
+<h4 id=confidence-boundary-on-the-molchan-diagram-molchan_cb>Confidence Boundary on the Molchan Diagram (<code>Molchan_CB</code>)</h4>
+<div class=markdown><p><code>[molt_cb,moln_cb] = Molchan_CB(N,alpha)</code> gives the confidence boundary in molchan diagram, where <code>[molt_cb,moln_cb]</code> are the points defining the boundary on the alarmed-rate-against-missing-rate phase plane. </p>
+<p><strong>Input Arguments:</strong></p>
+<ul>
+<li><p><code>N</code>: total number of target events/earthquakes</p>
+</li>
+<li><p><code>alpha</code>: <code>1-alpha</code> is the confidence level. For example, <code>alpha=0.05</code> means <code>95%</code> confidence level.</p>
+</li>
+</ul>
+<p><strong>Output Arguments:</strong></p>
+<ul>
+<li><p><code>molt_cb</code>: values corresponding to the alarmed rate</p>
+</li>
+<li><p><code>moln_cb</code>: values corresponding to the missing rate</p>
+</li>
+</ul>
+<p><strong>Hint:</strong></p>
+<ul>
+<li><p>Calculate the $D$ (fitting degree) values by <code>Dcb = 1 - molt_cb - moln_cb</code></p>
+</li>
+</ul>
+</div>
+<h4 id=generate-an-organized-directory-structure-mkdir_default>Generate an Organized directory Structure (<code>mkdir_default</code>)</h4>
+<p>In fact, all input/output directories can be arbitrarily assigned; we also provide a tool <code>mkdir_default</code> to automatically generate an organized directory structure.</p>
+<div class=markdown><p><code>mkdir_default</code> creates/makes folders by default and return their directories with default variable names. The default structure is:</p>
+<pre><code>                   variable           default folder name
+    ╔═ dir_main ═╤═══════════════════════════════════════╗
+    ║            ├─dir_stat         &#61;   &#39;StatisticIndex&#39; ║
+    ║            ├─dir_tsAIN        &#61;   &#39;tsAIN&#39;          ║
+    ║            ├─dir_molchan      &#61;   &#39;MolchanScore&#39;   ║
+    ║            └─dir_jointstation &#61;   &#39;JointStation&#39;   ║
+    ╚════════════════════════════════════════════════════╝</code></pre>
+<p><strong>Example:</strong> <code>[dir_stat, dir_tsAIN, dir_molchan, dir_jointstation] = mkdir_default(fullfile(pwd,'output_var'))</code></p>
+</div>
+<h4 id=inputoutput-directory-selection-dirselectassign>Input/Output Directory Selection (<code>dirselectassign</code>)</h4>
+<div class=markdown><p><code>dirselectassign(var_names...)</code> prompt user to select directories in a dialog box, and assigned the selected path to workspace with default variable name. If a variable with the same name as the default name has already in the workspace, its assignment will be ignored (i.e. its dialog box won't pop out). This is a tool for convenience. You can always assign directories explicitly to variable with any name you like.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><p>Four windows will pop out one by one allowing you to assign directories to variables <code>dir_stat</code>, <code>dir_tsAIN</code>, <code>dir_molchan</code>, <code>dir_jointstation</code>: </p>
+<pre><code class=language-matlab>dirselectassign&#40;&#39;dir_stat&#39;,&#39;dir_tsAIN&#39;,&#39;dir_molchan&#39;,&#39;dir_jointstation&#39;&#41;;</code></pre>
+<p>(Read the printed message in the Command Window)</p>
+</li>
+</ul>
+<ul>
+<li><p>Total 7 windows will pop out one by one allowing you to assign directories to the variables with default names <code>dir_stat</code>, <code>dir_tsAIN</code> , <code>dir_molchan</code>, <code>dir_jointstation</code>, <code>dir_data</code>, <code>dir_catalog</code>, <code>dir_toolbox</code>:</p>
+<pre><code class=language-matlab>dirselectassign&#40;&#41;;</code></pre>
+<p>(Read the printed message in the Command Window)</p>
+</li>
+</ul>
+</div>
+<div class=section-index>
+</div>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2021 CGRG All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js integrity=sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF crossorigin=anonymous></script>
+<style>.markmap>svg{width:100%;height:300px}</style>
+<script>window.markmap={autoLoader:{manual:!0}}</script>
+<script src=https://cdn.jsdelivr.net/npm/markmap-autoloader></script>
+<script src=/doc-archive/js/tabpane-persist.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css integrity=sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5 crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js integrity=sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/mhchem.min.js integrity=sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{display:!1,left:"$",right:"$"},{display:!0,left:"$$",right:"$$"}]})'></script>
+<script src=/doc-archive/js/main.min.132d51d6b4dff4953e0457236ac11b165c299319229bdb74b949e689bf7d3670.js integrity="sha256-Ey1R1rTf9JU+BFcjasEbFlwpkxkim9t0uUnmib99NnA=" crossorigin=anonymous></script>
+</body>
+</html>
