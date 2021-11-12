@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Introduction and Tutorial"
-date: "2021-11-11"
+date: "2021-11-12"
 linkTitle: "Introduction & Tutorial"
 ---
 
@@ -15,7 +15,7 @@ lazyhugo();
 cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\usermanual-and-docs")
 ``` -->
 
-# Introduction
+## Introduction
 
 MagTIP calculates the TIP (Time of Increased Probability) of earthquakes basing on the geomagnetic records of Central Weather Bureau of Taiwan. 
 The algorithm allows for the optimization of the model parameters, and gives the overall TIP (named joint-station TIP). 
@@ -27,12 +27,12 @@ The time scale of the evolution of the underground dynamical system is generally
 
 The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.
 
-# Getting Started
+## Getting Started
 The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as ".mat" files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by `dir_`; for example, `dir_data` is the directory for the formatted geomagnetic data, and `dir_stat` is the directory for statistic indices. 
 The `dir_`-prefixed variables are each a sequence of characters being something like `'D:\MagTIP-2021\output_var\StatisticIndex'`. 
 
-## The Sample Script for Everything
+### The Sample Script for Everything
 There is a script **"MagTIP_2021b.m"** contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:
 - switch current directory to the folder named "MagTIP-2021"
 - run section(s) in the script of "MagTIP_2021b.m"
@@ -40,7 +40,7 @@ There is a script **"MagTIP_2021b.m"** contains the sample codes of the whole pr
 In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (`dir_data`) and loading the toolbox (`dir_toolbox`). 
 Select the right folders as instructed, and they will be automatically added to path and be ready to use.
 
-## Input/Output Directories
+### Input/Output Directories
 Assigning directories for input/output data or variables is necessary before running any application. 
 For example:
 
@@ -83,8 +83,8 @@ For more information, see "MagTIP_2021b.m" and "dirselectassign.m".
 2. The order of column names can be arbitrarily arranged, but the strings have to be exactly the same as above.
 3. Geomagnetic time series in `dir_data` should be converted to the standard format. For more information, see `convdata0`.
 
-# Prepare Your Data
-## Format of Station list and Earthquake Catalog
+## Prepare Your Data
+### Format of Station list and Earthquake Catalog
 
 The `station_location.csv` specifies the location of every station;
 here is an example for `station_location.csv`: 
@@ -107,7 +107,7 @@ here is an example for `catalog.csv`:
 | 2020/8/10 06:14 | 121.7  | 22.17 | 124.78 | 4.13 |
 | ...             | ...    | ...   | ...    | ...  |
 
-## Format of Geomagnetic Data
+### Format of Geomagnetic Data
 
 All original files of geomagnetic timeseries have to be converted to the new format before any function that takes `dir_data` as an input argument.
 You can convert the data by simply applying:
@@ -123,7 +123,7 @@ In which,
 - For more information, see "convdata0.m".
 
 
-# The Main Process
+## The Main Process
 After all data are prepared (those in `dir_data` and `dir_spreadsheet`), you can run the whole forecasting process simply with:
 ```matlab
 statind(dir_data,dir_stat); 
