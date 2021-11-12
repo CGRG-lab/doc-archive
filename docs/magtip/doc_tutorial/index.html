@@ -78,7 +78,7 @@ English
 English
 </a>
 <div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink>
-<a class=dropdown-item href=/doc-archive/zh/docs/best-practices/matlab/>正體中文</a>
+<a class=dropdown-item href=/doc-archive/zh/docs/best-practices/git/>正體中文</a>
 </div>
 </div>
 <ul class="td-sidebar-nav__section pr-md-3 ul-0">
@@ -145,14 +145,20 @@ English
 </div>
 <div class=td-toc><nav id=TableOfContents>
 <ul>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#getting-started>Getting Started</a>
+<ul>
 <li><a href=#the-sample-script-for-everything>The Sample Script for Everything</a></li>
 <li><a href=#inputoutput-directories>Input/Output Directories</a></li>
 </ul>
+</li>
+<li><a href=#prepare-your-data>Prepare Your Data</a>
 <ul>
 <li><a href=#format-of-station-list-and-earthquake-catalog>Format of Station list and Earthquake Catalog</a></li>
 <li><a href=#format-of-geomagnetic-data>Format of Geomagnetic Data</a></li>
 </ul>
-<ul>
+</li>
+<li><a href=#the-main-process>The Main Process</a></li>
 <li><a href=#visualization-of-the-results>Visualization of the Results</a>
 <ul>
 <li><a href=#probability-forecast>Probability Forecast</a></li>
@@ -180,7 +186,7 @@ English
 <h1>Introduction and Tutorial</h1>
 <header class=article-meta>
 </header>
-<h1 id=introduction>Introduction</h1>
+<h2 id=introduction>Introduction</h2>
 <p>MagTIP calculates the TIP (Time of Increased Probability) of earthquakes basing on the geomagnetic records of Central Weather Bureau of Taiwan.
 The algorithm allows for the optimization of the model parameters, and gives the overall TIP (named joint-station TIP).
 The probability of capturing a target event in space and time can be derived based on the joint-station TIP, by considering the results from a large set of randomly permuted of model parameters simultaneously.</p>
@@ -188,11 +194,11 @@ The probability of capturing a target event in space and time can be derived bas
 As a result, either the conversion for fitting new data to old format (where some information must lose), or an extra waiting period (e.g. 7 years) for re-training models with new data, is required.
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.</p>
 <p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.</p>
-<h1 id=getting-started>Getting Started</h1>
+<h2 id=getting-started>Getting Started</h2>
 <p>The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as &ldquo;.mat&rdquo; files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by <code>dir_</code>; for example, <code>dir_data</code> is the directory for the formatted geomagnetic data, and <code>dir_stat</code> is the directory for statistic indices.
 The <code>dir_</code>-prefixed variables are each a sequence of characters being something like <code>'D:\MagTIP-2021\output_var\StatisticIndex'</code>.</p>
-<h2 id=the-sample-script-for-everything>The Sample Script for Everything</h2>
+<h3 id=the-sample-script-for-everything>The Sample Script for Everything</h3>
 <p>There is a script <strong>&ldquo;MagTIP_2021b.m&rdquo;</strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:</p>
 <ul>
 <li>switch current directory to the folder named &ldquo;MagTIP-2021&rdquo;</li>
@@ -200,7 +206,7 @@ The <code>dir_</code>-prefixed variables are each a sequence of characters being
 </ul>
 <p>In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (<code>dir_data</code>) and loading the toolbox (<code>dir_toolbox</code>).
 Select the right folders as instructed, and they will be automatically added to path and be ready to use.</p>
-<h2 id=inputoutput-directories>Input/Output Directories</h2>
+<h3 id=inputoutput-directories>Input/Output Directories</h3>
 <p>Assigning directories for input/output data or variables is necessary before running any application.
 For example:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>dir_catalog</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#4e9a06>&#39;data\spreadsheet&#39;</span><span style=color:#000;font-weight:700>;</span> 
@@ -231,8 +237,8 @@ For more information, see &ldquo;MagTIP_2021b.m&rdquo; and &ldquo;dirselectassig
 <li>The order of column names can be arbitrarily arranged, but the strings have to be exactly the same as above.</li>
 <li>Geomagnetic time series in <code>dir_data</code> should be converted to the standard format. For more information, see <code>convdata0</code>.</li>
 </ol>
-<h1 id=prepare-your-data>Prepare Your Data</h1>
-<h2 id=format-of-station-list-and-earthquake-catalog>Format of Station list and Earthquake Catalog</h2>
+<h2 id=prepare-your-data>Prepare Your Data</h2>
+<h3 id=format-of-station-list-and-earthquake-catalog>Format of Station list and Earthquake Catalog</h3>
 <p>The <code>station_location.csv</code> specifies the location of every station;
 here is an example for <code>station_location.csv</code>:</p>
 <table>
@@ -320,7 +326,7 @@ here is an example for <code>catalog.csv</code>:</p>
 </tr>
 </tbody>
 </table>
-<h2 id=format-of-geomagnetic-data>Format of Geomagnetic Data</h2>
+<h3 id=format-of-geomagnetic-data>Format of Geomagnetic Data</h3>
 <p>All original files of geomagnetic timeseries have to be converted to the new format before any function that takes <code>dir_data</code> as an input argument.
 You can convert the data by simply applying:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>convdata0</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_originalfiles</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>dir_data</span><span style=color:#000;font-weight:700>)</span>
@@ -332,7 +338,7 @@ You can convert the data by simply applying:</p>
 <li>The process of conversion may take very long if the number of files to be converted is large. Use the option <code>'ContinueFromLast'</code> and <code>'FilterByDatetime'</code> to avoid repeatedly converting the files that have already been converted before.</li>
 <li>For more information, see &ldquo;convdata0.m&rdquo;.</li>
 </ul>
-<h1 id=the-main-process>The Main Process</h1>
+<h2 id=the-main-process>The Main Process</h2>
 <p>After all data are prepared (those in <code>dir_data</code> and <code>dir_spreadsheet</code>), you can run the whole forecasting process simply with:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>statind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_data</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>);</span> 
 <span style=color:#000>anomalyind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>);</span> 
@@ -364,7 +370,7 @@ You can convert the data by simply applying:</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 11, 2021: <a href=https://github.com/CGRG-lab/doc-archive/commit/432bf85107d01de7a02239beb250163603cc6ca5>test git modify; reconstruct magtip (432bf85)</a>
+Last modified November 12, 2021: <a href=https://github.com/CGRG-lab/doc-archive/commit/e1d8e65ba4bf08847c37b9af40674741dbe00705>fix header level (e1d8e65)</a>
 </div>
 </div>
 </main>
