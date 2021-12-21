@@ -5,7 +5,7 @@ type: docs
 menu:
   main:
     weight: 22
-    pre: <i class="fa-solid fa-calendar"></i>
+    pre: <i class="fas fa-calendar-alt"></i>
 ---
 
 
