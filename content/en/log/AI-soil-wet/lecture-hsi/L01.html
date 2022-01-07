@@ -57,30 +57,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-<style type="text/css">
-    @font-face {
- font-family: "Fira Mono";
- font-weight: normal;
- font-style: normal;
- src: local('"Fira Mono"'), url('fonts/fira.ttf') format('truetype');
-}
-
-<script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            /*preferredFont: "TeX",*/
-            /*availableFonts: ["TeX", "STIX"],*/
-            styles: {
-                scale: 100,
-                ".MathJax_Display": {
-                    "font-size": "100%",
-                }
-            }
-        }
-    });
-</script>
-    
-  </style>
 
 
 
@@ -14540,9 +14516,9 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#為何使用julia?" data-toc-modified-id="為何使用julia?-1">為何使用julia?</a></span><ul class="toc-item"><li><span><a href="#背景簡介(開發、目前運作)" data-toc-modified-id="背景簡介(開發、目前運作)-1.1">背景簡介(開發、目前運作)</a></span></li><li><span><a href="#優勢" data-toc-modified-id="優勢-1.2">優勢</a></span></li><li><span><a href="#劣勢" data-toc-modified-id="劣勢-1.3">劣勢</a></span></li><li><span><a href="#遇到問題?" data-toc-modified-id="遇到問題?-1.4">遇到問題?</a></span></li><li><span><a href="#The-speed-of-julia" data-toc-modified-id="The-speed-of-julia-1.5">The speed of julia</a></span></li></ul></li><li><span><a href="#Julia-函式-(Functions)" data-toc-modified-id="Julia-函式-(Functions)-2">Julia 函式 (Functions)</a></span><ul class="toc-item"><li><span><a href="#函式的變數作用域-(Scope-of-Variable)" data-toc-modified-id="函式的變數作用域-(Scope-of-Variable)-2.1">函式的變數作用域 (Scope of Variable)</a></span></li><li><span><a href="#多重分派-(Multiple-dispatch)" data-toc-modified-id="多重分派-(Multiple-dispatch)-2.2">多重分派 (Multiple dispatch)</a></span></li><li><span><a href="#從實例認識多重分派：" data-toc-modified-id="從實例認識多重分派：-2.3">從實例認識多重分派：</a></span></li><li><span><a href="#從-julia-內建的乘法看多重分派" data-toc-modified-id="從-julia-內建的乘法看多重分派-2.4">從 julia 內建的乘法看多重分派</a></span><ul class="toc-item"><li><span><a href="#擴充乘法" data-toc-modified-id="擴充乘法-2.4.1">擴充乘法</a></span></li></ul></li></ul></li><li><span><a href="#常用型別系統" data-toc-modified-id="常用型別系統-3">常用型別系統</a></span></li><li><span><a href="#符號、字串與字元" data-toc-modified-id="符號、字串與字元-4">符號、字串與字元</a></span></li><li><span><a href="#慣例" data-toc-modified-id="慣例-5">慣例</a></span><ul class="toc-item"><li><span><a href="#範例-–-結尾有驚嘆號的函式" data-toc-modified-id="範例-–-結尾有驚嘆號的函式-5.1">範例 – 結尾有驚嘆號的函式</a></span></li><li><span><a href="#範例-–-DataFrame-and-DataFrames" data-toc-modified-id="範例-–-DataFrame-and-DataFrames-5.2">範例 – DataFrame and DataFrames</a></span><ul class="toc-item"><li><span><a href="#舉一反三" data-toc-modified-id="舉一反三-5.2.1">舉一反三</a></span></li></ul></li></ul></li><li><span><a href="#容器" data-toc-modified-id="容器-6">容器</a></span><ul class="toc-item"><li><span><a href="#陣列-(Array)" data-toc-modified-id="陣列-(Array)-6.1">陣列 (Array)</a></span></li><li><span><a href="#集合-(Collection)" data-toc-modified-id="集合-(Collection)-6.2">集合 (Collection)</a></span><ul class="toc-item"><li><span><a href="#數組-(Tuple)" data-toc-modified-id="數組-(Tuple)-6.2.1">數組 (Tuple)</a></span></li><li><span><a href="#配對(Pair)" data-toc-modified-id="配對(Pair)-6.2.2">配對(Pair)</a></span></li><li><span><a href="#字典(Dict)" data-toc-modified-id="字典(Dict)-6.2.3">字典(Dict)</a></span><ul class="toc-item"><li><span><a href="#關於字典的常用方法" data-toc-modified-id="關於字典的常用方法-6.2.3.1">關於字典的常用方法</a></span></li></ul></li><li><span><a href="#集合(Set)" data-toc-modified-id="集合(Set)-6.2.4">集合(Set)</a></span><ul class="toc-item"><li><span><a href="#關於Set的常用方法" data-toc-modified-id="關於Set的常用方法-6.2.4.1">關於Set的常用方法</a></span></li></ul></li></ul></li></ul></li><li><span><a href="#條件與迴圈" data-toc-modified-id="條件與迴圈-7">條件與迴圈</a></span><ul class="toc-item"><li><span><a href="#條件" data-toc-modified-id="條件-7.1">條件</a></span></li><li><span><a href="#迴圈" data-toc-modified-id="迴圈-7.2">迴圈</a></span><ul class="toc-item"><li><span><a href="#預分配(preallocate)" data-toc-modified-id="預分配(preallocate)-7.2.1">預分配(preallocate)</a></span></li></ul></li></ul></li><li><span><a href="#操作子" data-toc-modified-id="操作子-8">操作子</a></span></li><li><span><a href="#點運算" data-toc-modified-id="點運算-9">點運算</a></span></li><li><span><a href="#作業" data-toc-modified-id="作業-10">作業</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#為何使用julia?" data-toc-modified-id="為何使用julia?-1">為何使用julia?</a></span><ul class="toc-item"><li><span><a href="#背景簡介(開發、目前運作)" data-toc-modified-id="背景簡介(開發、目前運作)-1.1">背景簡介(開發、目前運作)</a></span></li><li><span><a href="#優勢" data-toc-modified-id="優勢-1.2">優勢</a></span></li><li><span><a href="#劣勢" data-toc-modified-id="劣勢-1.3">劣勢</a></span></li><li><span><a href="#遇到問題?" data-toc-modified-id="遇到問題?-1.4">遇到問題?</a></span></li><li><span><a href="#The-speed-of-julia" data-toc-modified-id="The-speed-of-julia-1.5">The speed of julia</a></span></li></ul></li><li><span><a href="#Julia-函式-(Functions)" data-toc-modified-id="Julia-函式-(Functions)-2">Julia 函式 (Functions)</a></span><ul class="toc-item"><li><span><a href="#函式的變數作用域-(Scope-of-Variable)" data-toc-modified-id="函式的變數作用域-(Scope-of-Variable)-2.1">函式的變數作用域 (Scope of Variable)</a></span></li><li><span><a href="#多重分派-(Multiple-dispatch)" data-toc-modified-id="多重分派-(Multiple-dispatch)-2.2">多重分派 (Multiple dispatch)</a></span></li><li><span><a href="#從實例認識多重分派：" data-toc-modified-id="從實例認識多重分派：-2.3">從實例認識多重分派：</a></span></li><li><span><a href="#從-julia-內建的乘法看多重分派" data-toc-modified-id="從-julia-內建的乘法看多重分派-2.4">從 julia 內建的乘法看多重分派</a></span><ul class="toc-item"><li><span><a href="#擴充乘法" data-toc-modified-id="擴充乘法-2.4.1">擴充乘法</a></span></li></ul></li></ul></li><li><span><a href="#常用型別系統" data-toc-modified-id="常用型別系統-3">常用型別系統</a></span></li><li><span><a href="#符號、字串與字元" data-toc-modified-id="符號、字串與字元-4">符號、字串與字元</a></span></li><li><span><a href="#慣例" data-toc-modified-id="慣例-5">慣例</a></span><ul class="toc-item"><li><span><a href="#範例-–-結尾有驚嘆號的函式" data-toc-modified-id="範例-–-結尾有驚嘆號的函式-5.1">範例 – 結尾有驚嘆號的函式</a></span></li><li><span><a href="#範例-–-命名規則" data-toc-modified-id="範例-–-命名規則-5.2">範例 – 命名規則</a></span><ul class="toc-item"><li><span><a href="#舉一反三" data-toc-modified-id="舉一反三-5.2.1">舉一反三</a></span></li></ul></li></ul></li><li><span><a href="#容器" data-toc-modified-id="容器-6">容器</a></span><ul class="toc-item"><li><span><a href="#陣列-(Array)" data-toc-modified-id="陣列-(Array)-6.1">陣列 (Array)</a></span></li><li><span><a href="#集合-(Collection)" data-toc-modified-id="集合-(Collection)-6.2">集合 (Collection)</a></span><ul class="toc-item"><li><span><a href="#數組-(Tuple)" data-toc-modified-id="數組-(Tuple)-6.2.1">數組 (Tuple)</a></span></li><li><span><a href="#配對(Pair)" data-toc-modified-id="配對(Pair)-6.2.2">配對(Pair)</a></span></li><li><span><a href="#字典(Dict)" data-toc-modified-id="字典(Dict)-6.2.3">字典(Dict)</a></span><ul class="toc-item"><li><span><a href="#關於字典的常用方法" data-toc-modified-id="關於字典的常用方法-6.2.3.1">關於字典的常用方法</a></span></li></ul></li><li><span><a href="#集合(Set)" data-toc-modified-id="集合(Set)-6.2.4">集合(Set)</a></span><ul class="toc-item"><li><span><a href="#關於Set的常用方法" data-toc-modified-id="關於Set的常用方法-6.2.4.1">關於Set的常用方法</a></span></li></ul></li></ul></li></ul></li><li><span><a href="#條件與迴圈" data-toc-modified-id="條件與迴圈-7">條件與迴圈</a></span><ul class="toc-item"><li><span><a href="#條件" data-toc-modified-id="條件-7.1">條件</a></span></li><li><span><a href="#迴圈" data-toc-modified-id="迴圈-7.2">迴圈</a></span><ul class="toc-item"><li><span><a href="#預分配(preallocate)" data-toc-modified-id="預分配(preallocate)-7.2.1">預分配(preallocate)</a></span></li></ul></li></ul></li><li><span><a href="#操作子" data-toc-modified-id="操作子-8">操作子</a></span></li><li><span><a href="#點運算" data-toc-modified-id="點運算-9">點運算</a></span></li><li><span><a href="#小結" data-toc-modified-id="小結-10">小結</a></span><ul class="toc-item"><li><span><a href="#相較於MATLAB，Julia在使用上更須遵守規則，但也更自由" data-toc-modified-id="相較於MATLAB，Julia在使用上更須遵守規則，但也更自由-10.1">相較於MATLAB，Julia在使用上更須遵守規則，但也更自由</a></span></li></ul></li><li><span><a href="#作業" data-toc-modified-id="作業-11">作業</a></span></li></ul></div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
@@ -14557,7 +14533,28 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre><span class="ansi-green-intense-fg ansi-bold">  Activating</span> new environment at `C:\Users\t2276\AppData\Local\Temp\jl_AYtZWF\Project.toml`
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
@@ -14571,6 +14568,88 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre><span class="ansi-green-intense-fg ansi-bold">    Updating</span> registry at `C:\Users\t2276\.julia\registries\General`
+<span class="ansi-green-intense-fg ansi-bold">    Updating</span> git-repo `https://github.com/JuliaRegistries/General.git`
+<span class="ansi-green-intense-fg ansi-bold">   Resolving</span> package versions...
+<span class="ansi-green-intense-fg ansi-bold">    Updating</span> `C:\Users\t2276\AppData\Local\Temp\jl_AYtZWF\Project.toml`
+ <span class="ansi-black-intense-fg"> [a93c6f00] </span><span class="ansi-green-intense-fg">+ DataFrames v1.3.1</span>
+<span class="ansi-green-intense-fg ansi-bold">    Updating</span> `C:\Users\t2276\AppData\Local\Temp\jl_AYtZWF\Manifest.toml`
+ <span class="ansi-black-intense-fg"> [34da2185] </span><span class="ansi-green-intense-fg">+ Compat v3.41.0</span>
+ <span class="ansi-black-intense-fg"> [a8cc5b0e] </span><span class="ansi-green-intense-fg">+ Crayons v4.0.4</span>
+ <span class="ansi-black-intense-fg"> [9a962f9c] </span><span class="ansi-green-intense-fg">+ DataAPI v1.9.0</span>
+ <span class="ansi-black-intense-fg"> [a93c6f00] </span><span class="ansi-green-intense-fg">+ DataFrames v1.3.1</span>
+ <span class="ansi-black-intense-fg"> [864edb3b] </span><span class="ansi-green-intense-fg">+ DataStructures v0.18.11</span>
+ <span class="ansi-black-intense-fg"> [e2d170a0] </span><span class="ansi-green-intense-fg">+ DataValueInterfaces v1.0.0</span>
+ <span class="ansi-black-intense-fg"> [59287772] </span><span class="ansi-green-intense-fg">+ Formatting v0.4.2</span>
+ <span class="ansi-black-intense-fg"> [41ab1584] </span><span class="ansi-green-intense-fg">+ InvertedIndices v1.1.0</span>
+ <span class="ansi-black-intense-fg"> [82899510] </span><span class="ansi-green-intense-fg">+ IteratorInterfaceExtensions v1.0.0</span>
+ <span class="ansi-black-intense-fg"> [e1d29d7a] </span><span class="ansi-green-intense-fg">+ Missings v1.0.2</span>
+ <span class="ansi-black-intense-fg"> [bac558e1] </span><span class="ansi-green-intense-fg">+ OrderedCollections v1.4.1</span>
+ <span class="ansi-black-intense-fg"> [2dfb63ee] </span><span class="ansi-green-intense-fg">+ PooledArrays v1.4.0</span>
+ <span class="ansi-black-intense-fg"> [08abe8d2] </span><span class="ansi-green-intense-fg">+ PrettyTables v1.3.1</span>
+ <span class="ansi-black-intense-fg"> [189a3867] </span><span class="ansi-green-intense-fg">+ Reexport v1.2.2</span>
+ <span class="ansi-black-intense-fg"> [a2af1166] </span><span class="ansi-green-intense-fg">+ SortingAlgorithms v1.0.1</span>
+ <span class="ansi-black-intense-fg"> [3783bdb8] </span><span class="ansi-green-intense-fg">+ TableTraits v1.0.1</span>
+ <span class="ansi-black-intense-fg"> [bd369af6] </span><span class="ansi-green-intense-fg">+ Tables v1.6.1</span>
+ <span class="ansi-black-intense-fg"> [0dad84c5] </span><span class="ansi-green-intense-fg">+ ArgTools</span>
+ <span class="ansi-black-intense-fg"> [56f22d72] </span><span class="ansi-green-intense-fg">+ Artifacts</span>
+ <span class="ansi-black-intense-fg"> [2a0f44e3] </span><span class="ansi-green-intense-fg">+ Base64</span>
+ <span class="ansi-black-intense-fg"> [ade2ca70] </span><span class="ansi-green-intense-fg">+ Dates</span>
+ <span class="ansi-black-intense-fg"> [8bb1440f] </span><span class="ansi-green-intense-fg">+ DelimitedFiles</span>
+ <span class="ansi-black-intense-fg"> [8ba89e20] </span><span class="ansi-green-intense-fg">+ Distributed</span>
+ <span class="ansi-black-intense-fg"> [f43a241f] </span><span class="ansi-green-intense-fg">+ Downloads</span>
+ <span class="ansi-black-intense-fg"> [9fa8497b] </span><span class="ansi-green-intense-fg">+ Future</span>
+ <span class="ansi-black-intense-fg"> [b77e0a4c] </span><span class="ansi-green-intense-fg">+ InteractiveUtils</span>
+ <span class="ansi-black-intense-fg"> [b27032c2] </span><span class="ansi-green-intense-fg">+ LibCURL</span>
+ <span class="ansi-black-intense-fg"> [76f85450] </span><span class="ansi-green-intense-fg">+ LibGit2</span>
+ <span class="ansi-black-intense-fg"> [8f399da3] </span><span class="ansi-green-intense-fg">+ Libdl</span>
+ <span class="ansi-black-intense-fg"> [37e2e46d] </span><span class="ansi-green-intense-fg">+ LinearAlgebra</span>
+ <span class="ansi-black-intense-fg"> [56ddb016] </span><span class="ansi-green-intense-fg">+ Logging</span>
+ <span class="ansi-black-intense-fg"> [d6f4376e] </span><span class="ansi-green-intense-fg">+ Markdown</span>
+ <span class="ansi-black-intense-fg"> [a63ad114] </span><span class="ansi-green-intense-fg">+ Mmap</span>
+ <span class="ansi-black-intense-fg"> [ca575930] </span><span class="ansi-green-intense-fg">+ NetworkOptions</span>
+ <span class="ansi-black-intense-fg"> [44cfe95a] </span><span class="ansi-green-intense-fg">+ Pkg</span>
+ <span class="ansi-black-intense-fg"> [de0858da] </span><span class="ansi-green-intense-fg">+ Printf</span>
+ <span class="ansi-black-intense-fg"> [3fa0cd96] </span><span class="ansi-green-intense-fg">+ REPL</span>
+ <span class="ansi-black-intense-fg"> [9a3f8284] </span><span class="ansi-green-intense-fg">+ Random</span>
+ <span class="ansi-black-intense-fg"> [ea8e919c] </span><span class="ansi-green-intense-fg">+ SHA</span>
+ <span class="ansi-black-intense-fg"> [9e88b42a] </span><span class="ansi-green-intense-fg">+ Serialization</span>
+ <span class="ansi-black-intense-fg"> [1a1011a3] </span><span class="ansi-green-intense-fg">+ SharedArrays</span>
+ <span class="ansi-black-intense-fg"> [6462fe0b] </span><span class="ansi-green-intense-fg">+ Sockets</span>
+ <span class="ansi-black-intense-fg"> [2f01184e] </span><span class="ansi-green-intense-fg">+ SparseArrays</span>
+ <span class="ansi-black-intense-fg"> [10745b16] </span><span class="ansi-green-intense-fg">+ Statistics</span>
+ <span class="ansi-black-intense-fg"> [fa267f1f] </span><span class="ansi-green-intense-fg">+ TOML</span>
+ <span class="ansi-black-intense-fg"> [a4e569a6] </span><span class="ansi-green-intense-fg">+ Tar</span>
+ <span class="ansi-black-intense-fg"> [8dfed614] </span><span class="ansi-green-intense-fg">+ Test</span>
+ <span class="ansi-black-intense-fg"> [cf7118a7] </span><span class="ansi-green-intense-fg">+ UUIDs</span>
+ <span class="ansi-black-intense-fg"> [4ec0a83e] </span><span class="ansi-green-intense-fg">+ Unicode</span>
+ <span class="ansi-black-intense-fg"> [deac9b47] </span><span class="ansi-green-intense-fg">+ LibCURL_jll</span>
+ <span class="ansi-black-intense-fg"> [29816b5a] </span><span class="ansi-green-intense-fg">+ LibSSH2_jll</span>
+ <span class="ansi-black-intense-fg"> [c8ffd9c3] </span><span class="ansi-green-intense-fg">+ MbedTLS_jll</span>
+ <span class="ansi-black-intense-fg"> [14a3606d] </span><span class="ansi-green-intense-fg">+ MozillaCACerts_jll</span>
+ <span class="ansi-black-intense-fg"> [83775a58] </span><span class="ansi-green-intense-fg">+ Zlib_jll</span>
+ <span class="ansi-black-intense-fg"> [8e850ede] </span><span class="ansi-green-intense-fg">+ nghttp2_jll</span>
+ <span class="ansi-black-intense-fg"> [3f19e933] </span><span class="ansi-green-intense-fg">+ p7zip_jll</span>
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14580,7 +14659,7 @@ a.anchor-link {
 <li>遵循簡單邏輯即能寫出高效程式碼</li>
 </ul>
 <h2 id="%E5%8A%A3%E5%8B%A2">&#21155;&#21218;<a class="anchor-link" href="#%E5%8A%A3%E5%8B%A2">&#182;</a></h2><ul>
-<li>社群小、資產少(相對於python)</li>
+<li>社群小、資產少 (相對於python)</li>
 <li>編譯時間長；在自動化腳本、網頁開發方面python會是較好的選擇</li>
 <li>你的同事沒有在用</li>
 </ul>
@@ -14821,7 +14900,7 @@ Stacktrace:
  [2] eval
    @ .\boot.jl:360 [inlined]
  [3] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
-   @ Base .\loading.jl:1094</pre>
+   @ Base .\loading.jl:1116</pre>
 </div>
 </div>
 
@@ -15075,7 +15154,7 @@ $$<p>建立一個🪵(木頭)的型別</p>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">🪓</span><span class="p">(</span><span class="n">w</span><span class="o">::</span><span class="n">🪵</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 	<span class="n">w</span><span class="o">.</span><span class="n">L</span><span class="o">=</span><span class="n">w</span><span class="o">.</span><span class="n">L</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
-	<span class="n">fill</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+	<span class="n">fill</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="c"># 創建一個 [w, w, w, ... , w] 共 n 個元素的向量</span>
 <span class="k">end</span>
 </pre></div>
 
@@ -15580,7 +15659,7 @@ julia 內建的函式都放在 Base 下面。
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E5%B8%B8%E7%94%A8%E5%9E%8B%E5%88%A5%E7%B3%BB%E7%B5%B1">&#24120;&#29992;&#22411;&#21029;&#31995;&#32113;<a class="anchor-link" href="#%E5%B8%B8%E7%94%A8%E5%9E%8B%E5%88%A5%E7%B3%BB%E7%B5%B1">&#182;</a></h1><p><img src="image/julia_short_hierarchy.png" width="400" height="500"></p>
+<h1 id="%E5%B8%B8%E7%94%A8%E5%9E%8B%E5%88%A5%E7%B3%BB%E7%B5%B1">&#24120;&#29992;&#22411;&#21029;&#31995;&#32113;<a class="anchor-link" href="#%E5%B8%B8%E7%94%A8%E5%9E%8B%E5%88%A5%E7%B3%BB%E7%B5%B1">&#182;</a></h1><p><img src="image/julia_short_hierarchy.png" width="520" height="500"></p>
 <p>抽象型別(Abstract type)</p>
 <ul>
 <li>無法被實例化(instaintiate)</li>
@@ -15737,7 +15816,7 @@ julia 內建的函式都放在 Base 下面。
 <li>範例(模組)：<code>DataFrames</code></li>
 </ul>
 </li>
-<li>在會改變輸入的可變型別之函式名稱中，使用驚嘆號</li>
+<li>在會改變輸入的可變型別之函式名稱中，使用驚嘆號(！)</li>
 </ul>
 <p>是否照慣例做並不影響執行結果。但是，遵循基本慣例可以讓我們光靠閱讀程式碼的階段就可以大致理解程式碼在做什麼；不遵循慣例會造成不必要的麻煩，對所有人都沒好處。</p>
 
@@ -15745,7 +15824,8 @@ julia 內建的函式都放在 Base 下面。
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E7%AF%84%E4%BE%8B-%E2%80%93-%E7%B5%90%E5%B0%BE%E6%9C%89%E9%A9%9A%E5%98%86%E8%99%9F%E7%9A%84%E5%87%BD%E5%BC%8F">&#31684;&#20363; &#8211; &#32080;&#23614;&#26377;&#39514;&#22022;&#34399;&#30340;&#20989;&#24335;<a class="anchor-link" href="#%E7%AF%84%E4%BE%8B-%E2%80%93-%E7%B5%90%E5%B0%BE%E6%9C%89%E9%A9%9A%E5%98%86%E8%99%9F%E7%9A%84%E5%87%BD%E5%BC%8F">&#182;</a></h2>
+<h2 id="%E7%AF%84%E4%BE%8B-%E2%80%93-%E7%B5%90%E5%B0%BE%E6%9C%89%E9%A9%9A%E5%98%86%E8%99%9F%E7%9A%84%E5%87%BD%E5%BC%8F">&#31684;&#20363; &#8211; &#32080;&#23614;&#26377;&#39514;&#22022;&#34399;&#30340;&#20989;&#24335;<a class="anchor-link" href="#%E7%AF%84%E4%BE%8B-%E2%80%93-%E7%B5%90%E5%B0%BE%E6%9C%89%E9%A9%9A%E5%98%86%E8%99%9F%E7%9A%84%E5%87%BD%E5%BC%8F">&#182;</a></h2><p>結尾有驚嘆號的函式提醒我們某一個輸入變數會直接被改變。</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -15816,7 +15896,8 @@ julia 內建的函式都放在 Base 下面。
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E7%AF%84%E4%BE%8B-%E2%80%93-DataFrame-and-DataFrames">&#31684;&#20363; &#8211; DataFrame and DataFrames<a class="anchor-link" href="#%E7%AF%84%E4%BE%8B-%E2%80%93-DataFrame-and-DataFrames">&#182;</a></h2>
+<h2 id="%E7%AF%84%E4%BE%8B-%E2%80%93-%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87">&#31684;&#20363; &#8211; &#21629;&#21517;&#35215;&#21063;<a class="anchor-link" href="#%E7%AF%84%E4%BE%8B-%E2%80%93-%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87">&#182;</a></h2><p>DataFrame (型別或建構子) and DataFrames (套件)</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -16114,11 +16195,11 @@ julia 內建的函式都放在 Base 下面。
 <li>向量(<code>Vector{DataType}</code>=<code>Array{DataType,1}</code>)</li>
 <li>矩陣(<code>Matrix{DataType}</code>=<code>Array{DataType,2}</code>)</li>
 </ul>
-<blockquote><p>⚠️ 注意：</p>
+<p>⚠️ 注意：</p>
 <ul>
-<li>不像matlab，範圍(Range)、向量、矩陣分別屬於不一樣的型別</li>
+<li>不像matlab，julia的範圍(Range)、向量、矩陣分別屬於不一樣的型別</li>
+<li>julia的範圍(e.g., <code>1:10</code>)只記載了起始、終止和間隔這三項資訊，需要透過<code>collect()</code>才能變成向量。例如:</li>
 </ul>
-</blockquote>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16127,7 +16208,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">5</span>
 </pre></div>
 
      </div>
@@ -16149,7 +16230,7 @@ julia 內建的函式都放在 Base 下面。
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Vector{Float64} (alias for Array{Float64, 1})</pre>
+<pre>1:5</pre>
 </div>
 
 </div>
@@ -16164,7 +16245,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16186,7 +16267,12 @@ julia 內建的函式都放在 Base 下面。
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Matrix{Int64} (alias for Array{Int64, 2})</pre>
+<pre>5-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+ 5</pre>
 </div>
 
 </div>
@@ -16201,7 +16287,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -16223,7 +16309,7 @@ julia 內建的函式都放在 Base 下面。
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>UnitRange{Int64}</pre>
+<pre>Vector{Float64} (alias for Array{Float64, 1})</pre>
 </div>
 
 </div>
@@ -16238,7 +16324,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">collect</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -16260,7 +16346,213 @@ julia 內建的函式都放在 Base 下面。
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Matrix{Int64} (alias for Array{Int64, 2})</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>UnitRange{Int64}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">typeof</span><span class="p">(</span><span class="n">collect</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>Vector{Int64} (alias for Array{Int64, 1})</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>⚠️ 注意：陣列(Array) 是可變的(mutable)。這時候 <code>v1 = v</code> 相當於將新變數名(v1)指向舊變數(v)。如果想要複製變數，請用 <code>copy</code> (e.g., <code>v1 = copy(v)</code>)。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">v</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>5-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+ 5</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">v1</span><span class="p">[</span><span class="k">end</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span> <span class="n">v1</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>5-element Vector{Int64}:
+  1
+  2
+  3
+  4
+ 99</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">v</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>5-element Vector{Int64}:
+  1
+  2
+  3
+  4
+ 99</pre>
 </div>
 
 </div>
@@ -16294,7 +16586,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">)</span>
@@ -16313,7 +16605,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
 
 
@@ -16331,7 +16623,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="s">&quot;b&quot;</span> <span class="k">in</span> <span class="n">a</span> <span class="c"># the same as in(&quot;b&quot;, a)</span>
@@ -16350,7 +16642,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 
 
 
@@ -16368,7 +16660,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -16387,7 +16679,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
 
 
@@ -16411,7 +16703,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># 透過 Pair constructor 建立</span>
@@ -16431,7 +16723,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
 
 
@@ -16449,11 +16741,11 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># 透過 key=&gt;value 語法建立 Pair</span>
-<span class="n">a</span> <span class="o">=</span> <span class="s">&quot;key1&quot;</span><span class="o">=&gt;</span><span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s">&quot;key1&quot;</span><span class="o">=&gt;</span> <span class="mi">1</span>
 </pre></div>
 
      </div>
@@ -16469,7 +16761,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
 
 
@@ -16487,7 +16779,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="k">in</span> <span class="n">a</span>
@@ -16531,7 +16823,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">([(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
@@ -16550,7 +16842,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
 
 
@@ -16571,7 +16863,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;B&quot;</span><span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;C&quot;</span><span class="o">=&gt;</span> <span class="mi">3</span><span class="p">)</span>
@@ -16590,7 +16882,7 @@ julia 內建的函式都放在 Base 下面。
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 
 
 
@@ -16611,7 +16903,7 @@ julia 內建的函式都放在 Base 下面。
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">a</span>
@@ -16656,7 +16948,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="s">&quot;D&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
@@ -16675,7 +16967,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 
 
 
@@ -16715,7 +17007,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
@@ -16734,7 +17026,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 
 
 
@@ -16758,7 +17050,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="mi">4</span> <span class="k">in</span> <span class="n">a</span>
@@ -16777,7 +17069,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
 
 
 
@@ -16792,10 +17084,16 @@ C is 3
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>聯集</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="kt">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -16814,7 +17112,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 
 
 
@@ -16832,16 +17130,10 @@ C is 3
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>聯集</p>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">union</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -16860,7 +17152,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
 
 
 
@@ -16896,7 +17188,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">a</span> <span class="o">∩</span> <span class="n">b</span>
@@ -16915,7 +17207,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 
 
 
@@ -16963,7 +17255,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -17011,10 +17303,10 @@ C is 3
 <h2 id="%E8%BF%B4%E5%9C%88">&#36852;&#22280;<a class="anchor-link" href="#%E8%BF%B4%E5%9C%88">&#182;</a></h2><h3 id="%E9%A0%90%E5%88%86%E9%85%8D(preallocate)">&#38928;&#20998;&#37197;(preallocate)<a class="anchor-link" href="#%E9%A0%90%E5%88%86%E9%85%8D(preallocate)">&#182;</a></h3><p>Julia 的預分配邏輯跟 matlab 或其他程式語言相似：在迴圈外先定義好輸出向量，再將向量丟進去運算會大幅減少對記憶體進行操作的時間。</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">BenchmarkTools</span>
@@ -17025,16 +17317,38 @@ C is 3
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>┌ Info: Precompiling BenchmarkTools [6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf]
+└ @ Base loading.jl:1342
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="k">let</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
 	<span class="n">A</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span>
-	<span class="n">answer</span> <span class="o">=</span> <span class="n">fill</span><span class="p">(</span><span class="nb">NaN</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="c"># 類似 matlab 的 nan(5,1)</span>
+	<span class="n">answer</span> <span class="o">=</span> <span class="n">fill</span><span class="p">(</span><span class="nb">NaN</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="c"># 類似 matlab 的 nan(n,1)</span>
 	<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">5</span>
 		<span class="n">A_i</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 		<span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_i</span><span class="o">^</span><span class="mi">2</span><span class="p">;</span>
@@ -17055,20 +17369,20 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>BenchmarkTools.Trial: 10000 samples with 1 evaluation.
- Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">10.200 μs</span> … <span class="ansi-magenta-fg">  7.670 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span> 0.00% … 98.54%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">57.600 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span> 0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">53.781 μs</span> ± <span class="ansi-green-fg">181.651 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>18.13% ±  5.67%
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold"> 7.800 μs</span> … <span class="ansi-magenta-fg">  3.735 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span> 0.00% … 98.68%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">29.000 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span> 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">32.756 μs</span> ± <span class="ansi-green-fg">116.999 μs</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>19.28% ±  5.69%
 
-    ▂█                    <span class="ansi-green-fg"> </span> <span class="ansi-blue-fg">▆</span>▂                                  
-  ▃▃██▇▄▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁<span class="ansi-green-fg">▂</span>▇<span class="ansi-blue-fg">█</span>█▅▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂ ▃
-  10.2 μs<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>          120 μs <span class="ansi-bold">&lt;</span>
+     ▂█             <span class="ansi-blue-fg">▃</span>  <span class="ansi-green-fg"> </span>                                        
+  ▁▂▃██▃▂▃▅▅▃▂▂▁▁▁▁▃<span class="ansi-blue-fg">█</span>█▄<span class="ansi-green-fg">▃</span>▃▄▄▄▃▃▃▃▃▂▂▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▂
+  7.8 μs<span class="ansi-black-intense-fg">          Histogram: frequency by time</span>         77.6 μs <span class="ansi-bold">&lt;</span>
 
  Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">156.41 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">4</span>.</pre>
 </div>
@@ -17082,7 +17396,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="k">let</span>
@@ -17109,20 +17423,20 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>BenchmarkTools.Trial: 2 samples with 1 evaluation.
- Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">4.619 s</span> … <span class="ansi-magenta-fg">   4.955 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>17.94% … 20.02%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">4.787 s               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>19.02%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">4.787 s</span> ± <span class="ansi-green-fg">237.697 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>19.02% ±  1.47%
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">2.855 s</span> … <span class="ansi-magenta-fg">   3.009 s</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span>15.10% … 18.39%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">2.932 s               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span>16.79%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">2.932 s</span> ± <span class="ansi-green-fg">108.279 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>16.79% ±  2.33%
 
   <span class="ansi-blue-fg">█</span>                            <span class="ansi-green-fg"> </span>                           █  
   <span class="ansi-blue-fg">█</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁
-  4.62 s<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>         4.95 s <span class="ansi-bold">&lt;</span>
+  2.86 s<span class="ansi-black-intense-fg">         Histogram: frequency by time</span>         3.01 s <span class="ansi-bold">&lt;</span>
 
  Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">1.49 GiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">49822676</span>.</pre>
 </div>
@@ -17142,7 +17456,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="k">let</span>
@@ -17169,20 +17483,20 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>BenchmarkTools.Trial: 5348 samples with 1 evaluation.
- Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">293.600 μs</span> … <span class="ansi-magenta-fg">189.774 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span> 0.00% … 99.44%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">560.400 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span> 0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">926.423 μs</span> ± <span class="ansi-green-fg">  6.960 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>33.85% ±  4.50%
+<pre>BenchmarkTools.Trial: 8900 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">178.800 μs</span> … <span class="ansi-magenta-fg">99.053 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span> 0.00% … 99.44%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">397.800 μs              </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span> 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">559.061 μs</span> ± <span class="ansi-green-fg"> 4.071 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>33.67% ±  4.60%
 
-    ▅▃▄▁▅▃<span class="ansi-blue-fg">█</span>▂▂▃       <span class="ansi-green-fg"> </span>                                           
-  ▅▅██████<span class="ansi-blue-fg">█</span>███▇▆▄▄▄▃▃<span class="ansi-green-fg">▃</span>▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▂ ▃
-  294 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          2.3 ms <span class="ansi-bold">&lt;</span>
+                               <span class="ansi-blue-fg">▆</span>█                    <span class="ansi-green-fg"> </span>          
+  ▁▁▁▆▇▄▅▇▄▃▂▂▂▂▂▁▁▁▁▂▅▂▄▄▂▅▅▄▆<span class="ansi-blue-fg">█</span>██▆▃▃▃▄▆▆▅▃▃▂▂▂▂▁▁▁▁▁<span class="ansi-green-fg">▁</span>▁▁▁▁▁▁▁▁ ▂
+  179 μs<span class="ansi-black-intense-fg">          Histogram: frequency by time</span>          625 μs <span class="ansi-bold">&lt;</span>
 
  Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">490.75 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">9994</span>.</pre>
 </div>
@@ -17196,7 +17510,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@benchmark</span> <span class="k">let</span>
@@ -17223,20 +17537,20 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>BenchmarkTools.Trial: 7360 samples with 1 evaluation.
- Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">202.500 μs</span> … <span class="ansi-magenta-fg">207.335 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span> 0.00% … 99.83%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">386.800 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span> 0.00%
- Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">627.723 μs</span> ± <span class="ansi-green-fg">  6.498 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>36.16% ±  3.49%
+<pre>BenchmarkTools.Trial: 10000 samples with 1 evaluation.
+ Range <span class="ansi-black-intense-fg">(</span><span class="ansi-cyan-intense-fg ansi-bold">min</span> … <span class="ansi-magenta-fg">max</span><span class="ansi-black-intense-fg">):  </span><span class="ansi-cyan-intense-fg ansi-bold">118.400 μs</span> … <span class="ansi-magenta-fg">124.757 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>min … max<span class="ansi-black-intense-fg">): </span> 0.00% … 99.82%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-blue-intense-fg ansi-bold">median</span><span class="ansi-black-intense-fg">):     </span><span class="ansi-blue-intense-fg ansi-bold">342.500 μs               </span><span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>median<span class="ansi-black-intense-fg">):    </span> 0.00%
+ Time  <span class="ansi-black-intense-fg">(</span><span class="ansi-green-intense-fg ansi-bold">mean</span> ± <span class="ansi-green-fg">σ</span><span class="ansi-black-intense-fg">):   </span><span class="ansi-green-intense-fg ansi-bold">378.699 μs</span> ± <span class="ansi-green-fg">  3.018 ms</span>  <span class="ansi-black-intense-fg">┊</span> GC <span class="ansi-black-intense-fg">(</span>mean ± σ<span class="ansi-black-intense-fg">):  </span>21.05% ±  2.64%
 
-    █▁  ▄▁        <span class="ansi-blue-fg"> </span>                    <span class="ansi-green-fg"> </span>                         
-  ▁▆██▆███▄▃▃▂▂▂▂▃<span class="ansi-blue-fg">▃</span>▃▃▅▅▃▃▇▇▅▄▃▃▅▇▆▅▃▂▂▁<span class="ansi-green-fg">▁</span>▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▂ ▂
-  202 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          902 μs <span class="ansi-bold">&lt;</span>
+    █▁▃▂                            <span class="ansi-blue-fg">▆</span>▅▁  <span class="ansi-green-fg"> </span>                       
+  ▂▇████▄▃▄▃▂▃▂▂▂▁▂▁▁▂▁▁▁▂▄▂▃▄▃▅▆▅▅█<span class="ansi-blue-fg">█</span>██▇▇<span class="ansi-green-fg">▇</span>▇▇▇▆▅▄▃▃▂▃▂▂▂▂▁▂▁▁▁▁▁ ▃
+  118 μs<span class="ansi-black-intense-fg">           Histogram: frequency by time</span>          525 μs <span class="ansi-bold">&lt;</span>
 
  Memory estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">334.84 KiB</span>, allocs estimate<span class="ansi-black-intense-fg">: </span><span class="ansi-yellow-fg">16</span>.</pre>
 </div>
@@ -17261,7 +17575,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
@@ -17280,7 +17594,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
 
 
 
@@ -17298,7 +17612,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&gt;</span><span class="mi">3</span>
@@ -17317,7 +17631,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
 
 
 
@@ -17335,10 +17649,10 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">collect</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span> <span class="c"># v = [1,2,3,4,5]</span>
 <span class="n">v</span> <span class="o">.&gt;</span> <span class="mi">3</span>
 </pre></div>
 
@@ -17355,7 +17669,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[77]:</div>
 
 
 
@@ -17383,7 +17697,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -17404,7 +17718,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[70]:</div>
 
 
 
@@ -17422,7 +17736,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -17441,7 +17755,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[66]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[71]:</div>
 
 
 
@@ -17459,7 +17773,7 @@ C is 3
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">];</span>
@@ -17479,7 +17793,7 @@ C is 3
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[72]:</div>
 
 
 
@@ -17503,21 +17817,301 @@ C is 3
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="%E4%BD%9C%E6%A5%AD">&#20316;&#26989;<a class="anchor-link" href="#%E4%BD%9C%E6%A5%AD">&#182;</a></h1><ol>
-<li>寫一個<code>drop</code>函式，包含兩個方法：</li>
-</ol>
+<h1 id="%E5%B0%8F%E7%B5%90">&#23567;&#32080;<a class="anchor-link" href="#%E5%B0%8F%E7%B5%90">&#182;</a></h1><h2 id="%E7%9B%B8%E8%BC%83%E6%96%BCMATLAB%EF%BC%8CJulia%E5%9C%A8%E4%BD%BF%E7%94%A8%E4%B8%8A%E6%9B%B4%E9%A0%88%E9%81%B5%E5%AE%88%E8%A6%8F%E5%89%87%EF%BC%8C%E4%BD%86%E4%B9%9F%E6%9B%B4%E8%87%AA%E7%94%B1">&#30456;&#36611;&#26044;MATLAB&#65292;Julia&#22312;&#20351;&#29992;&#19978;&#26356;&#38920;&#36981;&#23432;&#35215;&#21063;&#65292;&#20294;&#20063;&#26356;&#33258;&#30001;<a class="anchor-link" href="#%E7%9B%B8%E8%BC%83%E6%96%BCMATLAB%EF%BC%8CJulia%E5%9C%A8%E4%BD%BF%E7%94%A8%E4%B8%8A%E6%9B%B4%E9%A0%88%E9%81%B5%E5%AE%88%E8%A6%8F%E5%89%87%EF%BC%8C%E4%BD%86%E4%B9%9F%E6%9B%B4%E8%87%AA%E7%94%B1">&#182;</a></h2><p>例如，</p>
 <ul>
-<li>如果輸入是向量， 把向量的最後一個元素剔除後回傳</li>
-<li>如果輸入是矩陣， 把矩陣的最後一橫列剔除後回傳</li>
+<li><code>'HelloWorld'</code> ➡️ ❌ ERROR: syntax: character literal contains multiple characters</li>
+<li><code>"HelloWorld"</code> ➡️ ✔️ PASS!</li>
+<li><code>x = [5, 6, 7]; sin(x)</code> ➡️ ❌ ERROR: MethodError: no method matching sin(::Vector{Int64})</li>
+<li><code>x = [5, 6, 7]; sin.(x)</code> ➡️ ✔️ PASS!</li>
+<li><code>x = [5,6,7]; x &gt; 3</code> ➡️ ❌ MethodError: no method matching isless(::Int64, ::Vector{Int64})</li>
+<li><code>x = [5,6,7]; x .&gt; 3</code> ➡️ ✔️ PASS!</li>
+<li><code>function f(x) x^2 + 3x +1; end</code> ➡️ ✔️ PASS!</li>
+<li><code>a = [1,2,3]; f.(a)</code> ➡️ ✔️ PASS!</li>
+<li><code>for i=1:10 print(i) end</code> ➡️ ✔️ PASS!</li>
+<li><code>a = [1]; for i = [1.2, 2.3, 3.1] push!(a, i); end</code> ➡️ ❌ ERROR: InexactError: Int64(1.2)</li>
+<li><code>a = Float64[1]; for i = [1.2, 2.3, 3.1] push!(a, i); end</code> ➡️ ✔️ PASS!</li>
+<li><code>a = [1.0]; for i = [1.2, 2.3, 3.1] push!(a, i); end</code> ➡️ ✔️ PASS!</li>
 </ul>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://www.saedsayad.com/decision_tree_reg.htm">https://www.saedsayad.com/decision_tree_reg.htm</a></p>
+<h1 id="%E4%BD%9C%E6%A5%AD">&#20316;&#26989;<a class="anchor-link" href="#%E4%BD%9C%E6%A5%AD">&#182;</a></h1><ol>
+<li>寫一個<code>drop</code>函式，包含兩個方法：</li>
+</ol>
+<ul>
+<li>如果輸入是向量， 把向量的最後一個元素剔除後回傳(不改變原本輸入變數)</li>
+<li>如果輸入是矩陣， 把矩陣的最後一橫列剔除後回傳(不改變原本輸入變數)</li>
+</ul>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[73]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">drop</span><span class="p">(</span><span class="n">v</span><span class="o">::</span><span class="kt">Vector</span><span class="p">)</span>
+    <span class="nb">nothing</span> <span class="c"># write your code here!</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">drop</span><span class="p">(</span><span class="n">m</span><span class="o">::</span><span class="kt">Matrix</span><span class="p">)</span>
+    <span class="nb">nothing</span> <span class="c"># write your code here!</span>
+<span class="k">end</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[73]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>drop (generic function with 2 methods)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Test</span>
+<span class="nd">@testset</span> <span class="s">&quot;Testing drop(v::Vector)&quot;</span> <span class="k">begin</span>
+    <span class="nd">@test</span> <span class="n">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">.==</span> <span class="n">drop</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]))</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="nd">@test</span> <span class="n">all</span><span class="p">(</span><span class="n">v2</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">.==</span> <span class="n">drop</span><span class="p">(</span><span class="n">v2</span><span class="p">))</span>
+<span class="k">end</span>
+
+<span class="nd">@testset</span> <span class="s">&quot;Testing drop(v::Matrix)&quot;</span> <span class="k">begin</span>
+    <span class="n">m1</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="nd">@test</span> <span class="n">all</span><span class="p">(</span><span class="n">drop</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span> <span class="o">.==</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">])</span>
+<span class="k">end</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Testing drop(v::Vector): <span class="ansi-red-intense-fg ansi-bold">Test Failed</span> at <span class="ansi-bold">In[74]:3</span>
+  Expression: all([1, 3, 5] .== drop([1, 3, 5, 7]))
+Stacktrace:
+ [1] <span class="ansi-bold">macro expansion</span>
+<span class="ansi-black-intense-fg">   @ </span><span class="ansi-black-intense-fg ansi-underline">In[74]:3</span><span class="ansi-black-intense-fg"> [inlined]</span>
+ [2] <span class="ansi-bold">macro expansion</span>
+<span class="ansi-black-intense-fg">   @ </span><span class="ansi-black-intense-fg">C:\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.6\Test\src\</span><span class="ansi-black-intense-fg ansi-underline">Test.jl:1151</span><span class="ansi-black-intense-fg"> [inlined]</span>
+ [3] top-level scope
+<span class="ansi-black-intense-fg">   @ </span><span class="ansi-black-intense-fg ansi-underline">In[74]:3</span>
+Testing drop(v::Vector): <span class="ansi-red-intense-fg ansi-bold">Test Failed</span> at <span class="ansi-bold">In[74]:5</span>
+  Expression: all(v2[1:end - 1] .== drop(v2))
+Stacktrace:
+ [1] <span class="ansi-bold">macro expansion</span>
+<span class="ansi-black-intense-fg">   @ </span><span class="ansi-black-intense-fg ansi-underline">In[74]:5</span><span class="ansi-black-intense-fg"> [inlined]</span>
+ [2] <span class="ansi-bold">macro expansion</span>
+<span class="ansi-black-intense-fg">   @ </span><span class="ansi-black-intense-fg">C:\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.6\Test\src\</span><span class="ansi-black-intense-fg ansi-underline">Test.jl:1151</span><span class="ansi-black-intense-fg"> [inlined]</span>
+ [3] top-level scope
+<span class="ansi-black-intense-fg">   @ </span><span class="ansi-black-intense-fg ansi-underline">In[74]:3</span>
+<span class="ansi-bold">Test Summary:           | </span><span class="ansi-red-intense-fg ansi-bold">Fail  </span><span class="ansi-cyan-intense-fg ansi-bold">Total</span>
+Testing drop(v::Vector) | <span class="ansi-red-intense-fg">   2  </span><span class="ansi-cyan-fg">    2</span>
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-intense-fg">Some tests did not pass: 0 passed, 2 failed, 0 errored, 0 broken.</span>
+
+Stacktrace:
+ [1] finish(ts::Test.DefaultTestSet)
+   @ Test C:\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.6\Test\src\Test.jl:913
+ [2] macro expansion
+   @ C:\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.6\Test\src\Test.jl:1161 [inlined]
+ [3] top-level scope
+   @ In[74]:3
+ [4] eval
+   @ .\boot.jl:360 [inlined]
+ [5] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
+   @ Base .\loading.jl:1116</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>寫一個<code>lastnan!</code>函式，包含2個方法：</li>
+</ol>
+<ul>
+<li>把向量的最後一個元素改成NaN</li>
+<li>把向量的最後一列元素都改成NaN</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[82]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">lastnan!</span><span class="p">(</span><span class="n">v</span><span class="o">::</span><span class="kt">Vector</span><span class="p">)</span>
+    <span class="nb">nothing</span> <span class="c"># write your code here!</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">lastnan!</span><span class="p">(</span><span class="n">v</span><span class="o">::</span><span class="kt">Matrix</span><span class="p">)</span>
+    <span class="nb">nothing</span> <span class="c"># write your code here!</span>
+<span class="k">end</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[82]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>lastnan! (generic function with 2 methods)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span><span class="nd">@testset</span> <span class="s">&quot;Testing lastnan!(v::Vector)&quot;</span> <span class="k">begin</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">v0</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">lastnan!</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>   
+    <span class="nd">@test</span> <span class="n">all</span><span class="p">(</span><span class="n">v0</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">.==</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nd">@test</span> <span class="n">isnan</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="k">end</span><span class="p">])</span>
+<span class="k">end</span>
+
+<span class="nd">@testset</span> <span class="s">&quot;Testing lastnan!(v::Matrix)&quot;</span> <span class="k">begin</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">v0</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">lastnan!</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>   
+    <span class="nd">@test</span> <span class="n">all</span><span class="p">(</span><span class="n">v0</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]</span> <span class="o">.==</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">])</span>
+    <span class="nd">@test</span> <span class="n">all</span><span class="p">(</span><span class="n">isnan</span><span class="o">.</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="k">end</span><span class="p">,</span><span class="o">:</span><span class="p">]))</span>
+<span class="k">end</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-bold">Test Summary:               | </span><span class="ansi-green-intense-fg ansi-bold">Pass  </span><span class="ansi-cyan-intense-fg ansi-bold">Total</span>
+Testing lastnan!(v::Vector) | <span class="ansi-green-fg">   2  </span><span class="ansi-cyan-fg">    2</span>
+<span class="ansi-bold">Test Summary:               | </span><span class="ansi-green-intense-fg ansi-bold">Pass  </span><span class="ansi-cyan-intense-fg ansi-bold">Total</span>
+Testing lastnan!(v::Matrix) | <span class="ansi-green-fg">   2  </span><span class="ansi-cyan-fg">    2</span>
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[81]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Test.DefaultTestSet(&#34;Testing lastnan!(v::Matrix)&#34;, Any[], 2, false, false)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-julia"><pre><span></span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
