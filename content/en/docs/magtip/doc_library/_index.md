@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2021-11-11"
+date: "2022-01-07"
 linkTitle: "Library"
 ---
 
@@ -50,6 +50,8 @@ The four main functions are wrapper functions for routine training and forecasti
 <p>, only the files in the two time ranges &#91;2009-Dec-10, 2010-Oct-10&#93; and &#91;2013-Dec-10, 2017-Oct-10&#93; will be converted; ohterwise, ignored.</p>
 </li>
 </ul>
+</li>
+<li><p>&#39;Test&#39;: It take only the assigned ratio &#40;0-1&#41; of data &#40;files&#41; in  the directory <code>dir_originalfiles</code>. The files are randomly chosen.  This option should only be applied when you want to test your code for  reducing the overall computing time. Default is 0 &#40;when the assigned value for &#39;Test&#39; is &#36;\leq 0&#36; or &#36;\geq 1&#36;, there is no reduction in the data list&#41;.</p>
 </li>
 </ul>
 <p><strong>NOTICE:</strong></p>
@@ -127,6 +129,11 @@ The four main functions are wrapper functions for routine training and forecasti
 
 - The output directory and data structure is:
   ![](struct_stat.png)
+
+
+<div class="markdown"><p><code>statind_parfor</code> is the parallel computing version of <code>statind</code>, it  takes the same input arguments and keyword options as <code>statind</code>.</p>
+</div>
+
 
 
 ### Anomaly Index Number Calculation (`anomalyind`)
@@ -227,6 +234,11 @@ molscore&#40;dir_tsAIN,dir_catalog,dir_molchan&#41;;</code></pre>
   ![](struct_molchan.png)
 
 
+<div class="markdown"><p><code>molscore_parfor</code> is the parallel computing version of <code>molscore</code>, it  takes the same input arguments and keyword options as <code>molscore</code>.</p>
+</div>
+
+
+
 ### Joint-station (3-D) TIP and Molchan Score Calculation (`molscore3`)
 
 <div class="markdown"><p><code>molscore3</code> calculates the joint-station TIP, the Molchan score  between EQK and TIP, the Hit rate, and the earthquake probability. The calculation is based on optimized model given by <code>molscore</code>.</p>
@@ -302,6 +314,11 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 - The output directory and data structure is:
   ![](struct_jointstation.png)
   
+
+<div class="markdown"><p><code>molscore3_parfor</code> is the parallel computing version of <code>molscore3</code>, it  takes the same input arguments and keyword options as <code>molscore3</code>.</p>
+</div>
+
+
 ## Subfunctions
 Subfunctions are those a user normally do not have a chance to use. However, if you are a developer, the information will be very helpful.
 
@@ -663,7 +680,32 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 
 ### Earthquake Catalog Formatting (`checkcatalog`)
 
-<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  If the <code>catalog.csv</code> does not meet the required format, error will occur.</p>
+<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
+<ul>
+<li><p>Basicaly the following headers &#40;column names&#41;,</p>
+</li>
+</ul>
+<p>&#123;&#39;time&#39;,&#39;Lon&#39;,&#39;Lat&#39;,&#39;Mag&#39;,&#39;Depth&#39;&#125;, have to exist. Aliases are allowed; see the <strong>Aliases</strong> section below.</p>
+<ul>
+<li><p>The &#39;time&#39; variable should be in the following format: &#39;yyyy/MM/dd</p>
+</li>
+</ul>
+<p>HH:mm&#39;.</p>
+<ul>
+<li><p>Other variables except &#39;time&#39; should belong the class of &#39;double&#39;.</p>
+</li>
+</ul>
+<p><strong>Aliases</strong>:  For convenience, aliases of the column name of an variable in <code>catalog.csv</code> will be automatically converted:</p>
+<ul>
+<li><p>For earthquake magnitudes, the header of either &#123;&#39;Magnitude&#39;, &#39;magnitude&#39;, &#39;ML&#39;&#125; will be automatically converted to &#39;Mag&#39;.</p>
+</li>
+<li><p>For depths, the header of either &#123;&#39;depth&#39;, &#39;dep&#39;, &#39;Dep&#39;&#125; will be converted to &#39;Depth&#39;.</p>
+</li>
+<li><p>For longitude and latitude, either &#123;&#39;lon&#39;, &#39;longitude&#39;, &#39;Longitude&#39;&#125;,</p>
+</li>
+</ul>
+<p>&#123;&#39;lat&#39;, &#39;latitude&#39;, &#39;Latitude&#39;&#125; will be converted to &#39;Lon&#39; and &#39;Lat&#39;, respectively.</p>
+<p>For convenience, in <code>catalog.csv</code>, if the event time is written in separated two columns &#39;date&#39; and &#39;time&#39;,  with format &#39;yyyy-mm-dd&#39; &#40;or &#39;yyyy/mm/dd&#39;&#41; for &#39;date&#39; and &#39;hh:MM:ss&#39; &#40;or &#39;hh:MM&#39;&#41;, they will be merged  as a single &#39;time&#39; variable sufficing the format mentioned before.</p>
 </div>
 
 
@@ -905,7 +947,7 @@ In fact, all input/output directories can be arbitrarily assigned; we also provi
 
 #### Input/Output Directory Selection (`dirselectassign`)
 
-<div class="markdown"><p><code>dirselectassign&#40;var_names...&#41;</code>  prompt user to select directories in a dialog box, and assigned the  selected path to workspace with default variable name. If a variable with the same name as the default name has already in the workspace, its assignment will be ignored &#40;i.e. its dialog box won&#39;t pop out&#41;. This is a tool for convenience. You can always assign directories  explicitly to variable with any name you like.</p>
+<div class="markdown"><p><code>dirselectassign&#40;var_names...&#41;</code>  prompts user to select directories in a dialog box, and assigned the  selected path to workspace with default variable name. If a variable with the same name as the default name has already in the workspace, its assignment will be ignored &#40;i.e. its dialog box won&#39;t pop out&#41;. This is a tool for convenience. You can always assign directories  explicitly to variable with any name you like.</p>
 <p><strong>Example:</strong></p>
 <ul>
 <li><p>Four windows will pop out one by one allowing you to assign directories to variables  <code>dir_stat</code>, <code>dir_tsAIN</code>, <code>dir_molchan</code>, <code>dir_jointstation</code>: </p>
