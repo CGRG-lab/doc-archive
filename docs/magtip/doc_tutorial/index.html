@@ -16,7 +16,7 @@
 <link rel=icon type=image/png href=/doc-archive/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/doc-archive/favicons/android-192x192.png sizes=192x192>
 <title>Introduction and Tutorial | doc-archive</title>
-<meta name=description content>
+<meta name=description content=" …">
 <meta property="og:title" content="Introduction and Tutorial">
 <meta property="og:description" content="Docsy does docs">
 <meta property="og:type" content="website">
@@ -125,12 +125,12 @@ English
 <input type=checkbox id=m-doc-archivedocsmagtip-check>
 <label for=m-doc-archivedocsmagtip-check><a href=/doc-archive/docs/magtip/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtip><span>MagTIP</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
-<input type=checkbox id=m-doc-archivedocsmagtipdoc_library-check>
-<label for=m-doc-archivedocsmagtipdoc_library-check><a href=/doc-archive/docs/magtip/doc_library/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_library><span>Library</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
 <input type=checkbox id=m-doc-archivedocsmagtipdoc_tutorial-check>
 <label for=m-doc-archivedocsmagtipdoc_tutorial-check><a href=/doc-archive/docs/magtip/doc_tutorial/ title="Introduction and Tutorial" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_tutorial><span>Introduction & Tutorial</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
+<input type=checkbox id=m-doc-archivedocsmagtipdoc_library-check>
+<label for=m-doc-archivedocsmagtipdoc_library-check><a href=/doc-archive/docs/magtip/doc_library/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_library><span>Library</span></a></label>
 </li>
 </ul>
 </li>
@@ -149,6 +149,7 @@ English
 <div class=td-toc><nav id=TableOfContents>
 <ul>
 <li><a href=#introduction>Introduction</a></li>
+<li><a href=#environment>Environment</a></li>
 <li><a href=#getting-started>Getting Started</a>
 <ul>
 <li><a href=#the-sample-script-for-everything>The Sample Script for Everything</a></li>
@@ -197,6 +198,10 @@ The probability of capturing a target event in space and time can be derived bas
 As a result, either the conversion for fitting new data to old format (where some information must lose), or an extra waiting period (e.g. 7 years) for re-training models with new data, is required.
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.</p>
 <p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.</p>
+<h2 id=environment>Environment</h2>
+<pre class=julia-error>
+ERROR: UndefVarError: getdoc not defined
+</pre>
 <h2 id=getting-started>Getting Started</h2>
 <p>The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as &ldquo;.mat&rdquo; files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by <code>dir_</code>; for example, <code>dir_data</code> is the directory for the formatted geomagnetic data, and <code>dir_stat</code> is the directory for statistic indices.
@@ -373,7 +378,7 @@ You can convert the data by simply applying:</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 12, 2021: <a href=https://github.com/CGRG-lab/doc-archive/commit/e1d8e65ba4bf08847c37b9af40674741dbe00705>fix header level (e1d8e65)</a>
+Last modified January 7, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/b4f32e7d9b3e5c081bfa3313ca144290066414b5>add #environment in doc_tutorial and missing imgs. (b4f32e7)</a>
 </div>
 </div>
 </main>
