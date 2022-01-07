@@ -125,12 +125,12 @@ English
 <input type=checkbox id=m-doc-archivedocsmagtip-check>
 <label for=m-doc-archivedocsmagtip-check><a href=/doc-archive/docs/magtip/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtip><span>MagTIP</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
-<input type=checkbox id=m-doc-archivedocsmagtipdoc_tutorial-check>
-<label for=m-doc-archivedocsmagtipdoc_tutorial-check><a href=/doc-archive/docs/magtip/doc_tutorial/ title="Introduction and Tutorial" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_tutorial><span>Introduction & Tutorial</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
 <input type=checkbox id=m-doc-archivedocsmagtipdoc_library-check>
 <label for=m-doc-archivedocsmagtipdoc_library-check><a href=/doc-archive/docs/magtip/doc_library/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_library><span>Library</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
+<input type=checkbox id=m-doc-archivedocsmagtipdoc_tutorial-check>
+<label for=m-doc-archivedocsmagtipdoc_tutorial-check><a href=/doc-archive/docs/magtip/doc_tutorial/ title="Introduction and Tutorial" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_tutorial><span>Introduction & Tutorial</span></a></label>
 </li>
 </ul>
 </li>
@@ -230,6 +230,8 @@ The four main functions are wrapper functions for routine training and forecasti
 </li>
 </ul>
 </li>
+<li><p>'Test': It take only the assigned ratio (0-1) of data (files) in the directory <code>dir_originalfiles</code>. The files are randomly chosen. This option should only be applied when you want to test your code for reducing the overall computing time. Default is 0 (when the assigned value for 'Test' is $\leq 0$ or $\geq 1$, there is no reduction in the data list).</p>
+</li>
 </ul>
 <p><strong>NOTICE:</strong></p>
 <ul>
@@ -302,6 +304,8 @@ The four main functions are wrapper functions for routine training and forecasti
 <li>The output directory and data structure is:
 <img src=struct_stat.png alt></li>
 </ul>
+<div class=markdown><p><code>statind_parfor</code> is the parallel computing version of <code>statind</code>, it takes the same input arguments and keyword options as <code>statind</code>.</p>
+</div>
 <h3 id=anomaly-index-number-calculation-anomalyind>Anomaly Index Number Calculation (<code>anomalyind</code>)</h3>
 <div class=markdown><p><code>anomalyind(dir_stat,dir_output)</code> calculates anomaly index number (AIN) according to a list of $A_\text{thr}$; <code>dir_out</code> is where the output variables stored. </p>
 <p><strong>Example:</strong></p>
@@ -393,6 +397,8 @@ molscore&#40;dir_tsAIN,dir_catalog,dir_molchan&#41;;</code></pre>
 <li>The output directory and data structure is:
 <img src=struct_molchan.png alt></li>
 </ul>
+<div class=markdown><p><code>molscore_parfor</code> is the parallel computing version of <code>molscore</code>, it takes the same input arguments and keyword options as <code>molscore</code>.</p>
+</div>
 <h3 id=joint-station-3-d-tip-and-molchan-score-calculation-molscore3>Joint-station (3-D) TIP and Molchan Score Calculation (<code>molscore3</code>)</h3>
 <div class=markdown><p><code>molscore3</code> calculates the joint-station TIP, the Molchan score between EQK and TIP, the Hit rate, and the earthquake probability. The calculation is based on optimized model given by <code>molscore</code>.</p>
 <p><strong>Example:</strong></p>
@@ -466,6 +472,8 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 <li>The output directory and data structure is:
 <img src=struct_jointstation.png alt></li>
 </ul>
+<div class=markdown><p><code>molscore3_parfor</code> is the parallel computing version of <code>molscore3</code>, it takes the same input arguments and keyword options as <code>molscore3</code>.</p>
+</div>
 <h2 id=subfunctions>Subfunctions</h2>
 <p>Subfunctions are those a user normally do not have a chance to use. However, if you are a developer, the information will be very helpful.</p>
 <h3 id=sum-of-anomaly-indices-convain>Sum of Anomaly Indices (<code>convAIN</code>)</h3>
@@ -787,7 +795,32 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 <div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>station_location.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>station_location.csv</code> to <code>station_location.mat</code>. If the <code>station_location.csv</code> does not meet the required format, error will occur.</p>
 </div>
 <h3 id=earthquake-catalog-formatting-checkcatalog>Earthquake Catalog Formatting (<code>checkcatalog</code>)</h3>
-<div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>catalog.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>. If the <code>catalog.csv</code> does not meet the required format, error will occur.</p>
+<div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>catalog.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>. If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
+<ul>
+<li><p>Basicaly the following headers (column names),</p>
+</li>
+</ul>
+<p>{'time','Lon','Lat','Mag','Depth'}, have to exist. Aliases are allowed; see the <strong>Aliases</strong> section below.</p>
+<ul>
+<li><p>The 'time' variable should be in the following format: 'yyyy/MM/dd</p>
+</li>
+</ul>
+<p>HH:mm'.</p>
+<ul>
+<li><p>Other variables except 'time' should belong the class of 'double'.</p>
+</li>
+</ul>
+<p><strong>Aliases</strong>: For convenience, aliases of the column name of an variable in <code>catalog.csv</code> will be automatically converted:</p>
+<ul>
+<li><p>For earthquake magnitudes, the header of either {'Magnitude', 'magnitude', 'ML'} will be automatically converted to 'Mag'.</p>
+</li>
+<li><p>For depths, the header of either {'depth', 'dep', 'Dep'} will be converted to 'Depth'.</p>
+</li>
+<li><p>For longitude and latitude, either {'lon', 'longitude', 'Longitude'},</p>
+</li>
+</ul>
+<p>{'lat', 'latitude', 'Latitude'} will be converted to 'Lon' and 'Lat', respectively.</p>
+<p>For convenience, in <code>catalog.csv</code>, if the event time is written in separated two columns 'date' and 'time', with format 'yyyy-mm-dd' (or 'yyyy/mm/dd') for 'date' and 'hh:MM:ss' (or 'hh:MM'), they will be merged as a single 'time' variable sufficing the format mentioned before.</p>
 </div>
 <h3 id=generate-model-parameters-modparam>Generate Model Parameters (<code>modparam</code>)</h3>
 <div class=markdown><p>In MagTIP, model parameters defines TIP and target earthquakes (EQK). <code>[PredParam,varargout]=modparam()</code> generate the whole set of model parameters that are going to be used in the training phase by <code>molscore</code>. </p>
@@ -981,7 +1014,7 @@ plotEQKTIP3&#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&#
 <p><strong>Example:</strong> <code>[dir_stat, dir_tsAIN, dir_molchan, dir_jointstation] = mkdir_default(fullfile(pwd,'output_var'))</code></p>
 </div>
 <h4 id=inputoutput-directory-selection-dirselectassign>Input/Output Directory Selection (<code>dirselectassign</code>)</h4>
-<div class=markdown><p><code>dirselectassign(var_names...)</code> prompt user to select directories in a dialog box, and assigned the selected path to workspace with default variable name. If a variable with the same name as the default name has already in the workspace, its assignment will be ignored (i.e. its dialog box won't pop out). This is a tool for convenience. You can always assign directories explicitly to variable with any name you like.</p>
+<div class=markdown><p><code>dirselectassign(var_names...)</code> prompts user to select directories in a dialog box, and assigned the selected path to workspace with default variable name. If a variable with the same name as the default name has already in the workspace, its assignment will be ignored (i.e. its dialog box won't pop out). This is a tool for convenience. You can always assign directories explicitly to variable with any name you like.</p>
 <p><strong>Example:</strong></p>
 <ul>
 <li><p>Four windows will pop out one by one allowing you to assign directories to variables <code>dir_stat</code>, <code>dir_tsAIN</code>, <code>dir_molchan</code>, <code>dir_jointstation</code>: </p>
@@ -999,7 +1032,7 @@ plotEQKTIP3&#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&#
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 11, 2021: <a href=https://github.com/CGRG-lab/doc-archive/commit/432bf85107d01de7a02239beb250163603cc6ca5>test git modify; reconstruct magtip (432bf85)</a>
+Last modified January 7, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/2c70343cb657b2b99785f0e90322ab7c80d0d835>update magtip's doc (2c70343)</a>
 </div>
 </div>
 </main>
@@ -1013,7 +1046,7 @@ Last modified November 11, 2021: <a href=https://github.com/CGRG-lab/doc-archive
 <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
 </div>
 <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-<small class=text-white>&copy; 2021 CGRG All Rights Reserved</small>
+<small class=text-white>&copy; 2022 CGRG All Rights Reserved</small>
 </div>
 </div>
 </div>
