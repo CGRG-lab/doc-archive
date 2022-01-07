@@ -1,18 +1,16 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Introduction and Tutorial"
-date: "2021-11-12"
+date: "2022-01-07"
 linkTitle: "Introduction & Tutorial"
 ---
 
 
-<!-- TODO: git commit and push unpredictable-life
-FIXME: Delete the following in the future 
-
-`cd` to the folder where there is `.jmd`, and 
+<!-- 
 ```
+cd("doc_tutorial")
 lazyhugo();
-cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\usermanual-and-docs")
+cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_tutorial")
 ``` -->
 
 ## Introduction
@@ -26,6 +24,15 @@ As a result, either the conversion for fitting new data to old format (where som
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system. 
 
 The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.
+
+
+## Environment
+<pre class="julia-error">
+ERROR: UndefVarError: getdoc not defined
+</pre>
+
+
+
 
 ## Getting Started
 The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as ".mat" files.
