@@ -1,6 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Developing MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</guid><description>
 &lt;h2 id="instruction">Instruction&lt;/h2>
 &lt;ul>
+&lt;li>MagTIP-2022 depends on &lt;a href="https://github.com/okatsn/toolbox">okatsn&amp;rsquo;s toolbox&lt;/a>; therefore, in git bash &lt;code>git clone https://github.com/okatsn/toolbox.git&lt;/code> first, the target directory can be arbitrary chosen.&lt;/li>
 &lt;li>Go to &lt;a href="https://github.com/okatsn/MagTIP-2022/">https://github.com/okatsn/MagTIP-2022/&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
 &lt;li>In git bash clone your fork to local,
 &lt;ul>
@@ -14,7 +15,7 @@
 &lt;/blockquote>
 &lt;/li>
 &lt;/ul>
-&lt;p>For more about how to use git, see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
+&lt;p>For more about how to use git, see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!--
 ```
 cd("doc_tutorial")
@@ -30,6 +31,7 @@ As a result, either the conversion for fitting new data to old format (where som
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.&lt;/p>
 &lt;p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.&lt;/p>
 &lt;h2 id="environment">Environment&lt;/h2>
+&lt;p>Type &lt;code>license('inuse')&lt;/code> or &lt;code>ver&lt;/code> to see all the toolboxes you have.&lt;/p>
 &lt;div class="markdown">&lt;p>&lt;strong>MATLAB Version&lt;/strong>: 9.11.0.1809720 &amp;#40;R2021b&amp;#41; Update 1 &lt;strong>Operating System&lt;/strong>: Microsoft Windows 10 企業版 Version 10.0 &amp;#40;Build 19044&amp;#41; &lt;strong>Java Version&lt;/strong>: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot&amp;#40;TM&amp;#41; 64-Bit Server VM mixed mode&lt;/p>
 &lt;p>&lt;strong>Toolbox in-use&lt;/strong>:&lt;/p>
 &lt;ul>
