@@ -14,4 +14,70 @@
 &lt;/ul></description></item><item><title>Docs: Inverse problem</title><link>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/inverse_problem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/inverse_problem/</guid><description>
 &lt;ul>
 &lt;li>&lt;a href="https://giftoolscookbook.readthedocs.io/en/latest/content/fundamentals/index.html">GIFtoolsCookbook - Fundamentals of Inversions&lt;/a> - Briefly describe the basic concepts of inversion, readers can further study the keywords mentioned in the article.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Git</title><link>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/</link><pubDate>Thu, 05 Aug 2021 17:24:17 +0800</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/</guid><description>
+&lt;h3 id="initiateclone">Initiate/Clone&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>git init&lt;/code>: initiate the current directory as a git repository&lt;/li>
+&lt;li>&lt;code>git clone https://github.com/SOMEONES/ACertainRepo.git&lt;/code>: copy the repository of other&amp;rsquo;s to local&lt;/li>
+&lt;/ul>
+&lt;h3 id="add">Add&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>git remote add origin https://github.com/yourname/YourRepo.git&lt;/code>: create a remote named &lt;code>origin&lt;/code> and establish the connection between local and the remote.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>git add -A&lt;/code>: make every file to be tracked and stage all changes (i.e., make all of them ready to be committed)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="commit-and-push">Commit and push&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>git commit -am &amp;quot;whatever message is OK&amp;quot;&lt;/code>: stage all changes of tracked files and commit; untracked files won&amp;rsquo;t be committed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>git push --set-upstream origin master&lt;/code>: Setting &lt;code>master&lt;/code> as upstream means that from now on the target branch is set to be the &lt;code>master&lt;/code>, and you can push and pull without specifying the target branch.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>💩 Explain furthermore:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.git-tower.com/learn/git/glossary/origin/">&amp;ldquo;origin&amp;rdquo; is a shorthand name for the remote repository that a project was originally cloned from.&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="set-and-sync-with-the-upstream">Set and sync with the upstream&lt;/h3>
+&lt;p>Develop &lt;em>someone&lt;/em> else&amp;rsquo;s project:&lt;/p>
+&lt;ul>
+&lt;li>Go to the project of &lt;em>someone&lt;/em>, for example, &lt;a href="https://github.com/SOMEONES/SOMEONESREPO/">https://github.com/SOMEONES/SOMEONESREPO/&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
+&lt;li>In git bash clone your fork to local,
+&lt;ul>
+&lt;li>for example, &lt;code>git clone https://github.com/YOURNAME/SOMEONESREPO/&lt;/code>&lt;/li>
+&lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">more details about how to clone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>cd SOMEONESREPO&lt;/code> and set the upstream branch for synchronizing with that &lt;em>someone&lt;/em> (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">more details about how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/SOMEONES/SOMEONESREPO/&lt;/code>
+&lt;blockquote>
+&lt;p>you may like to check the current remote repository and upstream by &lt;code>git remote -v&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>&lt;a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-from-the-command-line">Sync with the original (upstream)&lt;/a> by
+&lt;ul>
+&lt;li>&lt;code>git fetch upstream&lt;/code> or &lt;code>git pull upstream master&lt;/code>&lt;/li>
+&lt;li>&lt;code>git merge upstream/master&lt;/code> (merge the current local branch with &lt;code>upstream&lt;/code>&amp;rsquo;s &lt;code>master&lt;/code> branch)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>📖Explain&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>fetch&lt;/code> retrieve the latest metadata info from remote; &lt;code>pull&lt;/code> does that AND copy those changes from remote repository to local.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;h3 id="handling-file-renames-in-git">Handling file renames in Git&lt;/h3>
+&lt;p>&lt;code>git mv css/iphone.css css/mobile.css&lt;/code>
+See &lt;a href="https://stackoverflow.com/questions/2641146/handling-file-renames-in-git">this&lt;/a>.&lt;/p>
+&lt;h3 id="other-useful-commands">Other useful commands&lt;/h3>
+&lt;p>&lt;a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Cheat sheet&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>use &lt;code>git log&lt;/code> to view the commit history&lt;/li>
+&lt;li>use &lt;code>git status&lt;/code> to see the current status (list the staged and unstaged files that have beem modified, added, or deleted.)&lt;/li>
 &lt;/ul></description></item></channel></rss>

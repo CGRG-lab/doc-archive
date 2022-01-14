@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.0">
 <link rel=alternate type=application/rss+xml href=https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/index.xml>
 <meta name=robots content="index, follow">
 <link rel="shortcut icon" href=/doc-archive/favicons/favicon.ico>
@@ -110,6 +110,9 @@ English
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocslearning-resourcesinverse_problem-li>
 <input type=checkbox id=m-doc-archivedocslearning-resourcesinverse_problem-check>
 <label for=m-doc-archivedocslearning-resourcesinverse_problem-check><a href=/doc-archive/docs/learning-resources/inverse_problem/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocslearning-resourcesinverse_problem><span>Inverse problem</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocslearning-resourcesgit-li>
+<input type=checkbox id=m-doc-archivedocslearning-resourcesgit-check>
+<label for=m-doc-archivedocslearning-resourcesgit-check><a href=/doc-archive/docs/learning-resources/git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocslearning-resourcesgit><span>Git</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocstools-li>
@@ -125,7 +128,10 @@ English
 <input type=checkbox id=m-doc-archivedocsmagtip-check>
 <label for=m-doc-archivedocsmagtip-check><a href=/doc-archive/docs/magtip/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtip><span>MagTIP</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_git-li>
+<input type=checkbox id=m-doc-archivedocsmagtipdoc_git-check>
+<label for=m-doc-archivedocsmagtipdoc_git-check><a href=/doc-archive/docs/magtip/doc_git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_git><span>Developing MagTIP</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
 <input type=checkbox id=m-doc-archivedocsmagtipdoc_tutorial-check>
 <label for=m-doc-archivedocsmagtipdoc_tutorial-check><a href=/doc-archive/docs/magtip/doc_tutorial/ title="Introduction and Tutorial" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_tutorial><span>Introduction & Tutorial</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
@@ -795,7 +801,7 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 <div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>station_location.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>station_location.csv</code> to <code>station_location.mat</code>. If the <code>station_location.csv</code> does not meet the required format, error will occur.</p>
 </div>
 <h3 id=earthquake-catalog-formatting-checkcatalog>Earthquake Catalog Formatting (<code>checkcatalog</code>)</h3>
-<div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>catalog.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>. If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
+<div class=markdown><p><code>[isvalid, msg] = checkcatalog(dir_catalog)</code> check if <code>catalog.mat/csv</code> exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>. After successfully create <code>catalog.mat</code>, the original <code>catalog.csv</code> will be moved into the folder 'delete_me'. If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
 <ul>
 <li><p>Basicaly the following headers (column names),</p>
 </li>
@@ -1032,7 +1038,7 @@ plotEQKTIP3&#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&#
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 7, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/2c70343cb657b2b99785f0e90322ab7c80d0d835>update magtip's doc (2c70343)</a>
+Last modified January 14, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/26963d462172ce34c810e38884b22d2492efb184>update magtip docs (26963d4)</a>
 </div>
 </div>
 </main>

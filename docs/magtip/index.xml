@@ -1,4 +1,20 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Developing MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</guid><description>
+&lt;h2 id="instruction">Instruction&lt;/h2>
+&lt;ul>
+&lt;li>Go to &lt;a href="https://github.com/okatsn/MagTIP-2022/">https://github.com/okatsn/MagTIP-2022/&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
+&lt;li>In git bash clone your fork to local,
+&lt;ul>
+&lt;li>for example, &lt;code>git clone https://github.com/YOURNAME/MagTIP-2022/&lt;/code>&lt;/li>
+&lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">more details about how to clone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>cd MagTIP-2022&lt;/code> and set up for synchronization (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">see here for how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/okatsn/MagTIP-2022/&lt;/code>
+&lt;blockquote>
+&lt;p>you may like to check the current remote repository and upstream by &lt;code>git remote -v&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ul>
+&lt;p>For more about how to use git, see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!--
 ```
 cd("doc_tutorial")
@@ -14,18 +30,36 @@ As a result, either the conversion for fitting new data to old format (where som
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.&lt;/p>
 &lt;p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.&lt;/p>
 &lt;h2 id="environment">Environment&lt;/h2>
-&lt;pre class="julia-error">
-ERROR: UndefVarError: getdoc not defined
-&lt;/pre>
+&lt;div class="markdown">&lt;p>&lt;strong>MATLAB Version&lt;/strong>: 9.11.0.1809720 &amp;#40;R2021b&amp;#41; Update 1 &lt;strong>Operating System&lt;/strong>: Microsoft Windows 10 企業版 Version 10.0 &amp;#40;Build 19044&amp;#41; &lt;strong>Java Version&lt;/strong>: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot&amp;#40;TM&amp;#41; 64-Bit Server VM mixed mode&lt;/p>
+&lt;p>&lt;strong>Toolbox in-use&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>MATLAB Version 9.11 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Curve Fitting Toolbox Version 3.6 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Financial Toolbox Version 6.2 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Mapping Toolbox Version 5.2 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Optimization Toolbox Version 9.2 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Parallel Computing Toolbox Version 7.5 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Signal Processing Toolbox Version 8.7 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Statistics and Machine Learning Toolbox Version 12.2 &amp;#40;R2021b&amp;#41;&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
 &lt;h2 id="getting-started">Getting Started&lt;/h2>
 &lt;p>The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as &amp;ldquo;.mat&amp;rdquo; files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by &lt;code>dir_&lt;/code>; for example, &lt;code>dir_data&lt;/code> is the directory for the formatted geomagnetic data, and &lt;code>dir_stat&lt;/code> is the directory for statistic indices.
-The &lt;code>dir_&lt;/code>-prefixed variables are each a sequence of characters being something like &lt;code>'D:\MagTIP-2021\output_var\StatisticIndex'&lt;/code>.&lt;/p>
+The &lt;code>dir_&lt;/code>-prefixed variables are each a sequence of characters being something like &lt;code>'D:\MagTIP-2022\output_var\StatisticIndex'&lt;/code>.&lt;/p>
 &lt;h3 id="the-sample-script-for-everything">The Sample Script for Everything&lt;/h3>
-&lt;p>There is a script &lt;strong>&amp;ldquo;MagTIP_2021b.m&amp;rdquo;&lt;/strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:&lt;/p>
+&lt;p>There is a script &lt;strong>&amp;ldquo;demo/demo_script.m&amp;rdquo;&lt;/strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:&lt;/p>
 &lt;ul>
-&lt;li>switch current directory to the folder named &amp;ldquo;MagTIP-2021&amp;rdquo;&lt;/li>
-&lt;li>run section(s) in the script of &amp;ldquo;MagTIP_2021b.m&amp;rdquo;&lt;/li>
+&lt;li>switch current directory to the folder named &amp;ldquo;MagTIP-2022&amp;rdquo;&lt;/li>
+&lt;li>run section(s) in the script&lt;/li>
 &lt;/ul>
 &lt;p>In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (&lt;code>dir_data&lt;/code>) and loading the toolbox (&lt;code>dir_toolbox&lt;/code>).
 Select the right folders as instructed, and they will be automatically added to path and be ready to use.&lt;/p>
@@ -54,7 +88,7 @@ That is, the code chunk above is equivalent to&lt;/p>
 &lt;!-- `LaTeX Error: Cannot determine size of graphic in ../fig/dirtree.svg (no Bound ingBox).` when doctype is "md2pdf" -->
 &lt;p>You can create this directory structure manually by adding new folders using your OS&amp;rsquo;s interface.
 You can also assign the &lt;code>dir_&lt;/code>-prefixed variables by using &lt;code>dirselectassign(...)&lt;/code>, where windows pop out for selecting existing directory.
-For more information, see &amp;ldquo;MagTIP_2021b.m&amp;rdquo; and &amp;ldquo;dirselectassign.m&amp;rdquo;.&lt;/p>
+For more information, see &amp;ldquo;demo_script.m&amp;rdquo; and &amp;ldquo;dirselectassign.m&amp;rdquo;.&lt;/p>
 &lt;p>&lt;strong>⚠Notice:&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>&lt;code>dir_spreadsheet&lt;/code> must contain &lt;code>catalog.csv&lt;/code> and &lt;code>station_location.csv&lt;/code>, with the first row (column names) being &amp;lsquo;code&amp;rsquo;, &amp;lsquo;format&amp;rsquo;, &amp;lsquo;Lon&amp;rsquo;, &amp;lsquo;Lat&amp;rsquo; for &lt;code>station_location.csv&lt;/code>, and &amp;lsquo;time&amp;rsquo;, &amp;lsquo;Lon&amp;rsquo;, &amp;lsquo;Lat&amp;rsquo;, &amp;lsquo;Depth&amp;rsquo;, and &amp;lsquo;Mag&amp;rsquo; for &lt;code>catalog.csv&lt;/code>.&lt;/li>
@@ -150,6 +184,7 @@ here is an example for &lt;code>catalog.csv&lt;/code>:&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;p>Also see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/#station-list-formatting-checkstation">checkstation.m&lt;/a> and &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/#earthquake-catalog-formatting-checkcatalog">checkcatalog.m&lt;/a>.&lt;/p>
 &lt;h3 id="format-of-geomagnetic-data">Format of Geomagnetic Data&lt;/h3>
 &lt;p>All original files of geomagnetic timeseries have to be converted to the new format before any function that takes &lt;code>dir_data&lt;/code> as an input argument.
 You can convert the data by simply applying:&lt;/p>
@@ -164,13 +199,18 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/ul>
 &lt;h2 id="the-main-process">The Main Process&lt;/h2>
 &lt;p>After all data are prepared (those in &lt;code>dir_data&lt;/code> and &lt;code>dir_spreadsheet&lt;/code>), you can run the whole forecasting process simply with:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">statind&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_data&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_stat&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">statind&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_data&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_stat&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">% For multi-threading, use statind_parfor(...) &lt;/span>
 &lt;span style="color:#000">anomalyind&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_stat&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000">molscore&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
-&lt;span style="color:#000">molscore3&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_jointstation&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
+&lt;span style="color:#000">molscore&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">% For multi-threading, use molscore_parfor(...)&lt;/span>
+&lt;span style="color:#000">molscore3&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_tsAIN&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_molchan&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_catalog&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#000">dir_jointstation&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span> &lt;span style="color:#8f5902;font-style:italic">%For multi-threading, use molscore3_parfor(...) &lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In which, &lt;code>statind&lt;/code> calculates specific statistical quantities of each day; &lt;code>anomalyind&lt;/code> calculates anomaly index according to different $A_\text{thr}$ threshold; &lt;code>molscore&lt;/code> gives optimized models; and &lt;code>molscore3&lt;/code> use optimized models to calculate probability forecasts.&lt;/p>
 &lt;h2 id="visualization-of-the-results">Visualization of the Results&lt;/h2>
 &lt;p>There are several tools provided for visualizing the result. For detailed information about these tools, please refer to the &lt;a href="../doc_library/#plotting">Library/Tools/Plotting&lt;/a>.&lt;/p>
+&lt;p>There is also a script &lt;strong>&amp;ldquo;demo/demo_visualization.m&amp;rdquo;&lt;/strong>; you can easily obtain plots of the results following the steps below:&lt;/p>
+&lt;ul>
+&lt;li>switch current directory to the folder named &amp;ldquo;MagTIP-2022&amp;rdquo;&lt;/li>
+&lt;li>run section(s) in the script&amp;quot;&lt;/li>
+&lt;/ul>
 &lt;h3 id="probability-forecast">Probability Forecast&lt;/h3>
 &lt;p>&lt;code>plotProbability&lt;/code> visualizes the probability of the calculated results (which is stored in &lt;code>dir_jointstation&lt;/code> in default), with options for whether to plot epicenters of target events (目標地震) and for specifying the date time to plot, as an example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="color:#000">dir_prob&lt;/span> &lt;span style="color:#000;font-weight:bold">=&lt;/span> &lt;span style="color:#000">fullfile&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_jointstation&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;png&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;prob&amp;#39;&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
@@ -190,7 +230,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="plotEQKTIP_ex1.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
 &lt;!--
 `cd` to the folder where there is `.jmd`, and
 ```
@@ -795,7 +835,7 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;div class="markdown">&lt;p>&lt;code>&amp;#91;isvalid, msg&amp;#93; &amp;#61; checkcatalog&amp;#40;dir_catalog&amp;#41;&lt;/code> check if &lt;code>station_location.mat/csv&lt;/code> exist in &lt;code>dir_catalog&lt;/code>, and convert the &lt;code>station_location.csv&lt;/code> to &lt;code>station_location.mat&lt;/code>. If the &lt;code>station_location.csv&lt;/code> does not meet the required format, error will occur.&lt;/p>
 &lt;/div>
 &lt;h3 id="earthquake-catalog-formatting-checkcatalog">Earthquake Catalog Formatting (&lt;code>checkcatalog&lt;/code>)&lt;/h3>
-&lt;div class="markdown">&lt;p>&lt;code>&amp;#91;isvalid, msg&amp;#93; &amp;#61; checkcatalog&amp;#40;dir_catalog&amp;#41;&lt;/code> check if &lt;code>catalog.mat/csv&lt;/code> exist in &lt;code>dir_catalog&lt;/code>, and convert the &lt;code>catalog.csv&lt;/code> to &lt;code>catalog.mat&lt;/code>. If the &lt;code>catalog.csv&lt;/code> does not meet the required format, error will occur. The &lt;code>catalog.csv&lt;/code> has to suffice the following condtions:&lt;/p>
+&lt;div class="markdown">&lt;p>&lt;code>&amp;#91;isvalid, msg&amp;#93; &amp;#61; checkcatalog&amp;#40;dir_catalog&amp;#41;&lt;/code> check if &lt;code>catalog.mat/csv&lt;/code> exist in &lt;code>dir_catalog&lt;/code>, and convert the &lt;code>catalog.csv&lt;/code> to &lt;code>catalog.mat&lt;/code>. After successfully create &lt;code>catalog.mat&lt;/code>, the original &lt;code>catalog.csv&lt;/code> will be moved into the folder &amp;#39;delete_me&amp;#39;. If the &lt;code>catalog.csv&lt;/code> does not meet the required format, error will occur. The &lt;code>catalog.csv&lt;/code> has to suffice the following condtions:&lt;/p>
 &lt;ul>
 &lt;li>&lt;p>Basicaly the following headers &amp;#40;column names&amp;#41;,&lt;/p>
 &lt;/li>

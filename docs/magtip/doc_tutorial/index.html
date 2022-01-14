@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.0">
 <link rel=alternate type=application/rss+xml href=https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/index.xml>
 <meta name=robots content="index, follow">
 <link rel="shortcut icon" href=/doc-archive/favicons/favicon.ico>
@@ -110,6 +110,9 @@ English
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocslearning-resourcesinverse_problem-li>
 <input type=checkbox id=m-doc-archivedocslearning-resourcesinverse_problem-check>
 <label for=m-doc-archivedocslearning-resourcesinverse_problem-check><a href=/doc-archive/docs/learning-resources/inverse_problem/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-doc-archivedocslearning-resourcesinverse_problem><span>Inverse problem</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocslearning-resourcesgit-li>
+<input type=checkbox id=m-doc-archivedocslearning-resourcesgit-check>
+<label for=m-doc-archivedocslearning-resourcesgit-check><a href=/doc-archive/docs/learning-resources/git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocslearning-resourcesgit><span>Git</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-doc-archivedocstools-li>
@@ -125,7 +128,10 @@ English
 <input type=checkbox id=m-doc-archivedocsmagtip-check>
 <label for=m-doc-archivedocsmagtip-check><a href=/doc-archive/docs/magtip/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtip><span>MagTIP</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_git-li>
+<input type=checkbox id=m-doc-archivedocsmagtipdoc_git-check>
+<label for=m-doc-archivedocsmagtipdoc_git-check><a href=/doc-archive/docs/magtip/doc_git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_git><span>Developing MagTIP</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
 <input type=checkbox id=m-doc-archivedocsmagtipdoc_tutorial-check>
 <label for=m-doc-archivedocsmagtipdoc_tutorial-check><a href=/doc-archive/docs/magtip/doc_tutorial/ title="Introduction and Tutorial" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_tutorial><span>Introduction & Tutorial</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
@@ -199,18 +205,36 @@ As a result, either the conversion for fitting new data to old format (where som
 The time scale of the evolution of the underground dynamical system is generally thought to be large, hence data collected from old stations are precious. For being able to fully utilizing both the data from the most modern instruments and older sensors, the project of this year aims for the multivariate MagTIP forecasting system.</p>
 <p>The newest multivariate MagTIP forecasting system not only supports three-component and one-component geomagnetic signals simultaneously, but also allows additional earthquake-relevant time series to be involved in calculating TIP.</p>
 <h2 id=environment>Environment</h2>
-<pre class=julia-error>
-ERROR: UndefVarError: getdoc not defined
-</pre>
+<div class=markdown><p><strong>MATLAB Version</strong>: 9.11.0.1809720 (R2021b) Update 1 <strong>Operating System</strong>: Microsoft Windows 10 企業版 Version 10.0 (Build 19044) <strong>Java Version</strong>: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode</p>
+<p><strong>Toolbox in-use</strong>:</p>
+<ul>
+<li><p>MATLAB Version 9.11 (R2021b)</p>
+</li>
+<li><p>Curve Fitting Toolbox Version 3.6 (R2021b)</p>
+</li>
+<li><p>Financial Toolbox Version 6.2 (R2021b)</p>
+</li>
+<li><p>Mapping Toolbox Version 5.2 (R2021b)</p>
+</li>
+<li><p>Optimization Toolbox Version 9.2 (R2021b)</p>
+</li>
+<li><p>Parallel Computing Toolbox Version 7.5 (R2021b)</p>
+</li>
+<li><p>Signal Processing Toolbox Version 8.7 (R2021b)</p>
+</li>
+<li><p>Statistics and Machine Learning Toolbox Version 12.2 (R2021b)</p>
+</li>
+</ul>
+</div>
 <h2 id=getting-started>Getting Started</h2>
 <p>The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as &ldquo;.mat&rdquo; files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by <code>dir_</code>; for example, <code>dir_data</code> is the directory for the formatted geomagnetic data, and <code>dir_stat</code> is the directory for statistic indices.
-The <code>dir_</code>-prefixed variables are each a sequence of characters being something like <code>'D:\MagTIP-2021\output_var\StatisticIndex'</code>.</p>
+The <code>dir_</code>-prefixed variables are each a sequence of characters being something like <code>'D:\MagTIP-2022\output_var\StatisticIndex'</code>.</p>
 <h3 id=the-sample-script-for-everything>The Sample Script for Everything</h3>
-<p>There is a script <strong>&ldquo;MagTIP_2021b.m&rdquo;</strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:</p>
+<p>There is a script <strong>&ldquo;demo/demo_script.m&rdquo;</strong> contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:</p>
 <ul>
-<li>switch current directory to the folder named &ldquo;MagTIP-2021&rdquo;</li>
-<li>run section(s) in the script of &ldquo;MagTIP_2021b.m&rdquo;</li>
+<li>switch current directory to the folder named &ldquo;MagTIP-2022&rdquo;</li>
+<li>run section(s) in the script</li>
 </ul>
 <p>In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (<code>dir_data</code>) and loading the toolbox (<code>dir_toolbox</code>).
 Select the right folders as instructed, and they will be automatically added to path and be ready to use.</p>
@@ -238,7 +262,7 @@ That is, the code chunk above is equivalent to</p>
 <img src=dirtree.svg alt></p>
 <p>You can create this directory structure manually by adding new folders using your OS&rsquo;s interface.
 You can also assign the <code>dir_</code>-prefixed variables by using <code>dirselectassign(...)</code>, where windows pop out for selecting existing directory.
-For more information, see &ldquo;MagTIP_2021b.m&rdquo; and &ldquo;dirselectassign.m&rdquo;.</p>
+For more information, see &ldquo;demo_script.m&rdquo; and &ldquo;dirselectassign.m&rdquo;.</p>
 <p><strong>⚠Notice:</strong></p>
 <ol>
 <li><code>dir_spreadsheet</code> must contain <code>catalog.csv</code> and <code>station_location.csv</code>, with the first row (column names) being &lsquo;code&rsquo;, &lsquo;format&rsquo;, &lsquo;Lon&rsquo;, &lsquo;Lat&rsquo; for <code>station_location.csv</code>, and &lsquo;time&rsquo;, &lsquo;Lon&rsquo;, &lsquo;Lat&rsquo;, &lsquo;Depth&rsquo;, and &lsquo;Mag&rsquo; for <code>catalog.csv</code>.</li>
@@ -334,6 +358,7 @@ here is an example for <code>catalog.csv</code>:</p>
 </tr>
 </tbody>
 </table>
+<p>Also see <a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/#station-list-formatting-checkstation>checkstation.m</a> and <a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/#earthquake-catalog-formatting-checkcatalog>checkcatalog.m</a>.</p>
 <h3 id=format-of-geomagnetic-data>Format of Geomagnetic Data</h3>
 <p>All original files of geomagnetic timeseries have to be converted to the new format before any function that takes <code>dir_data</code> as an input argument.
 You can convert the data by simply applying:</p>
@@ -348,13 +373,18 @@ You can convert the data by simply applying:</p>
 </ul>
 <h2 id=the-main-process>The Main Process</h2>
 <p>After all data are prepared (those in <code>dir_data</code> and <code>dir_spreadsheet</code>), you can run the whole forecasting process simply with:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>statind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_data</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>);</span> 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>statind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_data</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>);</span> <span style=color:#8f5902;font-style:italic>% For multi-threading, use statind_parfor(...) </span>
 <span style=color:#000>anomalyind</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_stat</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>);</span> 
-<span style=color:#000>molscore</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>);</span>
-<span style=color:#000>molscore3</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>);</span>
+<span style=color:#000>molscore</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>);</span> <span style=color:#8f5902;font-style:italic>% For multi-threading, use molscore_parfor(...)</span>
+<span style=color:#000>molscore3</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_tsAIN</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_molchan</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_catalog</span><span style=color:#000;font-weight:700>,</span><span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>);</span> <span style=color:#8f5902;font-style:italic>%For multi-threading, use molscore3_parfor(...) </span>
 </code></pre></div><p>In which, <code>statind</code> calculates specific statistical quantities of each day; <code>anomalyind</code> calculates anomaly index according to different $A_\text{thr}$ threshold; <code>molscore</code> gives optimized models; and <code>molscore3</code> use optimized models to calculate probability forecasts.</p>
 <h2 id=visualization-of-the-results>Visualization of the Results</h2>
 <p>There are several tools provided for visualizing the result. For detailed information about these tools, please refer to the <a href=../doc_library/#plotting>Library/Tools/Plotting</a>.</p>
+<p>There is also a script <strong>&ldquo;demo/demo_visualization.m&rdquo;</strong>; you can easily obtain plots of the results following the steps below:</p>
+<ul>
+<li>switch current directory to the folder named &ldquo;MagTIP-2022&rdquo;</li>
+<li>run section(s) in the script"</li>
+</ul>
 <h3 id=probability-forecast>Probability Forecast</h3>
 <p><code>plotProbability</code> visualizes the probability of the calculated results (which is stored in <code>dir_jointstation</code> in default), with options for whether to plot epicenters of target events (目標地震) and for specifying the date time to plot, as an example:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-matlab data-lang=matlab><span style=color:#000>dir_prob</span> <span style=color:#000;font-weight:700>=</span> <span style=color:#000>fullfile</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>dir_jointstation</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;png&#39;</span><span style=color:#000;font-weight:700>,</span><span style=color:#4e9a06>&#39;prob&#39;</span><span style=color:#000;font-weight:700>);</span>
@@ -378,7 +408,7 @@ You can convert the data by simply applying:</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 7, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/b4f32e7d9b3e5c081bfa3313ca144290066414b5>add #environment in doc_tutorial and missing imgs. (b4f32e7)</a>
+Last modified January 14, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/26963d462172ce34c810e38884b22d2492efb184>update magtip docs (26963d4)</a>
 </div>
 </div>
 </main>
