@@ -8,7 +8,7 @@
 &lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">more details about how to clone&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;code>cd MagTIP-2022&lt;/code> and set up for synchronization (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">see here for how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/okatsn/MagTIP-2022/&lt;/code>
+&lt;li>&lt;code>cd MagTIP-2022&lt;/code> and set up for synchronization (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">see here for how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/okatsn/MagTIP-2022.git&lt;/code>
 &lt;blockquote>
 &lt;p>you may like to check the current remote repository and upstream by &lt;code>git remote -v&lt;/code>.&lt;/p>
 &lt;/blockquote>

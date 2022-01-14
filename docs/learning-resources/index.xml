@@ -15,6 +15,8 @@
 &lt;ul>
 &lt;li>&lt;a href="https://giftoolscookbook.readthedocs.io/en/latest/content/fundamentals/index.html">GIFtoolsCookbook - Fundamentals of Inversions&lt;/a> - Briefly describe the basic concepts of inversion, readers can further study the keywords mentioned in the article.&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Git</title><link>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/</link><pubDate>Thu, 05 Aug 2021 17:24:17 +0800</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/</guid><description>
+&lt;h3 id="download-git">Download GIT&lt;/h3>
+&lt;p>&lt;a href="https://git-scm.com/downloads">https://git-scm.com/downloads&lt;/a>&lt;/p>
 &lt;h3 id="initiateclone">Initiate/Clone&lt;/h3>
 &lt;ul>
 &lt;li>&lt;code>git init&lt;/code>: initiate the current directory as a git repository&lt;/li>
@@ -28,16 +30,22 @@
 &lt;li>
 &lt;p>&lt;code>git add -A&lt;/code>: make every file to be tracked and stage all changes (i.e., make all of them ready to be committed)&lt;/p>
 &lt;/li>
+&lt;li>
+&lt;p>&lt;code>git add --all&lt;/code>: Stage all changes; that is, make every modified files ready to be committed.&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;h3 id="commit-and-push">Commit and push&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;code>git commit -am &amp;quot;whatever message is OK&amp;quot;&lt;/code>: stage all changes of tracked files and commit; untracked files won&amp;rsquo;t be committed.&lt;/p>
+&lt;p>&lt;code>git commit -m &amp;quot;whatever message is OK&amp;quot;&lt;/code>: stage all changes of tracked files and commit; untracked files won&amp;rsquo;t be committed.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>git push --set-upstream origin master&lt;/code>: Setting &lt;code>master&lt;/code> as upstream means that from now on the target branch is set to be the &lt;code>master&lt;/code>, and you can push and pull without specifying the target branch.&lt;/p>
+&lt;p>&lt;code>git push --set-upstream origin master&lt;/code>(the first time) or &lt;code>git push&lt;/code> (therein after)&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;blockquote>
+&lt;p>Setting &lt;code>master&lt;/code> as upstream means that from now on the target branch is set to be the &lt;code>master&lt;/code>, and you can push and pull without specifying the target branch.&lt;/p>
+&lt;/blockquote>
 &lt;blockquote>
 &lt;p>💩 Explain furthermore:&lt;/p>
 &lt;ul>
@@ -47,14 +55,14 @@
 &lt;h3 id="set-and-sync-with-the-upstream">Set and sync with the upstream&lt;/h3>
 &lt;p>Develop &lt;em>someone&lt;/em> else&amp;rsquo;s project:&lt;/p>
 &lt;ul>
-&lt;li>Go to the project of &lt;em>someone&lt;/em>, for example, &lt;a href="https://github.com/SOMEONES/SOMEONESREPO/">https://github.com/SOMEONES/SOMEONESREPO/&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
+&lt;li>Go to the project of &lt;em>someone&lt;/em>, for example, &lt;a href="https://github.com/SOMEONES/SOMEONESREPO">https://github.com/SOMEONES/SOMEONESREPO&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
 &lt;li>In git bash clone your fork to local,
 &lt;ul>
-&lt;li>for example, &lt;code>git clone https://github.com/YOURNAME/SOMEONESREPO/&lt;/code>&lt;/li>
+&lt;li>for example, &lt;code>git clone https://github.com/YOURNAME/SOMEONESREPO.git&lt;/code>&lt;/li>
 &lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">more details about how to clone&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;code>cd SOMEONESREPO&lt;/code> and set the upstream branch for synchronizing with that &lt;em>someone&lt;/em> (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">more details about how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/SOMEONES/SOMEONESREPO/&lt;/code>
+&lt;li>&lt;code>cd SOMEONESREPO&lt;/code> and set the upstream branch for synchronizing with that &lt;em>someone&lt;/em> (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">more details about how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/SOMEONES/SOMEONESREPO.git&lt;/code>
 &lt;blockquote>
 &lt;p>you may like to check the current remote repository and upstream by &lt;code>git remote -v&lt;/code>.&lt;/p>
 &lt;/blockquote>
@@ -65,7 +73,17 @@
 &lt;li>&lt;code>git merge upstream/master&lt;/code> (merge the current local branch with &lt;code>upstream&lt;/code>&amp;rsquo;s &lt;code>master&lt;/code> branch)&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>Pull request
+&lt;ul>
+&lt;li>I think it is more convenient to handle pull request directly on Github; see &lt;a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request">Merging a pull request&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub Pull Requests and Issues&lt;/a> can be useful in review the differences.&lt;/li>
 &lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/dev-aten/graphics/reproducible-science/git-fork-clone-flow.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote">Source of this figure&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;blockquote>
 &lt;p>&lt;strong>📖Explain&lt;/strong>:&lt;/p>
 &lt;ul>

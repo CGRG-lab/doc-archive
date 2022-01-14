@@ -16,10 +16,12 @@
 <link rel=icon type=image/png href=/doc-archive/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/doc-archive/favicons/android-192x192.png sizes=192x192>
 <title>Git | doc-archive</title>
-<meta name=description content="Initiate/Clone
+<meta name=description content="Download GIT
+https://git-scm.com/downloads
+Initiate/Clone
 
 git init: initiate the current directory as a git repository
-git clone https://github.com/SOMEONES/ACertainRepo.git: copy the …">
+git clone …">
 <meta property="og:title" content="Git">
 <meta property="og:description" content="Docsy does docs">
 <meta property="og:type" content="website">
@@ -84,7 +86,7 @@ English
 English
 </a>
 <div class=dropdown-menu aria-labelledby=navbarDropdownMenuLink>
-<a class=dropdown-item href=/doc-archive/zh/docs/best-practices/git/>正體中文</a>
+<a class=dropdown-item href=/doc-archive/zh/docs/best-practices/matlab/>正體中文</a>
 </div>
 </div>
 <ul class="td-sidebar-nav__section pr-md-3 ul-0">
@@ -159,6 +161,7 @@ English
 <ul>
 <li>
 <ul>
+<li><a href=#download-git>Download GIT</a></li>
 <li><a href=#initiateclone>Initiate/Clone</a></li>
 <li><a href=#add>Add</a></li>
 <li><a href=#commit-and-push>Commit and push</a></li>
@@ -188,6 +191,8 @@ English
 <h1>Git</h1>
 <header class=article-meta>
 </header>
+<h3 id=download-git>Download GIT</h3>
+<p><a href=https://git-scm.com/downloads>https://git-scm.com/downloads</a></p>
 <h3 id=initiateclone>Initiate/Clone</h3>
 <ul>
 <li><code>git init</code>: initiate the current directory as a git repository</li>
@@ -201,16 +206,22 @@ English
 <li>
 <p><code>git add -A</code>: make every file to be tracked and stage all changes (i.e., make all of them ready to be committed)</p>
 </li>
+<li>
+<p><code>git add --all</code>: Stage all changes; that is, make every modified files ready to be committed.</p>
+</li>
 </ul>
 <h3 id=commit-and-push>Commit and push</h3>
 <ul>
 <li>
-<p><code>git commit -am "whatever message is OK"</code>: stage all changes of tracked files and commit; untracked files won&rsquo;t be committed.</p>
+<p><code>git commit -m "whatever message is OK"</code>: stage all changes of tracked files and commit; untracked files won&rsquo;t be committed.</p>
 </li>
 <li>
-<p><code>git push --set-upstream origin master</code>: Setting <code>master</code> as upstream means that from now on the target branch is set to be the <code>master</code>, and you can push and pull without specifying the target branch.</p>
+<p><code>git push --set-upstream origin master</code>(the first time) or <code>git push</code> (therein after)</p>
 </li>
 </ul>
+<blockquote>
+<p>Setting <code>master</code> as upstream means that from now on the target branch is set to be the <code>master</code>, and you can push and pull without specifying the target branch.</p>
+</blockquote>
 <blockquote>
 <p>💩 Explain furthermore:</p>
 <ul>
@@ -220,14 +231,14 @@ English
 <h3 id=set-and-sync-with-the-upstream>Set and sync with the upstream</h3>
 <p>Develop <em>someone</em> else&rsquo;s project:</p>
 <ul>
-<li>Go to the project of <em>someone</em>, for example, <a href=https://github.com/SOMEONES/SOMEONESREPO/>https://github.com/SOMEONES/SOMEONESREPO/</a> and fork it (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo>see how to fork</a>).</li>
+<li>Go to the project of <em>someone</em>, for example, <a href=https://github.com/SOMEONES/SOMEONESREPO>https://github.com/SOMEONES/SOMEONESREPO</a> and fork it (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo>see how to fork</a>).</li>
 <li>In git bash clone your fork to local,
 <ul>
-<li>for example, <code>git clone https://github.com/YOURNAME/SOMEONESREPO/</code></li>
+<li>for example, <code>git clone https://github.com/YOURNAME/SOMEONESREPO.git</code></li>
 <li><a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository>more details about how to clone</a></li>
 </ul>
 </li>
-<li><code>cd SOMEONESREPO</code> and set the upstream branch for synchronizing with that <em>someone</em> (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository>more details about how to set upstream</a>: <code>git remote add upstream https://github.com/SOMEONES/SOMEONESREPO/</code>
+<li><code>cd SOMEONESREPO</code> and set the upstream branch for synchronizing with that <em>someone</em> (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository>more details about how to set upstream</a>: <code>git remote add upstream https://github.com/SOMEONES/SOMEONESREPO.git</code>
 <blockquote>
 <p>you may like to check the current remote repository and upstream by <code>git remote -v</code>.</p>
 </blockquote>
@@ -238,7 +249,17 @@ English
 <li><code>git merge upstream/master</code> (merge the current local branch with <code>upstream</code>&rsquo;s <code>master</code> branch)</li>
 </ul>
 </li>
+<li>Pull request
+<ul>
+<li>I think it is more convenient to handle pull request directly on Github; see <a href=https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request>Merging a pull request</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub Pull Requests and Issues</a> can be useful in review the differences.</li>
 </ul>
+</li>
+</ul>
+<p><img src=https://raw.githubusercontent.com/NEONScience/NEON-Data-Skills/dev-aten/graphics/reproducible-science/git-fork-clone-flow.png alt></p>
+<blockquote>
+<p><a href=https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote>Source of this figure</a></p>
+</blockquote>
 <blockquote>
 <p><strong>📖Explain</strong>:</p>
 <ul>
@@ -257,7 +278,7 @@ See <a href=https://stackoverflow.com/questions/2641146/handling-file-renames-in
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 14, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/f6db405f02cb7ee99de0364e915e4b854b9b8654>add tutorial of git (f6db405)</a>
+Last modified January 14, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/cc2f7aca1d0fb25fbc0734ddd92bf166c54cf61c>update docs related to git (cc2f7ac)</a>
 </div>
 </div>
 </main>
