@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2022-01-07"
+date: "2022-01-13"
 linkTitle: "Library"
 ---
 
@@ -680,7 +680,7 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 
 ### Earthquake Catalog Formatting (`checkcatalog`)
 
-<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
+<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  After successfully create <code>catalog.mat</code>, the original <code>catalog.csv</code> will be moved into the folder &#39;delete_me&#39;. If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
 <ul>
 <li><p>Basicaly the following headers &#40;column names&#41;,</p>
 </li>

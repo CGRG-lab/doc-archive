@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Introduction and Tutorial"
-date: "2022-01-07"
+date: "2022-01-13"
 linkTitle: "Introduction & Tutorial"
 ---
 
@@ -12,6 +12,7 @@ cd("doc_tutorial")
 lazyhugo();
 cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_tutorial")
 ``` -->
+
 
 ## Introduction
 
@@ -27,22 +28,40 @@ The newest multivariate MagTIP forecasting system not only supports three-compon
 
 
 ## Environment
-<pre class="julia-error">
-ERROR: UndefVarError: getdoc not defined
-</pre>
 
+<div class="markdown"><p><strong>MATLAB Version</strong>: 9.11.0.1809720 &#40;R2021b&#41; Update 1 <strong>Operating System</strong>: Microsoft Windows 10 企業版 Version 10.0 &#40;Build 19044&#41; <strong>Java Version</strong>: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot&#40;TM&#41; 64-Bit Server VM mixed mode</p>
+<p><strong>Toolbox in-use</strong>:</p>
+<ul>
+<li><p>MATLAB                                                Version 9.11        &#40;R2021b&#41;</p>
+</li>
+<li><p>Curve Fitting Toolbox                                 Version 3.6         &#40;R2021b&#41;</p>
+</li>
+<li><p>Financial Toolbox                                     Version 6.2         &#40;R2021b&#41;</p>
+</li>
+<li><p>Mapping Toolbox                                       Version 5.2         &#40;R2021b&#41;</p>
+</li>
+<li><p>Optimization Toolbox                                  Version 9.2         &#40;R2021b&#41;</p>
+</li>
+<li><p>Parallel Computing Toolbox                            Version 7.5         &#40;R2021b&#41;</p>
+</li>
+<li><p>Signal Processing Toolbox                             Version 8.7         &#40;R2021b&#41;</p>
+</li>
+<li><p>Statistics and Machine Learning Toolbox               Version 12.2        &#40;R2021b&#41;</p>
+</li>
+</ul>
+</div>
 
 
 
 ## Getting Started
 The main functions of MagTIP take directories that contains necessary files as input arguments, and all output variables are saved in another directory as ".mat" files.
 In this document, the input/output variable that contains the information of the path to a directory (i.e., a folder) is prefixed by `dir_`; for example, `dir_data` is the directory for the formatted geomagnetic data, and `dir_stat` is the directory for statistic indices. 
-The `dir_`-prefixed variables are each a sequence of characters being something like `'D:\MagTIP-2021\output_var\StatisticIndex'`. 
+The `dir_`-prefixed variables are each a sequence of characters being something like `'D:\MagTIP-2022\output_var\StatisticIndex'`. 
 
 ### The Sample Script for Everything
-There is a script **"MagTIP_2021b.m"** contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:
-- switch current directory to the folder named "MagTIP-2021"
-- run section(s) in the script of "MagTIP_2021b.m"
+There is a script **"demo/demo_script.m"** contains the sample codes of the whole process; you can easily make everything set and go through the entire MagTIP procedures following the steps below:
+- switch current directory to the folder named "MagTIP-2022"
+- run section(s) in the script
 
 In the beginning (the first three sections), you will see several pop-out windows for selecting the directory of geomagnetic data (`dir_data`) and loading the toolbox (`dir_toolbox`). 
 Select the right folders as instructed, and they will be automatically added to path and be ready to use.
@@ -82,7 +101,7 @@ Here is an overview of this default directory structure:
 
 You can create this directory structure manually by adding new folders using your OS's interface. 
 You can also assign the `dir_`-prefixed variables by using `dirselectassign(...)`, where windows pop out for selecting existing directory. 
-For more information, see "MagTIP_2021b.m" and "dirselectassign.m".
+For more information, see "demo_script.m" and "dirselectassign.m".
 
 **⚠Notice:** 
 
@@ -114,6 +133,10 @@ here is an example for `catalog.csv`:
 | 2020/8/10 06:14 | 121.7  | 22.17 | 124.78 | 4.13 |
 | ...             | ...    | ...   | ...    | ...  |
 
+
+Also see [checkstation.m]({{< ref "docs/magtip/doc_library/_index.md#station-list-formatting-checkstation" >}}) and [checkcatalog.m]({{< ref "docs/magtip/doc_library/_index.md#earthquake-catalog-formatting-checkcatalog" >}}).
+
+
 ### Format of Geomagnetic Data
 
 All original files of geomagnetic timeseries have to be converted to the new format before any function that takes `dir_data` as an input argument.
@@ -133,15 +156,20 @@ In which,
 ## The Main Process
 After all data are prepared (those in `dir_data` and `dir_spreadsheet`), you can run the whole forecasting process simply with:
 ```matlab
-statind(dir_data,dir_stat); 
+statind(dir_data,dir_stat); % For multi-threading, use statind_parfor(...) 
 anomalyind(dir_stat,dir_tsAIN); 
-molscore(dir_tsAIN,dir_catalog,dir_molchan);
-molscore3(dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation);
+molscore(dir_tsAIN,dir_catalog,dir_molchan); % For multi-threading, use molscore_parfor(...)
+molscore3(dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation); %For multi-threading, use molscore3_parfor(...) 
 ```
 In which, `statind` calculates specific statistical quantities of each day; `anomalyind` calculates anomaly index according to different $A_\text{thr}$ threshold; `molscore` gives optimized models; and `molscore3` use optimized models to calculate probability forecasts.
 
 ## Visualization of the Results
 There are several tools provided for visualizing the result. For detailed information about these tools, please refer to the [Library/Tools/Plotting](../doc_library/#plotting).
+
+There is also a script **"demo/demo_visualization.m"**; you can easily obtain plots of the results following the steps below:
+- switch current directory to the folder named "MagTIP-2022"
+- run section(s) in the script"
+
 
 ### Probability Forecast
 `plotProbability` visualizes the probability of the calculated results (which is stored in `dir_jointstation` in default), with options for whether to plot epicenters of target events (目標地震) and for specifying the date time to plot, as an example:
