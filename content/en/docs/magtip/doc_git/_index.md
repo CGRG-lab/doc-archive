@@ -6,6 +6,7 @@ linkTitle: "Developing MagTIP"
 ---
 
 ## Instruction
+- MagTIP-2022 depends on [okatsn's toolbox](https://github.com/okatsn/toolbox); therefore, in git bash `git clone https://github.com/okatsn/toolbox.git` first, the target directory can be arbitrary chosen.
 - Go to https://github.com/okatsn/MagTIP-2022/ and fork it ([see how to fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)).
 - In git bash clone your fork to local, 
     - for example, `git clone https://github.com/YOURNAME/MagTIP-2022/` 

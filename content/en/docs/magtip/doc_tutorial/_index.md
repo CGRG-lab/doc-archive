@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Introduction and Tutorial"
-date: "2022-01-13"
+date: "2022-01-14"
 linkTitle: "Introduction & Tutorial"
 ---
 
@@ -28,6 +28,8 @@ The newest multivariate MagTIP forecasting system not only supports three-compon
 
 
 ## Environment
+Type `license('inuse')` or `ver` to see all the toolboxes you have.
+
 
 <div class="markdown"><p><strong>MATLAB Version</strong>: 9.11.0.1809720 &#40;R2021b&#41; Update 1 <strong>Operating System</strong>: Microsoft Windows 10 企業版 Version 10.0 &#40;Build 19044&#41; <strong>Java Version</strong>: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot&#40;TM&#41; 64-Bit Server VM mixed mode</p>
 <p><strong>Toolbox in-use</strong>:</p>
