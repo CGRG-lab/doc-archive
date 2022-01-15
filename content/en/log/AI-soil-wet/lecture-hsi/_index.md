@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
-title: "Notebooks"
-linkTitle: "Notebooks"
+title: "Learning Julia"
+linkTitle: "Learning Julia"
 ---
 
 [Download all the notebooks here](https://drive.google.com/drive/folders/1tRQTVFiEOeEYIrP9cv_5bMYBQehGIXP3?usp=sharing)
