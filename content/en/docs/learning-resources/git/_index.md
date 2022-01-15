@@ -46,8 +46,9 @@ Develop *someone* else's project:
 > [Source of this figure](https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote)
 
 
-> **📖Explain**:
+> **📖Explain and Hints**:
 > - `fetch` retrieve the latest metadata info from remote; `pull` does that AND copy those changes from remote repository to local. 
+> - you may like to check the current remote repository and upstream by using `git remote -v`.
 
 ### Handling file renames in Git
 `git mv css/iphone.css css/mobile.css`
