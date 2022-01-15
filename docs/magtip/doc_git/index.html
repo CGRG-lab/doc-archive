@@ -15,17 +15,22 @@
 <link rel=icon type=image/png href=/doc-archive/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/doc-archive/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/doc-archive/favicons/android-192x192.png sizes=192x192>
-<title>Developing MagTIP | doc-archive</title>
-<meta name=description content="Instruction
+<title>Setting up MagTIP | doc-archive</title>
+<meta name=description content="
 
-MagTIP-2022 depends on okatsn&rsquo;s toolbox; therefore, in git bash git clone https://github.com/okatsn/toolbox.git first, the target …">
-<meta property="og:title" content="Developing MagTIP">
+
+Notice
+
+    
+MagTIP-2022 and its dependent toolbox are hosted on Github; in which, MagTIP-2022 is private.
+To use MagTIP, you need to have a Github …">
+<meta property="og:title" content="Setting up MagTIP">
 <meta property="og:description" content="Docsy does docs">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/">
-<meta itemprop=name content="Developing MagTIP">
+<meta itemprop=name content="Setting up MagTIP">
 <meta itemprop=description content="Docsy does docs"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Developing MagTIP">
+<meta name=twitter:title content="Setting up MagTIP">
 <meta name=twitter:description content="Docsy does docs">
 <link rel=preload href=/doc-archive/scss/main.min.bd5285b713d3061549a6bfd34e5f4ec6775ede36672a3088260f0d420050647f.css as=style>
 <link href=/doc-archive/scss/main.min.bd5285b713d3061549a6bfd34e5f4ec6775ede36672a3088260f0d420050647f.css rel=stylesheet integrity>
@@ -130,15 +135,15 @@ English
 <input type=checkbox id=m-doc-archivedocsmagtip-check>
 <label for=m-doc-archivedocsmagtip-check><a href=/doc-archive/docs/magtip/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtip><span>MagTIP</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_git-li>
-<input type=checkbox id=m-doc-archivedocsmagtipdoc_git-check>
-<label for=m-doc-archivedocsmagtipdoc_git-check><a href=/doc-archive/docs/magtip/doc_git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_git><span>Developing MagTIP</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_tutorial-li>
 <input type=checkbox id=m-doc-archivedocsmagtipdoc_tutorial-check>
 <label for=m-doc-archivedocsmagtipdoc_tutorial-check><a href=/doc-archive/docs/magtip/doc_tutorial/ title="Introduction and Tutorial" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_tutorial><span>Introduction & Tutorial</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_library-li>
 <input type=checkbox id=m-doc-archivedocsmagtipdoc_library-check>
 <label for=m-doc-archivedocsmagtipdoc_library-check><a href=/doc-archive/docs/magtip/doc_library/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_library><span>Library</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-doc-archivedocsmagtipdoc_git-li>
+<input type=checkbox id=m-doc-archivedocsmagtipdoc_git-check>
+<label for=m-doc-archivedocsmagtipdoc_git-check><a href=/doc-archive/docs/magtip/doc_git/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-doc-archivedocsmagtipdoc_git><span>Setting up MagTIP</span></a></label>
 </li>
 </ul>
 </li>
@@ -152,8 +157,14 @@ English
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
 <a href=https://github.com/CGRG-lab/doc-archive/edit/master/content/en/docs/magtip/doc_git/_index.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
 <a href="https://github.com/CGRG-lab/doc-archive/new/master/content/en/docs/magtip/doc_git/_index.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" target=_blank><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/CGRG-lab/doc-archive/issues/new?title=Developing%20MagTIP" target=_blank><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/CGRG-lab/doc-archive/issues/new?title=Setting%20up%20MagTIP" target=_blank><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 </div>
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#im-a-user-of-magtip>I&rsquo;m a user of MagTIP</a></li>
+<li><a href=#im-a-developer-of-magtip>I&rsquo;m a developer of MagTIP</a></li>
+</ul>
+</nav></div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <nav aria-label=breadcrumb class="d-none d-md-block d-print-none">
@@ -165,35 +176,51 @@ English
 <a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/>MagTIP</a>
 </li>
 <li class="breadcrumb-item active" aria-current=page>
-<a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/>Developing MagTIP</a>
+<a href=https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/>Setting up MagTIP</a>
 </li>
 </ol>
 </nav>
 <div class=td-content>
-<h1>Developing MagTIP</h1>
+<h1>Setting up MagTIP</h1>
 <header class=article-meta>
 </header>
-<h2 id=instruction>Instruction</h2>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Notice</h4>
 <ul>
-<li>MagTIP-2022 depends on <a href=https://github.com/okatsn/toolbox>okatsn&rsquo;s toolbox</a>; therefore, in git bash <code>git clone https://github.com/okatsn/toolbox.git</code> first, the target directory can be arbitrary chosen.</li>
+<li><a href=https://github.com/okatsn/MagTIP-2022>MagTIP-2022</a> and its dependent <a href=https://github.com/okatsn/toolbox>toolbox</a> are hosted on Github; in which, <a href=https://github.com/okatsn/MagTIP-2022>MagTIP-2022</a> is private.</li>
+<li>To use MagTIP, you need to have a Github account and get authorized in order to access the repository.</li>
+</ul>
+</div>
+<div class="alert alert-info" role=alert>
+<h4 class=alert-heading>Hint</h4>
+<ul>
+<li>Have <a href=https://git-scm.com/downloads>Git</a> installed before you can use the command in the following sections.</li>
+</ul>
+</div>
+<h2 id=im-a-user-of-magtip>I&rsquo;m a user of MagTIP</h2>
+<p>Right click on the links to download the batch files below and:</p>
+<ul>
+<li>Double click on the file <a href=./clone_MagTIP_and_toolbox.bat>clone_MagTIP_and_toolbox.bat</a> to clone and set upstream for MagTIP and its dependent toolbox (do this only once).</li>
+<li>Double click on <a href=./force_update.bat>force_update.bat</a> to make the local up-to-date with the latest MagTIP (⚠️<strong>any changes on the source code will be lost</strong>).</li>
+</ul>
+<h2 id=im-a-developer-of-magtip>I&rsquo;m a developer of MagTIP</h2>
+<ul>
+<li>MagTIP-2022 depends on <a href=https://github.com/okatsn/toolbox>okatsn&rsquo;s toolbox</a>; therefore, in git bash (or command window), <code>git clone https://github.com/okatsn/toolbox.git</code> first (the target directory can be arbitrary chosen).</li>
 <li>Go to <a href=https://github.com/okatsn/MagTIP-2022/>https://github.com/okatsn/MagTIP-2022/</a> and fork it (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo>see how to fork</a>).</li>
-<li>In git bash clone your fork to local,
+<li>In git bash (or command window) clone your fork to local,
 <ul>
 <li>for example, <code>git clone https://github.com/YOURNAME/MagTIP-2022/</code></li>
 <li><a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository>more details about how to clone</a></li>
 </ul>
 </li>
-<li><code>cd MagTIP-2022</code> and set up for synchronization (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository>see here for how to set upstream</a>: <code>git remote add upstream https://github.com/okatsn/MagTIP-2022.git</code>
-<blockquote>
-<p>you may like to check the current remote repository and upstream by <code>git remote -v</code>.</p>
-</blockquote>
-</li>
+<li><code>cd MagTIP-2022</code> and set up for synchronization (<a href=https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository>see here for how to set upstream</a>: <code>git remote add upstream https://github.com/okatsn/MagTIP-2022.git</code></li>
+<li>Create a pull request to request for merging your work with the main.</li>
+<li>For more about how to use git, see <a href=https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/>here</a>.</li>
 </ul>
-<p>For more about how to use git, see <a href=https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/>here</a>.</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 14, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/ba4e615e61637eea3d1d8f2b76544267e1a2d747>update magtip docs (ba4e615)</a>
+Last modified January 15, 2022: <a href=https://github.com/CGRG-lab/doc-archive/commit/fcb9abb7aa69f44131b15f0031570200bae93437>MagTIP_installation (fcb9abb)</a>
 </div>
 </div>
 </main>

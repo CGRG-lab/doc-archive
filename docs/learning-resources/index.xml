@@ -85,9 +85,10 @@
 &lt;p>&lt;a href="https://www.neonscience.org/resources/learning-hub/tutorials/git-setup-remote">Source of this figure&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
-&lt;p>&lt;strong>📖Explain&lt;/strong>:&lt;/p>
+&lt;p>&lt;strong>📖Explain and Hints&lt;/strong>:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>fetch&lt;/code> retrieve the latest metadata info from remote; &lt;code>pull&lt;/code> does that AND copy those changes from remote repository to local.&lt;/li>
+&lt;li>you may like to check the current remote repository and upstream by using &lt;code>git remote -v&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;/blockquote>
 &lt;h3 id="handling-file-renames-in-git">Handling file renames in Git&lt;/h3>

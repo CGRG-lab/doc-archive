@@ -1,21 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Developing MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</guid><description>
-&lt;h2 id="instruction">Instruction&lt;/h2>
-&lt;ul>
-&lt;li>MagTIP-2022 depends on &lt;a href="https://github.com/okatsn/toolbox">okatsn&amp;rsquo;s toolbox&lt;/a>; therefore, in git bash &lt;code>git clone https://github.com/okatsn/toolbox.git&lt;/code> first, the target directory can be arbitrary chosen.&lt;/li>
-&lt;li>Go to &lt;a href="https://github.com/okatsn/MagTIP-2022/">https://github.com/okatsn/MagTIP-2022/&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
-&lt;li>In git bash clone your fork to local,
-&lt;ul>
-&lt;li>for example, &lt;code>git clone https://github.com/YOURNAME/MagTIP-2022/&lt;/code>&lt;/li>
-&lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">more details about how to clone&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>cd MagTIP-2022&lt;/code> and set up for synchronization (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">see here for how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/okatsn/MagTIP-2022.git&lt;/code>
-&lt;blockquote>
-&lt;p>you may like to check the current remote repository and upstream by &lt;code>git remote -v&lt;/code>.&lt;/p>
-&lt;/blockquote>
-&lt;/li>
-&lt;/ul>
-&lt;p>For more about how to use git, see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!--
 ```
 cd("doc_tutorial")
@@ -1070,4 +1053,37 @@ plotEQKTIP3&amp;#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLo
 &lt;p>&amp;#40;Read the printed message in the Command Window&amp;#41;&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/div></description></item></channel></rss>
+&lt;/div></description></item><item><title>Docs: Setting up MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</link><pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_git/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Notice&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/okatsn/MagTIP-2022">MagTIP-2022&lt;/a> and its dependent &lt;a href="https://github.com/okatsn/toolbox">toolbox&lt;/a> are hosted on Github; in which, &lt;a href="https://github.com/okatsn/MagTIP-2022">MagTIP-2022&lt;/a> is private.&lt;/li>
+&lt;li>To use MagTIP, you need to have a Github account and get authorized in order to access the repository.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Hint&lt;/h4>
+&lt;ul>
+&lt;li>Have &lt;a href="https://git-scm.com/downloads">Git&lt;/a> installed before you can use the command in the following sections.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h2 id="im-a-user-of-magtip">I&amp;rsquo;m a user of MagTIP&lt;/h2>
+&lt;p>Right click on the links to download the batch files below and:&lt;/p>
+&lt;ul>
+&lt;li>Double click on the file &lt;a href="./clone_MagTIP_and_toolbox.bat">clone_MagTIP_and_toolbox.bat&lt;/a> to clone and set upstream for MagTIP and its dependent toolbox (do this only once).&lt;/li>
+&lt;li>Double click on &lt;a href="./force_update.bat">force_update.bat&lt;/a> to make the local up-to-date with the latest MagTIP (⚠️&lt;strong>any changes on the source code will be lost&lt;/strong>).&lt;/li>
+&lt;/ul>
+&lt;h2 id="im-a-developer-of-magtip">I&amp;rsquo;m a developer of MagTIP&lt;/h2>
+&lt;ul>
+&lt;li>MagTIP-2022 depends on &lt;a href="https://github.com/okatsn/toolbox">okatsn&amp;rsquo;s toolbox&lt;/a>; therefore, in git bash (or command window), &lt;code>git clone https://github.com/okatsn/toolbox.git&lt;/code> first (the target directory can be arbitrary chosen).&lt;/li>
+&lt;li>Go to &lt;a href="https://github.com/okatsn/MagTIP-2022/">https://github.com/okatsn/MagTIP-2022/&lt;/a> and fork it (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">see how to fork&lt;/a>).&lt;/li>
+&lt;li>In git bash (or command window) clone your fork to local,
+&lt;ul>
+&lt;li>for example, &lt;code>git clone https://github.com/YOURNAME/MagTIP-2022/&lt;/code>&lt;/li>
+&lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository">more details about how to clone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>cd MagTIP-2022&lt;/code> and set up for synchronization (&lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-original-repository">see here for how to set upstream&lt;/a>: &lt;code>git remote add upstream https://github.com/okatsn/MagTIP-2022.git&lt;/code>&lt;/li>
+&lt;li>Create a pull request to request for merging your work with the main.&lt;/li>
+&lt;li>For more about how to use git, see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/learning-resources/git/">here&lt;/a>.&lt;/li>
+&lt;/ul></description></item></channel></rss>
