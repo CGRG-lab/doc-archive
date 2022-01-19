@@ -1,7 +1,7 @@
 ---
 author: "Tsung-Hsi, Wu"
 title: "Introduction and Tutorial"
-date: "2022-01-14"
+date: "2022-01-19"
 linkTitle: "Introduction & Tutorial"
 weight: 10
 ---
@@ -37,13 +37,7 @@ Type `license('inuse')` or `ver` to see all the toolboxes you have.
 <ul>
 <li><p>MATLAB                                                Version 9.11        &#40;R2021b&#41;</p>
 </li>
-<li><p>Curve Fitting Toolbox                                 Version 3.6         &#40;R2021b&#41;</p>
-</li>
-<li><p>Financial Toolbox                                     Version 6.2         &#40;R2021b&#41;</p>
-</li>
 <li><p>Mapping Toolbox                                       Version 5.2         &#40;R2021b&#41;</p>
-</li>
-<li><p>Optimization Toolbox                                  Version 9.2         &#40;R2021b&#41;</p>
 </li>
 <li><p>Parallel Computing Toolbox                            Version 7.5         &#40;R2021b&#41;</p>
 </li>
