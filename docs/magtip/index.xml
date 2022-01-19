@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!--
 ```
 cd("doc_tutorial")
@@ -20,13 +20,7 @@ The time scale of the evolution of the underground dynamical system is generally
 &lt;ul>
 &lt;li>&lt;p>MATLAB Version 9.11 &amp;#40;R2021b&amp;#41;&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>Curve Fitting Toolbox Version 3.6 &amp;#40;R2021b&amp;#41;&lt;/p>
-&lt;/li>
-&lt;li>&lt;p>Financial Toolbox Version 6.2 &amp;#40;R2021b&amp;#41;&lt;/p>
-&lt;/li>
 &lt;li>&lt;p>Mapping Toolbox Version 5.2 &amp;#40;R2021b&amp;#41;&lt;/p>
-&lt;/li>
-&lt;li>&lt;p>Optimization Toolbox Version 9.2 &amp;#40;R2021b&amp;#41;&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>Parallel Computing Toolbox Version 7.5 &amp;#40;R2021b&amp;#41;&lt;/p>
 &lt;/li>
