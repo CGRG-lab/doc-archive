@@ -14,5 +14,9 @@ You need to get authorized in order to access these files. Please contact tsung.
 
 [Audio recordings](https://drive.google.com/drive/folders/1WMCIZtce6FsTLlqybVXGYJTwlBt-xGBW?usp=sharing)
 
+[Photos](https://drive.google.com/drive/folders/106L5FDMJX7VZPCo83Vns1mDdZamzApXZ?usp=sharing)
+
 ## SWC insider meetings
 [Slides](https://drive.google.com/drive/folders/1zpu33ZzuvnT2YqXX7WfADtyn4-xq5UiR?usp=sharing)
+
+[Minutes](https://docs.google.com/document/d/1Fq0Tb3LUxGBHXpYb4RtB4JmZYohwVx-oRB-KyH_n9Dw/edit?usp=sharing)
