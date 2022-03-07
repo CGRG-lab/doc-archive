@@ -1,14 +1,15 @@
 ---
+weight: 20
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2022-01-13"
+date: "2022-03-07"
 linkTitle: "Library"
-weight: 20
 ---
 
 <!-- 
 `cd` to the folder where there is `.jmd`, and 
 ```
+using GeneralTools
 cd("doc_library")
 lazyhugo();
 cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_library")
@@ -34,9 +35,9 @@ The four stages is wrapped by four functions with keyword options that we can cu
 The four main functions are wrapper functions for routine training and forecasting process. As follow:
 
 
-### Data Preprocessing (`convdata0`)
+### Data Preprocessing (`conv_geomagdata`)
 
-<div class="markdown"><p>The original geomagnetic data  &#40;which are those in &quot;.csv&quot; format being something like &quot;2008010300.KM&quot; or &quot;20190307.LY&quot;&#41; should be converted to a standard format before any calculation.  <code>convdata0&#40;dir_originalfiles, dir_data&#41;</code> read original data in <code>dir_originalfiles</code> and save them in the standard format at the directory <code>dir_data</code>.</p>
+<div class="markdown"><p>The original geomagnetic data  &#40;which are those in &quot;.csv&quot; format being something like &quot;2008010300.KM&quot; or &quot;20190307.LY&quot;&#41; should be converted to a standard format before any calculation.  <code>conv_geomagdata&#40;dir_originalfiles, dir_data&#41;</code> read original data in <code>dir_originalfiles</code> and save them in the standard format at the directory <code>dir_data</code>.</p>
 <p><strong>Keyword Argument:</strong></p>
 <ul>
 <li><p>&#39;ContinueFromLast&#39;: Default is <code>false</code>. If <code>true</code>, it compares the names  of all old files in the <code>dir_originalfiles</code> and the new files in <code>dir_data</code> before conversion  to avoid files that are already being converted to be converted again.  This additional procedure may take several hours depending on the size of database;  a more efficient way for avoiding  repeated processing is to manually specify &#39;FilterByDatetime&#39;. See below.</p>
@@ -674,19 +675,8 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 
 ### Station List Formatting (`checkstation`)
 
-<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>station_location.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>station_location.csv</code> to <code>station_location.mat</code>.  If the <code>station_location.csv</code> does not meet the required format, error will occur.</p>
-</div>
-
-
-
-### Earthquake Catalog Formatting (`checkcatalog`)
-
-<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  After successfully create <code>catalog.mat</code>, the original <code>catalog.csv</code> will be moved into the folder &#39;delete_me&#39;. If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
-<ul>
-<li><p>Basicaly the following headers &#40;column names&#41;,</p>
-</li>
-</ul>
-<p>&#123;&#39;time&#39;,&#39;Lon&#39;,&#39;Lat&#39;,&#39;Mag&#39;,&#39;Depth&#39;&#125;, have to exist. Aliases are allowed; see the <strong>Aliases</strong> section below.</p>
+<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkstation&#40;dir_catalog&#41;</code> check if <code>station_location.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>station_location.csv</code> to <code>station_location.mat</code>.  After successfully create <code>station_location.mat</code>, the original <code>station_location.csv</code> will be moved to the folder &#39;original_csv&#39;.</p>
+<p>If the <code>station_location.csv</code> does not meet the required format, error will occur. The <code>station_location.csv</code> has to suffice the following condtions:</p>
 <ul>
 <li><p>The &#39;time&#39; variable should be in the following format: &#39;yyyy/MM/dd</p>
 </li>
@@ -695,7 +685,44 @@ loadAIN&#40;dir_tsAIN,BestModelNames,TimeRange&#41;</code></pre>
 <ul>
 <li><p>Other variables except &#39;time&#39; should belong the class of &#39;double&#39;.</p>
 </li>
+<li><p>Basicaly the following headers &#40;column names&#41;,</p>
+</li>
 </ul>
+<p>&#123;&#39;code&#39;,&#39;format&#39;,&#39;Lon&#39;,&#39;Lat&#39;&#125; have to exist.  In which, </p>
+<ul>
+<li><p>&#39;code&#39; is the code for the station, whereas &#39;format&#39; is the full name of  the station. For example, &#39;MS&#39; &#40;code&#41; corresponds to &#39;馬仕&#39; &#40;format&#41;.</p>
+</li>
+<li><p>&#39;Lon&#39; and &#39;Lat&#39; are longitude and latitude of the station respectively.</p>
+</li>
+</ul>
+<p>Aliases for the column names in the <code>station_location.csv</code> are allowed; see the <strong>Aliases</strong> section below.</p>
+<p><strong>Aliases</strong>:  For convenience, aliases of the column name of an variable in <code>station_location.csv</code> will be automatically converted:</p>
+<ul>
+<li><p>For longitude and latitude, either &#123;&#39;lon&#39;, &#39;longitude&#39;, &#39;Longitude&#39;&#125;,</p>
+</li>
+</ul>
+<p>&#123;&#39;lat&#39;, &#39;latitude&#39;, &#39;Latitude&#39;&#125; will be converted to &#39;Lon&#39; and &#39;Lat&#39;, respectively.</p>
+</div>
+
+
+
+### Earthquake Catalog Formatting (`checkcatalog`)
+
+<div class="markdown"><p><code>&#91;isvalid, msg&#93; &#61; checkcatalog&#40;dir_catalog&#41;</code> check if <code>catalog.mat/csv</code>  exist in <code>dir_catalog</code>, and convert the <code>catalog.csv</code> to <code>catalog.mat</code>.  After successfully create <code>catalog.mat</code>, the original <code>catalog.csv</code> will be moved to the folder &#39;original_csv&#39;.</p>
+<p>If the <code>catalog.csv</code> does not meet the required format, error will occur. The <code>catalog.csv</code> has to suffice the following condtions:</p>
+<ul>
+<li><p>The &#39;time&#39; variable should be in the following format: &#39;yyyy/MM/dd</p>
+</li>
+</ul>
+<p>HH:mm&#39;.</p>
+<ul>
+<li><p>Other variables except &#39;time&#39; should belong the class of &#39;double&#39;.</p>
+</li>
+<li><p>Basicaly the following headers &#40;column names&#41;,</p>
+</li>
+</ul>
+<p>&#123;&#39;time&#39;,&#39;Lon&#39;,&#39;Lat&#39;,&#39;Mag&#39;,&#39;Depth&#39;&#125;, have to exist. </p>
+<p>Aliases for the column names in the <code>catalog.csv</code> are allowed; see the <strong>Aliases</strong> section below.</p>
 <p><strong>Aliases</strong>:  For convenience, aliases of the column name of an variable in <code>catalog.csv</code> will be automatically converted:</p>
 <ul>
 <li><p>For earthquake magnitudes, the header of either &#123;&#39;Magnitude&#39;, &#39;magnitude&#39;, &#39;ML&#39;&#125; will be automatically converted to &#39;Mag&#39;.</p>
