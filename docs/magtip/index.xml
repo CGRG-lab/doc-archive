@@ -210,7 +210,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="plotEQKTIP_ex1.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Tue, 26 Apr 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
 &lt;!--
 `cd` to the folder where there is `.jmd`, and
 ```
@@ -234,7 +234,7 @@ cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_
 &lt;/ol>
 &lt;p>The four stages is wrapped by four functions with keyword options that we can customize the parameters related to model optimization and probability forecast.
 The four main functions are wrapper functions for routine training and forecasting process. As follow:&lt;/p>
-&lt;h3 id="data-preprocessing-conv_geomagdata">Data Preprocessing (&lt;code>conv_geomagdata&lt;/code>)&lt;/h3>
+&lt;h3 id="data-preprocessing-conv_geomagdata-conv_gemsdata">Data Preprocessing (&lt;code>conv_geomagdata&lt;/code>, &lt;code>conv_gemsdata&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>The original geomagnetic data &amp;#40;which are those in &amp;quot;.csv&amp;quot; format being something like &amp;quot;2008010300.KM&amp;quot; or &amp;quot;20190307.LY&amp;quot;&amp;#41; should be converted to a standard format before any calculation. &lt;code>conv_geomagdata&amp;#40;dir_originalfiles, dir_data&amp;#41;&lt;/code> read original data in &lt;code>dir_originalfiles&lt;/code> and save them in the standard format at the directory &lt;code>dir_data&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Keyword Argument:&lt;/strong>&lt;/p>
 &lt;ul>
@@ -263,6 +263,14 @@ datetime&amp;#40;2013,12,10&amp;#41;, datetime&amp;#40;2017,10,10&amp;#41;&amp;#
 &lt;li>&lt;p>every file should have its extension as the code of the corresponding station, e.g. &amp;#39;20200101.HC&amp;#39; is correct; &amp;#39;20200101.txt&amp;#39; is not valid and an error will occur.&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;/div>
+&lt;div class="markdown">&lt;p>&lt;code>conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;&lt;/code> read original GEMS&amp;#39;s data &amp;#40;e.g., &amp;quot;2012&lt;em>02&lt;/em>07&lt;em>16&lt;/em>45&lt;em>00.dat&amp;quot;&amp;#41; in &amp;#96;dir&lt;/em>gems&amp;#96;, merge and convert them to the standard format for MagTIP.&lt;/p>
+&lt;p>Also see &lt;code>&amp;quot;read_gemsdata.m&amp;quot;&lt;/code>.&lt;/p>
+&lt;h1>Example&lt;/h1>
+&lt;pre>&lt;code class="language-matlab">dir_gems &amp;#61; &amp;#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&amp;#39;;
+saveto &amp;#61; &amp;#39;d:\Data&amp;#39;;
+dir_catalog &amp;#61; &amp;#37; for obtaining the station information &amp;#40;&amp;quot;station_location.mat&amp;quot;&amp;#41;;
+conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;h3 id="statistical-index-calculation-statind">Statistical Index Calculation (&lt;code>statind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>statind&amp;#40;dir_data,dir_output&amp;#41;&lt;/code> calculate daily statistics &amp;#40;a statistical quantity as an index of the day&amp;#41; of the daily timeseries in &lt;code>dir_data&lt;/code>. The output variables are stored in &lt;code>dir_output&lt;/code>.&lt;/p>
@@ -931,7 +939,7 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;p>All Tools are not necessary for the MagTIP algorithm; they are invented, for example, to demonstrate the results in figure or for generating/selecting directories in a convenient way.&lt;/p>
 &lt;h3 id="plotting">Plotting&lt;/h3>
 &lt;h4 id="overview-of-all-geomagnetic-data-plot_dataoverview">Overview of All Geomagnetic Data (&lt;code>plot_dataoverview&lt;/code>)&lt;/h4>
-&lt;div class="markdown">&lt;p>&lt;code>plot_dataoverview&amp;#40;dir_stat&amp;#41;&lt;/code> plot an overview of all data. &lt;strong>Keyword Arguments:&lt;/strong>&lt;/p>
+&lt;div class="markdown">&lt;p>&lt;code>plot_dataoverview&amp;#40;dir_stat, dir_catalog&amp;#41;&lt;/code> plot an overview of all data. &lt;strong>Keyword Arguments:&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>&lt;p>&amp;#39;SaveFigureTo&amp;#39;: the output path&lt;/p>
 &lt;/li>
