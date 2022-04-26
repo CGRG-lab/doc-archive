@@ -2,7 +2,7 @@
 weight: 20
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2022-03-07"
+date: "2022-04-26"
 linkTitle: "Library"
 ---
 
@@ -35,7 +35,7 @@ The four stages is wrapped by four functions with keyword options that we can cu
 The four main functions are wrapper functions for routine training and forecasting process. As follow:
 
 
-### Data Preprocessing (`conv_geomagdata`)
+### Data Preprocessing (`conv_geomagdata`, `conv_gemsdata`)
 
 <div class="markdown"><p>The original geomagnetic data  &#40;which are those in &quot;.csv&quot; format being something like &quot;2008010300.KM&quot; or &quot;20190307.LY&quot;&#41; should be converted to a standard format before any calculation.  <code>conv_geomagdata&#40;dir_originalfiles, dir_data&#41;</code> read original data in <code>dir_originalfiles</code> and save them in the standard format at the directory <code>dir_data</code>.</p>
 <p><strong>Keyword Argument:</strong></p>
@@ -66,6 +66,17 @@ The four main functions are wrapper functions for routine training and forecasti
 </li>
 </ul>
 </div>
+
+
+<div class="markdown"><p><code>conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;</code> read original GEMS&#39;s data &#40;e.g., &quot;2012<em>02</em>07<em>16</em>45<em>00.dat&quot;&#41; in &#96;dir</em>gems&#96;, merge and convert them to the standard format for MagTIP.</p>
+<p>Also see <code>&quot;read_gemsdata.m&quot;</code>.</p>
+<h1>Example</h1>
+<pre><code class="language-matlab">dir_gems &#61; &#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&#39;;
+saveto &#61; &#39;d:\Data&#39;;
+dir_catalog &#61; &#37; for obtaining the station information &#40;&quot;station_location.mat&quot;&#41;;
+conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
+</div>
+
 
 
 
@@ -809,7 +820,7 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 ### Plotting
 #### Overview of All Geomagnetic Data (`plot_dataoverview`)
 
-<div class="markdown"><p><code>plot_dataoverview&#40;dir_stat&#41;</code> plot an overview of all data. <strong>Keyword Arguments:</strong></p>
+<div class="markdown"><p><code>plot_dataoverview&#40;dir_stat, dir_catalog&#41;</code> plot an overview of all data. <strong>Keyword Arguments:</strong></p>
 <ul>
 <li><p>&#39;SaveFigureTo&#39;: the output path</p>
 </li>
