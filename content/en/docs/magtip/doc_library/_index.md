@@ -2,14 +2,14 @@
 weight: 20
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2022-04-26"
+date: "2022-04-27"
 linkTitle: "Library"
 ---
 
 <!-- 
 `cd` to the folder where there is `.jmd`, and 
 ```
-using GeneralTools
+using HypertextTools
 cd("doc_library")
 lazyhugo();
 cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_library")
@@ -35,7 +35,9 @@ The four stages is wrapped by four functions with keyword options that we can cu
 The four main functions are wrapper functions for routine training and forecasting process. As follow:
 
 
-### Data Preprocessing (`conv_geomagdata`, `conv_gemsdata`)
+### Data Conversion and Preprocessing 
+#### `conv_geomagdata`
+
 
 <div class="markdown"><p>The original geomagnetic data  &#40;which are those in &quot;.csv&quot; format being something like &quot;2008010300.KM&quot; or &quot;20190307.LY&quot;&#41; should be converted to a standard format before any calculation.  <code>conv_geomagdata&#40;dir_originalfiles, dir_data&#41;</code> read original data in <code>dir_originalfiles</code> and save them in the standard format at the directory <code>dir_data</code>.</p>
 <p><strong>Keyword Argument:</strong></p>
@@ -68,9 +70,12 @@ The four main functions are wrapper functions for routine training and forecasti
 </div>
 
 
+
+
+#### `conv_gemsdata`
+
 <div class="markdown"><p><code>conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;</code> read original GEMS&#39;s data &#40;e.g., &quot;2012<em>02</em>07<em>16</em>45<em>00.dat&quot;&#41; in &#96;dir</em>gems&#96;, merge and convert them to the standard format for MagTIP.</p>
-<p>Also see <code>&quot;read_gemsdata.m&quot;</code>.</p>
-<h1>Example</h1>
+<p>Also see <code>&quot;read_gemsdata.m&quot;</code>. <strong>Example</strong>:</p>
 <pre><code class="language-matlab">dir_gems &#61; &#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&#39;;
 saveto &#61; &#39;d:\Data&#39;;
 dir_catalog &#61; &#37; for obtaining the station information &#40;&quot;station_location.mat&quot;&#41;;
@@ -330,6 +335,33 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 
 <div class="markdown"><p><code>molscore3_parfor</code> is the parallel computing version of <code>molscore3</code>, it  takes the same input arguments and keyword options as <code>molscore3</code>.</p>
 </div>
+
+
+
+
+## Class Definition
+
+<div class="markdown"><p><code>fmt</code> is a class that </p>
+<ol>
+<li><p>stores all constant names</p>
+</li>
+<li><p>stores all constant variables</p>
+</li>
+</ol>
+<p>that enalbes you to modify or extend some contants without breaking other functionalities.</p>
+<p><code>fmt</code> also serves as &quot;dictionaries&quot; of names to corresponding variables.</p>
+<p><strong>Functions</strong>:</p>
+<ul>
+<li><p><code>colindex2data&#40;what_type&#41;</code>: returns column indices to time and data part of the loaded matrix. Example: <code>&#91;colind_time, colind_data&#93; &#61; colindex2data&#40;&#39;GEMS0&#39;&#41;</code></p>
+</li>
+<li><p><code>filterRange&#40;filter_tag&#41;</code>: returns two values indicating the lower and upper limit of the filter, in the unit of Hz. Example: <code>fmt.filterRange&#40;ULF-A&#41;</code>.</p>
+</li>
+<li><p><code>expecteddatapoint&#40;what_type&#41;</code>: returns the expected number of data point of a specific file type. Example: <code>totalpts &#61; expecteddatapoint&#40;&#39;GEMS0&#39;&#41;</code>; and you can derive sampling frequency <code>fs</code> by <code>fs &#61; totalpts/86400</code>.</p>
+</li>
+</ul>
+</div>
+
+
 
 
 ## Subfunctions
