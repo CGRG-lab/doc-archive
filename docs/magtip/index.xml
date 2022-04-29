@@ -1,7 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!--
 ```
-using GeneralTools
+using HypertextTools
 cd("doc_tutorial")
 lazyhugo();
 cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_tutorial")
@@ -165,7 +165,13 @@ here is an example for &lt;code>catalog.csv&lt;/code>:&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;p>Also see &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/#station-list-formatting-checkstation">checkstation.m&lt;/a> and &lt;a href="https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/#earthquake-catalog-formatting-checkcatalog">checkcatalog.m&lt;/a>.&lt;/p>
-&lt;h3 id="format-of-geomagnetic-data">Format of Geomagnetic Data&lt;/h3>
+&lt;h3 id="standard-data-format">Standard data format&lt;/h3>
+&lt;p>All records should be converted/transformed into the formatted matfiles.
+The formatted file name is generated via &lt;code>standarddataname&lt;/code>, where&lt;/p>
+&lt;div class="markdown">&lt;p>&lt;code>&amp;#91;fname&amp;#93; &amp;#61; standarddataname&amp;#40;stnm, dtstr, type_j&amp;#41;&lt;/code> returns the file name of the standard data format. For example, &lt;code>standarddataname&amp;#40;&amp;#39;HUAL&amp;#39;, &amp;#39;20120202&amp;#39;, &amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code> returns &lt;code>stn&amp;#91;HUAL&amp;#93;dt&amp;#91;20120202&amp;#93;type&amp;#91;GEMS0&amp;#93;.mat&lt;/code>.&lt;/p>
+&lt;/div>
+&lt;p>The formatted matfile should contain only 1 field where the field name can be arbitrarily chosen. Saying the field to be &lt;code>M&lt;/code>, &lt;code>M&lt;/code> has to be a matrix where the column indices to time and data are assigned by function &lt;code>fmt.colindex2data&lt;/code> depending on the type of the data. See &lt;a href="../doc_library/#format">Library/Format&lt;/a> for more information.&lt;/p>
+&lt;h4 id="format-of-geomagnetic-data">Format of Geomagnetic Data&lt;/h4>
 &lt;p>All original files of geomagnetic timeseries have to be converted to the new format before any function that takes &lt;code>dir_data&lt;/code> as an input argument.
 You can convert the data by simply applying:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-matlab" data-lang="matlab">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">conv_geomagdata&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">dir_originalfiles&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span> &lt;span style="color:#000">dir_data&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span>
@@ -210,7 +216,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="plotEQKTIP_ex1.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
 &lt;!--
 `cd` to the folder where there is `.jmd`, and
 ```
@@ -234,7 +240,7 @@ cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_
 &lt;/ol>
 &lt;p>The four stages is wrapped by four functions with keyword options that we can customize the parameters related to model optimization and probability forecast.
 The four main functions are wrapper functions for routine training and forecasting process. As follow:&lt;/p>
-&lt;h3 id="data-conversion-and-preprocessing">Data Conversion and Preprocessing&lt;/h3>
+&lt;h3 id="data-conversion">Data Conversion&lt;/h3>
 &lt;h4 id="conv_geomagdata">&lt;code>conv_geomagdata&lt;/code>&lt;/h4>
 &lt;div class="markdown">&lt;p>The original geomagnetic data &amp;#40;which are those in &amp;quot;.csv&amp;quot; format being something like &amp;quot;2008010300.KM&amp;quot; or &amp;quot;20190307.LY&amp;quot;&amp;#41; should be converted to a standard format before any calculation. &lt;code>conv_geomagdata&amp;#40;dir_originalfiles, dir_data&amp;#41;&lt;/code> read original data in &lt;code>dir_originalfiles&lt;/code> and save them in the standard format at the directory &lt;code>dir_data&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Keyword Argument:&lt;/strong>&lt;/p>
@@ -268,15 +274,21 @@ datetime&amp;#40;2013,12,10&amp;#41;, datetime&amp;#40;2017,10,10&amp;#41;&amp;#
 &lt;h4 id="conv_gemsdata">&lt;code>conv_gemsdata&lt;/code>&lt;/h4>
 &lt;div class="markdown">&lt;p>&lt;code>conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;&lt;/code> read original GEMS&amp;#39;s data &amp;#40;e.g., &amp;quot;2012&lt;em>02&lt;/em>07&lt;em>16&lt;/em>45&lt;em>00.dat&amp;quot;&amp;#41; in &amp;#96;dir&lt;/em>gems&amp;#96;, merge and convert them to the standard format for MagTIP.&lt;/p>
 &lt;p>Also see &lt;code>&amp;quot;read_gemsdata.m&amp;quot;&lt;/code>. &lt;strong>Example&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code class="language-matlab">dir_gems &amp;#61; &amp;#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&amp;#39;;
+&lt;pre>&lt;code class="language-matlab">dir_gems &amp;#61; &amp;#39;g:\GEMSdat\&amp;#39;;
+&amp;#37; where the individual data locates in for example:
+&amp;#37; &amp;#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&amp;#39;
 saveto &amp;#61; &amp;#39;d:\Data&amp;#39;;
 dir_catalog &amp;#61; &amp;#37; for obtaining the station information &amp;#40;&amp;quot;station_location.mat&amp;quot;&amp;#41;;
 conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/div>
+&lt;h3 id="data-preprocessing">Data Preprocessing&lt;/h3>
+&lt;div class="markdown">&lt;p>&lt;code>M_prp &amp;#61; no&amp;#40;fpath&amp;#41;&lt;/code> does no preprocessing, loads and returns the data of &lt;code>fpath&lt;/code> in the form of matrix.&lt;/p>
+&lt;p>Other functions might also depends on &lt;code>no&lt;/code>. For example, &lt;code>prpfunctions&lt;/code> is dependent on &lt;code>no&lt;/code> to get the directory of all functions for preprocessing. &lt;/p>
+&lt;/div>
 &lt;h3 id="statistical-index-calculation-statind">Statistical Index Calculation (&lt;code>statind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>statind&amp;#40;dir_data,dir_output&amp;#41;&lt;/code> calculate daily statistics &amp;#40;a statistical quantity as an index of the day&amp;#41; of the daily timeseries in &lt;code>dir_data&lt;/code>. The output variables are stored in &lt;code>dir_output&lt;/code>.&lt;/p>
 &lt;p>&lt;strong>Example&lt;/strong>:&lt;/p>
-&lt;pre>&lt;code class="language-matlab">statind&amp;#40;dir_data,dir_output,&amp;#39;StatName&amp;#39;,&amp;#39;S&amp;#39;,&amp;#39;StatFunction&amp;#39;,@skewness, &amp;#39;Filter&amp;#39;, &amp;#123;&amp;#39;ULF-A&amp;#39;,&amp;#39;ULF-B&amp;#39;&amp;#125;&amp;#41;;&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-matlab">statind&amp;#40;dir_data,dir_output,&amp;#39;StatName&amp;#39;,&amp;#39;S&amp;#39;,&amp;#39;StatFunction&amp;#39;,@skewness, &amp;#39;Preprocess&amp;#39;, &amp;#123;&amp;#39;ULF_A&amp;#39;,&amp;#39;ULF_B&amp;#39;&amp;#125;&amp;#41;;&lt;/code>&lt;/pre>
 &lt;p>In which, &lt;code>dir_data&lt;/code> is the directory for the time series in the standard format; &lt;code>dir_output&lt;/code> is the &lt;code>dir_stat&lt;/code> mentioned before.&lt;/p>
 &lt;p>&lt;strong>Keyword Arguments&lt;/strong>:&lt;/p>
 &lt;ul>
@@ -298,23 +310,23 @@ conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;p>&lt;code>&amp;#39;Filter&amp;#39;&lt;/code>&lt;/p>
+&lt;li>&lt;p>&lt;code>&amp;#39;Preprocess&amp;#39;&lt;/code>&lt;/p>
 &lt;ul>
-&lt;li>&lt;p>Apply filter&amp;#40;s&amp;#41; to time series loaded from &lt;code>dir_data&lt;/code>. Generally applying a filter very largely increase the computing time, so you may consider &lt;code>&amp;#39;SaveFilteredData&amp;#39;&lt;/code>.&lt;/p>
+&lt;li>&lt;p>Apply filter&amp;#40;s&amp;#41; to time series loaded from &lt;code>dir_data&lt;/code>. Generally applying a filter very largely increase the computing time, so you may consider &lt;code>&amp;#39;SavePreprocessedData&amp;#39;&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>Default is &lt;code>&amp;#123;&amp;#39;no&amp;#39;&amp;#125;&lt;/code>, where no filter will be applied.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>Supported arguments are &lt;code>&amp;#39;no&amp;#39;&lt;/code>, &lt;code>&amp;#39;ULF-A&amp;#39;&lt;/code> &amp;#40;a band pass filter of frequency range &lt;code>&amp;#91;0.001 0.003&amp;#93;&lt;/code> Hz&amp;#41;, &lt;code>&amp;#39;ULF-B&amp;#39;&lt;/code> &amp;#40;&lt;code>&amp;#91;0.001 0.01&amp;#93;&lt;/code> Hz&amp;#41;, and &lt;code>&amp;#39;ULF-C&amp;#39;&lt;/code> &amp;#40;&lt;code>&amp;#91;0.001 0.1&amp;#93;&lt;/code> Hz&amp;#41;.&lt;/p>
+&lt;li>&lt;p>Supported arguments are &lt;code>&amp;#39;no&amp;#39;&lt;/code>, &lt;code>&amp;#39;ULF_A&amp;#39;&lt;/code> &amp;#40;a band pass filter of frequency range &lt;code>&amp;#91;0.001 0.003&amp;#93;&lt;/code> Hz&amp;#41;, &lt;code>&amp;#39;ULF_B&amp;#39;&lt;/code> &amp;#40;&lt;code>&amp;#91;0.001 0.01&amp;#93;&lt;/code> Hz&amp;#41;, and &lt;code>&amp;#39;ULF_C&amp;#39;&lt;/code> &amp;#40;&lt;code>&amp;#91;0.001 0.1&amp;#93;&lt;/code> Hz&amp;#41;.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>Also see &lt;code>filterthedata&amp;#40;&amp;#41;&lt;/code>.&lt;/p>
+&lt;li>&lt;p>Use &lt;code>prpfunctions&amp;#40;&amp;#41;&lt;/code> to list all available preprocessing functions.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>If multiple filters are applied, for example &lt;code>&amp;#123;&amp;#39;no&amp;#39;, &amp;#39;ULF-A&amp;#39;&amp;#125;&lt;/code>, then two sets of result according to no-filter data and ULF-A band passed data are going to be produced. &lt;/p>
+&lt;li>&lt;p>If multiple filters are applied, for example &lt;code>&amp;#123;&amp;#39;no&amp;#39;, &amp;#39;ULF_A&amp;#39;&amp;#125;&lt;/code>, then two sets of result according to no-filter data and ULF_A band passed data are going to be produced. &lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;p>&lt;code>&amp;#39;SaveFilteredData&amp;#39;&lt;/code>&lt;/p>
+&lt;li>&lt;p>&lt;code>&amp;#39;SavePreprocessedData&amp;#39;&lt;/code>&lt;/p>
 &lt;ul>
-&lt;li>&lt;p>Save the filtered data to an alternative folder. Their directory is parallel to that of no-filter data.&lt;/p>
+&lt;li>&lt;p>Save the preprocessed data to an alternative folder. Their directory is parallel to that of no-filter data.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -382,7 +394,7 @@ molscore&amp;#40;dir_tsAIN,dir_catalog,dir_molchan&amp;#41;;&lt;/code>&lt;/pre>
 &lt;ul>
 &lt;li>&lt;p>&amp;#39;TrainingPhase&amp;#39;&lt;/p>
 &lt;ul>
-&lt;li>&lt;p>Assigns a &amp;#40;set of&amp;#41; training phase&amp;#40;s&amp;#41;. It should be of type &lt;code>&amp;#39;calendarDuration&amp;#39;&lt;/code>, &lt;code>&amp;#39;duration&amp;#39;&lt;/code>, an N by 2 array of &lt;code>&amp;#39;datetime&amp;#39;&lt;/code>, or an N by 2 cell array, where N is the number of the training phases. If given an N by 2 array specifying N training phases, then N sets of results will be produced separately, with output format being &lt;code>&amp;#39;&amp;#91;MolScore&amp;#93;stn&amp;#91;&amp;#37;x&amp;#93;ID&amp;#91;&amp;#37;s&amp;#93;filt&amp;#91;&amp;#37;s&amp;#93;dt&amp;#91;&amp;#37;s-&amp;#37;s&amp;#93;.mat&amp;#39;&lt;/code>.&lt;/p>
+&lt;li>&lt;p>Assigns a &amp;#40;set of&amp;#41; training phase&amp;#40;s&amp;#41;. It should be of type &lt;code>&amp;#39;calendarDuration&amp;#39;&lt;/code>, &lt;code>&amp;#39;duration&amp;#39;&lt;/code>, an N by 2 array of &lt;code>&amp;#39;datetime&amp;#39;&lt;/code>, or an N by 2 cell array, where N is the number of the training phases. If given an N by 2 array specifying N training phases, then N sets of results will be produced separately, with output format being &lt;code>&amp;#39;&amp;#91;MolScore&amp;#93;stn&amp;#91;&amp;#37;x&amp;#93;ID&amp;#91;&amp;#37;s&amp;#93;prp&amp;#91;&amp;#37;s&amp;#93;dt&amp;#91;&amp;#37;s-&amp;#37;s&amp;#93;.mat&amp;#39;&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>For example, a 4 by 2 datetime array &lt;code>reshape&amp;#40;datetime&amp;#40;2009:2016,2,1&amp;#41;,&amp;#91;&amp;#93;,2&amp;#41;&lt;/code> specifies the start and end date of 4 training phases, with the first column being the datetime of the start and the second column being the end of each training phases.&lt;/p>
 &lt;/li>
@@ -504,7 +516,7 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;/ul>
 &lt;div class="markdown">&lt;p>&lt;code>molscore3_parfor&lt;/code> is the parallel computing version of &lt;code>molscore3&lt;/code>, it takes the same input arguments and keyword options as &lt;code>molscore3&lt;/code>.&lt;/p>
 &lt;/div>
-&lt;h2 id="class-definition">Class Definition&lt;/h2>
+&lt;h2 id="format">Format&lt;/h2>
 &lt;div class="markdown">&lt;p>&lt;code>fmt&lt;/code> is a class that &lt;/p>
 &lt;ol>
 &lt;li>&lt;p>stores all constant names&lt;/p>
@@ -518,9 +530,11 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;ul>
 &lt;li>&lt;p>&lt;code>colindex2data&amp;#40;what_type&amp;#41;&lt;/code>: returns column indices to time and data part of the loaded matrix. Example: &lt;code>&amp;#91;colind_time, colind_data&amp;#93; &amp;#61; colindex2data&amp;#40;&amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code>&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>&lt;code>filterRange&amp;#40;filter_tag&amp;#41;&lt;/code>: returns two values indicating the lower and upper limit of the filter, in the unit of Hz. Example: &lt;code>fmt.filterRange&amp;#40;ULF-A&amp;#41;&lt;/code>.&lt;/p>
+&lt;li>&lt;p>&lt;code>filterRange&amp;#40;filter_tag&amp;#41;&lt;/code>: returns two values indicating the lower and upper limit of the filter, in the unit of Hz. Example: &lt;code>fmt.filterRange&amp;#40;ULF_A&amp;#41;&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>&lt;code>expecteddatapoint&amp;#40;what_type&amp;#41;&lt;/code>: returns the expected number of data point of a specific file type. Example: &lt;code>totalpts &amp;#61; expecteddatapoint&amp;#40;&amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code>; and you can derive sampling frequency &lt;code>fs&lt;/code> by &lt;code>fs &amp;#61; totalpts/86400&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>fmtfieldname &amp;#61; datatype_fieldname&amp;#40;what_type&amp;#41;&lt;/code>: returns the field name for &lt;code>fmt&lt;/code> that you can &lt;code>fmt.&amp;#40;fmtfieldname&amp;#41;&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -994,7 +1008,7 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;li>&lt;p>&amp;#39;Rigorous&amp;#39;: Whether to drop &amp;#40;ignore&amp;#41; the probability forecasts that are not in the range of the forecasting phases. Default is true. Generally the leading time window &amp;#40;&lt;code>Tlead&lt;/code>&amp;#41; is different among models, and the probability can be calculated as far as the &lt;code>Tlead&lt;/code> of at least one model covered. However, for the dates out of the forecasting phase, only part of the models are applied thus the probability forecast is weaker.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>&amp;#39;TargetPattern&amp;#39;: the pattern for filtering the files in &lt;code>dir_jointstation&lt;/code>. Default is to look up all files that fits the pattern &amp;quot;&amp;#91;JointStation&amp;#93;&lt;em>.mat&amp;quot;. For example, you can manually specify it as &amp;quot;&lt;/em>&amp;#91;ULF-A&amp;#93;&amp;quot; to give plots of that based on ULF-A only. The pattern should always begin with &amp;quot;&lt;em>&amp;quot; and the last cahracter can never be &amp;quot;&lt;/em>&amp;quot;. For multiple filtering at once &amp;#40;e.g., &lt;code>&amp;#39;*&amp;#91;ULF-B&amp;#93;*&amp;#91;Tpred-1&amp;#93;&amp;#39;&lt;/code>&amp;#41;, join the pattern with &amp;quot;*&amp;quot; and the order is important.&lt;/p>
+&lt;li>&lt;p>&amp;#39;TargetPattern&amp;#39;: the pattern for filtering the files in &lt;code>dir_jointstation&lt;/code>. Default is to look up all files that fits the pattern &amp;quot;&amp;#91;JointStation&amp;#93;&lt;em>.mat&amp;quot;. For example, you can manually specify it as &amp;quot;&lt;/em>&amp;#91;ULF&lt;em>A&amp;#93;&amp;quot; to give plots of that based on ULF&lt;/em>A only. The pattern should always begin with &amp;quot;&lt;em>&amp;quot; and the last cahracter can never be &amp;quot;&lt;/em>&amp;quot;. For multiple filtering at once &amp;#40;e.g., &lt;code>&amp;#39;*&amp;#91;ULF_B&amp;#93;*&amp;#91;Tpred-1&amp;#93;&amp;#39;&lt;/code>&amp;#41;, join the pattern with &amp;quot;*&amp;quot; and the order is important.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -1028,13 +1042,13 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;div class="markdown">&lt;p>&lt;code>calcFittingDegree&amp;#40;jpathlist&amp;#41;&lt;/code> according to the given files &amp;#40;&lt;code>jpathlist&lt;/code>&amp;#41; provides the overall alarmed rate, missing rate that allows the calculation of the overall fitting degree. Make sure to provide correct input list of the &lt;code>&amp;#91;JointStation&amp;#93;&lt;/code> variable , for example, those have the same ID and are not overlapped in forecasting time interval for each group; otherwise the calculated fitting degree can be unreasonable.&lt;/p>
 &lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
 &lt;pre>&lt;code class="language-matlab">dir_png &amp;#61; &amp;#39;D:\GoogleDrive\0MyResearch\CWB_project\CWB2021\Figures&amp;#39;;
-jpathlist &amp;#61; datalist&amp;#40;&amp;#39;&amp;#91;JointStation&amp;#93;ID&amp;#91;ou7ud&amp;#93;filt&amp;#91;ULF-B&amp;#93;*.mat&amp;#39;, dir_jointstation&amp;#41;.fullpath;
+jpathlist &amp;#61; datalist&amp;#40;&amp;#39;&amp;#91;JointStation&amp;#93;ID&amp;#91;ou7ud&amp;#93;prp&amp;#91;ULF_B&amp;#93;*.mat&amp;#39;, dir_jointstation&amp;#41;.fullpath;
 &amp;#91;AlarmedRate, MissingRate, xticklabel, EQKs, TIP3s, TIPv3s,TIPTimes,LatLons&amp;#93; &amp;#61; calcFittingDegree&amp;#40;jpathlist&amp;#41;;
 FittingDegrees &amp;#61; 1 - AlarmedRate - MissingRate;
-plotEQKTIP3&amp;#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&amp;#41;;&lt;/code>&lt;/pre>
+plotEQKTIP3&amp;#40;dir_png,prp_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&amp;#41;;&lt;/code>&lt;/pre>
 &lt;p>&lt;strong>Input Arguments&lt;/strong>:&lt;/p>
 &lt;ul>
-&lt;li>&lt;p>&lt;code>jpathlist&lt;/code>: a cell array of the full paths of &lt;code>&amp;#91;JointStation&amp;#93;&lt;/code> files that are produced by &lt;code>molscore3&lt;/code>. You can simpliy obtain the path list by &lt;code>jpathlist &amp;#61; datalist&amp;#40;&amp;#39;&amp;#91;JointStation&amp;#93;ID&amp;#91;ou7ud&amp;#93;*filt&amp;#91;ULF-A&amp;#93;*slc&amp;#91;Tpred-10&amp;#93;*.mat&amp;#39;,dir_jointstation&amp;#41;.fullpath;&lt;/code>&lt;/p>
+&lt;li>&lt;p>&lt;code>jpathlist&lt;/code>: a cell array of the full paths of &lt;code>&amp;#91;JointStation&amp;#93;&lt;/code> files that are produced by &lt;code>molscore3&lt;/code>. You can simpliy obtain the path list by &lt;code>jpathlist &amp;#61; datalist&amp;#40;&amp;#39;&amp;#91;JointStation&amp;#93;ID&amp;#91;ou7ud&amp;#93;*prp&amp;#91;ULF_A&amp;#93;*slc&amp;#91;Tpred-10&amp;#93;*.mat&amp;#39;,dir_jointstation&amp;#41;.fullpath;&lt;/code>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>Keyword Arguments&lt;/strong>:&lt;/p>
