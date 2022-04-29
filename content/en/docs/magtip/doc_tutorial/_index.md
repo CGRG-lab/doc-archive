@@ -2,14 +2,14 @@
 weight: 10
 author: "Tsung-Hsi, Wu"
 title: "Introduction and Tutorial"
-date: "2022-03-07"
+date: "2022-04-29"
 linkTitle: "Introduction & Tutorial"
 ---
 
 
 <!-- 
 ```
-using GeneralTools
+using HypertextTools
 cd("doc_tutorial")
 lazyhugo();
 cp2content(raw"D:\GoogleDrive\Sites\CGRG\doc-archive\content\en\docs\magtip\doc_tutorial")
@@ -135,7 +135,19 @@ here is an example for `catalog.csv`:
 Also see [checkstation.m]({{< ref "docs/magtip/doc_library/_index.md#station-list-formatting-checkstation" >}}) and [checkcatalog.m]({{< ref "docs/magtip/doc_library/_index.md#earthquake-catalog-formatting-checkcatalog" >}}).
 
 
-### Format of Geomagnetic Data
+### Standard data format
+All records should be converted/transformed into the formatted matfiles. 
+The formatted file name is generated via `standarddataname`, where
+
+
+<div class="markdown"><p><code>&#91;fname&#93; &#61; standarddataname&#40;stnm, dtstr, type_j&#41;</code> returns the file name of the standard data format.  For example, <code>standarddataname&#40;&#39;HUAL&#39;, &#39;20120202&#39;, &#39;GEMS0&#39;&#41;</code> returns <code>stn&#91;HUAL&#93;dt&#91;20120202&#93;type&#91;GEMS0&#93;.mat</code>.</p>
+</div>
+
+
+
+The formatted matfile should contain only 1 field where the field name can be arbitrarily chosen. Saying the field to be `M`, `M` has to be a matrix where the column indices to time and data are assigned by function `fmt.colindex2data` depending on the type of the data. See [Library/Format](../doc_library/#format) for more information.
+
+#### Format of Geomagnetic Data
 
 All original files of geomagnetic timeseries have to be converted to the new format before any function that takes `dir_data` as an input argument.
 You can convert the data by simply applying:

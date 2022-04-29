@@ -2,7 +2,7 @@
 weight: 20
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2022-04-27"
+date: "2022-04-29"
 linkTitle: "Library"
 ---
 
@@ -35,7 +35,7 @@ The four stages is wrapped by four functions with keyword options that we can cu
 The four main functions are wrapper functions for routine training and forecasting process. As follow:
 
 
-### Data Conversion and Preprocessing 
+### Data Conversion
 #### `conv_geomagdata`
 
 
@@ -76,7 +76,9 @@ The four main functions are wrapper functions for routine training and forecasti
 
 <div class="markdown"><p><code>conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;</code> read original GEMS&#39;s data &#40;e.g., &quot;2012<em>02</em>07<em>16</em>45<em>00.dat&quot;&#41; in &#96;dir</em>gems&#96;, merge and convert them to the standard format for MagTIP.</p>
 <p>Also see <code>&quot;read_gemsdata.m&quot;</code>. <strong>Example</strong>:</p>
-<pre><code class="language-matlab">dir_gems &#61; &#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&#39;;
+<pre><code class="language-matlab">dir_gems &#61; &#39;g:\GEMSdat\&#39;;
+&#37; where the individual data locates in for example:
+&#37; &#39;g:\GEMSdat\em10\REC\Y2012\M02\D07\2012_02_07_16_45_00.dat&#39;
 saveto &#61; &#39;d:\Data&#39;;
 dir_catalog &#61; &#37; for obtaining the station information &#40;&quot;station_location.mat&quot;&#41;;
 conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
@@ -84,12 +86,20 @@ conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
 
 
 
+### Data Preprocessing
+
+
+<div class="markdown"><p><code>M_prp &#61; no&#40;fpath&#41;</code> does no preprocessing, loads and returns the data of <code>fpath</code> in the form of matrix.</p>
+<p>Other functions might also depends on <code>no</code>. For example, <code>prpfunctions</code> is dependent on <code>no</code> to get the directory of all functions for preprocessing. </p>
+</div>
+
+
 
 ### Statistical Index Calculation (`statind`)
 
 <div class="markdown"><p><code>statind&#40;dir_data,dir_output&#41;</code> calculate daily statistics &#40;a statistical  quantity as an index of the day&#41; of the daily timeseries in <code>dir_data</code>.  The output variables are stored in <code>dir_output</code>.</p>
 <p><strong>Example</strong>:</p>
-<pre><code class="language-matlab">statind&#40;dir_data,dir_output,&#39;StatName&#39;,&#39;S&#39;,&#39;StatFunction&#39;,@skewness, &#39;Filter&#39;, &#123;&#39;ULF-A&#39;,&#39;ULF-B&#39;&#125;&#41;;</code></pre>
+<pre><code class="language-matlab">statind&#40;dir_data,dir_output,&#39;StatName&#39;,&#39;S&#39;,&#39;StatFunction&#39;,@skewness, &#39;Preprocess&#39;, &#123;&#39;ULF_A&#39;,&#39;ULF_B&#39;&#125;&#41;;</code></pre>
 <p>In which, <code>dir_data</code> is the directory for the time series in the standard format; <code>dir_output</code> is the <code>dir_stat</code> mentioned before.</p>
 <p><strong>Keyword Arguments</strong>:</p>
 <ul>
@@ -111,23 +121,23 @@ conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
 </li>
 </ul>
 </li>
-<li><p><code>&#39;Filter&#39;</code></p>
+<li><p><code>&#39;Preprocess&#39;</code></p>
 <ul>
-<li><p>Apply filter&#40;s&#41; to time series loaded from <code>dir_data</code>. Generally  applying a filter very largely increase the computing time, so you  may consider <code>&#39;SaveFilteredData&#39;</code>.</p>
+<li><p>Apply filter&#40;s&#41; to time series loaded from <code>dir_data</code>. Generally  applying a filter very largely increase the computing time, so you  may consider <code>&#39;SavePreprocessedData&#39;</code>.</p>
 </li>
 <li><p>Default is <code>&#123;&#39;no&#39;&#125;</code>, where no filter will be applied.</p>
 </li>
-<li><p>Supported arguments are <code>&#39;no&#39;</code>, <code>&#39;ULF-A&#39;</code> &#40;a band pass filter of  frequency range <code>&#91;0.001 0.003&#93;</code> Hz&#41;, <code>&#39;ULF-B&#39;</code> &#40;<code>&#91;0.001 0.01&#93;</code> Hz&#41;,  and <code>&#39;ULF-C&#39;</code> &#40;<code>&#91;0.001 0.1&#93;</code> Hz&#41;.</p>
+<li><p>Supported arguments are <code>&#39;no&#39;</code>, <code>&#39;ULF_A&#39;</code> &#40;a band pass filter of  frequency range <code>&#91;0.001 0.003&#93;</code> Hz&#41;, <code>&#39;ULF_B&#39;</code> &#40;<code>&#91;0.001 0.01&#93;</code> Hz&#41;,  and <code>&#39;ULF_C&#39;</code> &#40;<code>&#91;0.001 0.1&#93;</code> Hz&#41;.</p>
 </li>
-<li><p>Also see <code>filterthedata&#40;&#41;</code>.</p>
+<li><p>Use <code>prpfunctions&#40;&#41;</code> to list all available preprocessing functions.</p>
 </li>
-<li><p>If multiple filters are applied, for example <code>&#123;&#39;no&#39;, &#39;ULF-A&#39;&#125;</code>, then  two sets of result according to no-filter data and ULF-A band passed data are going to be produced. </p>
+<li><p>If multiple filters are applied, for example <code>&#123;&#39;no&#39;, &#39;ULF_A&#39;&#125;</code>, then  two sets of result according to no-filter data and ULF_A band passed data are going to be produced. </p>
 </li>
 </ul>
 </li>
-<li><p><code>&#39;SaveFilteredData&#39;</code></p>
+<li><p><code>&#39;SavePreprocessedData&#39;</code></p>
 <ul>
-<li><p>Save the filtered data to an alternative folder. Their directory is parallel to that of no-filter data.</p>
+<li><p>Save the preprocessed data to an alternative folder. Their directory is parallel to that of no-filter data.</p>
 </li>
 </ul>
 </li>
@@ -205,7 +215,7 @@ molscore&#40;dir_tsAIN,dir_catalog,dir_molchan&#41;;</code></pre>
 <ul>
 <li><p>&#39;TrainingPhase&#39;</p>
 <ul>
-<li><p>Assigns a &#40;set of&#41; training phase&#40;s&#41;. It should be of type <code>&#39;calendarDuration&#39;</code>, <code>&#39;duration&#39;</code>, an N by 2 array of <code>&#39;datetime&#39;</code>,  or an N by 2 cell array, where N is the number of the training phases. If given an N by 2 array specifying N training phases, then N sets  of results will be produced separately, with output format being  <code>&#39;&#91;MolScore&#93;stn&#91;&#37;x&#93;ID&#91;&#37;s&#93;filt&#91;&#37;s&#93;dt&#91;&#37;s-&#37;s&#93;.mat&#39;</code>.</p>
+<li><p>Assigns a &#40;set of&#41; training phase&#40;s&#41;. It should be of type <code>&#39;calendarDuration&#39;</code>, <code>&#39;duration&#39;</code>, an N by 2 array of <code>&#39;datetime&#39;</code>,  or an N by 2 cell array, where N is the number of the training phases. If given an N by 2 array specifying N training phases, then N sets  of results will be produced separately, with output format being  <code>&#39;&#91;MolScore&#93;stn&#91;&#37;x&#93;ID&#91;&#37;s&#93;prp&#91;&#37;s&#93;dt&#91;&#37;s-&#37;s&#93;.mat&#39;</code>.</p>
 </li>
 <li><p>For example, a 4 by 2 datetime array  <code>reshape&#40;datetime&#40;2009:2016,2,1&#41;,&#91;&#93;,2&#41;</code> specifies the start and end date of 4 training phases, with the first column being the datetime of the start and the second column being the end of each training phases.</p>
 </li>
@@ -339,7 +349,7 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 
 
 
-## Class Definition
+## Format
 
 <div class="markdown"><p><code>fmt</code> is a class that </p>
 <ol>
@@ -354,9 +364,11 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 <ul>
 <li><p><code>colindex2data&#40;what_type&#41;</code>: returns column indices to time and data part of the loaded matrix. Example: <code>&#91;colind_time, colind_data&#93; &#61; colindex2data&#40;&#39;GEMS0&#39;&#41;</code></p>
 </li>
-<li><p><code>filterRange&#40;filter_tag&#41;</code>: returns two values indicating the lower and upper limit of the filter, in the unit of Hz. Example: <code>fmt.filterRange&#40;ULF-A&#41;</code>.</p>
+<li><p><code>filterRange&#40;filter_tag&#41;</code>: returns two values indicating the lower and upper limit of the filter, in the unit of Hz. Example: <code>fmt.filterRange&#40;ULF_A&#41;</code>.</p>
 </li>
 <li><p><code>expecteddatapoint&#40;what_type&#41;</code>: returns the expected number of data point of a specific file type. Example: <code>totalpts &#61; expecteddatapoint&#40;&#39;GEMS0&#39;&#41;</code>; and you can derive sampling frequency <code>fs</code> by <code>fs &#61; totalpts/86400</code>.</p>
+</li>
+<li><p><code>fmtfieldname &#61; datatype_fieldname&#40;what_type&#41;</code>: returns the field name for <code>fmt</code> that you can <code>fmt.&#40;fmtfieldname&#41;</code>.</p>
 </li>
 </ul>
 </div>
@@ -890,7 +902,7 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 </li>
 <li><p>&#39;Rigorous&#39;: Whether to drop &#40;ignore&#41; the probability forecasts that are not in the range of the forecasting phases. Default is true. Generally the leading  time window &#40;<code>Tlead</code>&#41; is different among models, and the probability can be calculated as far as the <code>Tlead</code> of at least one model covered.  However, for the dates out of the forecasting phase, only part of the models are applied thus the probability forecast is weaker.</p>
 </li>
-<li><p>&#39;TargetPattern&#39;: the pattern for filtering the files in <code>dir_jointstation</code>. Default is to look up all files that fits the pattern  &quot;&#91;JointStation&#93;<em>.mat&quot;. For example, you can manually specify it as &quot;</em>&#91;ULF-A&#93;&quot; to give plots of that based on ULF-A only. The pattern should always begin with &quot;<em>&quot; and the last cahracter can never be &quot;</em>&quot;. For multiple filtering at once &#40;e.g., <code>&#39;*&#91;ULF-B&#93;*&#91;Tpred-1&#93;&#39;</code>&#41;, join the pattern with &quot;*&quot; and the order is important.</p>
+<li><p>&#39;TargetPattern&#39;: the pattern for filtering the files in <code>dir_jointstation</code>. Default is to look up all files that fits the pattern  &quot;&#91;JointStation&#93;<em>.mat&quot;. For example, you can manually specify it as &quot;</em>&#91;ULF<em>A&#93;&quot; to give plots of that based on ULF</em>A only. The pattern should always begin with &quot;<em>&quot; and the last cahracter can never be &quot;</em>&quot;. For multiple filtering at once &#40;e.g., <code>&#39;*&#91;ULF_B&#93;*&#91;Tpred-1&#93;&#39;</code>&#41;, join the pattern with &quot;*&quot; and the order is important.</p>
 </li>
 </ul>
 </div>
@@ -939,13 +951,13 @@ All Tools are not necessary for the MagTIP algorithm; they are invented, for exa
 <div class="markdown"><p><code>calcFittingDegree&#40;jpathlist&#41;</code> according to the given files &#40;<code>jpathlist</code>&#41; provides the overall alarmed rate, missing rate that allows the calculation of the overall fitting degree.  Make sure to provide correct input list of the <code>&#91;JointStation&#93;</code> variable , for example, those have the same ID and are not overlapped in  forecasting time interval for each group;  otherwise the calculated fitting degree can be unreasonable.</p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-matlab">dir_png &#61; &#39;D:\GoogleDrive\0MyResearch\CWB_project\CWB2021\Figures&#39;;
-jpathlist &#61; datalist&#40;&#39;&#91;JointStation&#93;ID&#91;ou7ud&#93;filt&#91;ULF-B&#93;*.mat&#39;, dir_jointstation&#41;.fullpath;
+jpathlist &#61; datalist&#40;&#39;&#91;JointStation&#93;ID&#91;ou7ud&#93;prp&#91;ULF_B&#93;*.mat&#39;, dir_jointstation&#41;.fullpath;
 &#91;AlarmedRate, MissingRate, xticklabel, EQKs, TIP3s, TIPv3s,TIPTimes,LatLons&#93; &#61; calcFittingDegree&#40;jpathlist&#41;;
 FittingDegrees &#61; 1 - AlarmedRate - MissingRate;
-plotEQKTIP3&#40;dir_png,filt_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&#41;;</code></pre>
+plotEQKTIP3&#40;dir_png,prp_i, xlabels, EQKs, TIP3s, TIPv3s,TIPTimes, LatLons&#41;;</code></pre>
 <p><strong>Input Arguments</strong>:</p>
 <ul>
-<li><p><code>jpathlist</code>: a cell array of the full paths of <code>&#91;JointStation&#93;</code> files that are produced by <code>molscore3</code>. You can simpliy obtain the path list by <code>jpathlist &#61; datalist&#40;&#39;&#91;JointStation&#93;ID&#91;ou7ud&#93;*filt&#91;ULF-A&#93;*slc&#91;Tpred-10&#93;*.mat&#39;,dir_jointstation&#41;.fullpath;</code></p>
+<li><p><code>jpathlist</code>: a cell array of the full paths of <code>&#91;JointStation&#93;</code> files that are produced by <code>molscore3</code>. You can simpliy obtain the path list by <code>jpathlist &#61; datalist&#40;&#39;&#91;JointStation&#93;ID&#91;ou7ud&#93;*prp&#91;ULF_A&#93;*slc&#91;Tpred-10&#93;*.mat&#39;,dir_jointstation&#41;.fullpath;</code></p>
 </li>
 </ul>
 <p><strong>Keyword Arguments</strong>:</p>
