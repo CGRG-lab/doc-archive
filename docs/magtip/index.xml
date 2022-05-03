@@ -282,6 +282,15 @@ dir_catalog &amp;#61; &amp;#37; for obtaining the station information &amp;#40;&
 conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;h3 id="data-preprocessing">Data Preprocessing&lt;/h3>
+&lt;p>Write your preprocessing function for example &lt;code>prp_fn(filepath)&lt;/code> for file in the &lt;a href="../doc_tutorial/#standard-data-format">Standard Data Format&lt;/a>. Put for example &lt;code>&amp;quot;prp_fn.m&amp;quot;&lt;/code> under &lt;code>&amp;quot;/src/preprocess&amp;quot;&lt;/code>. Use your custom preprocessing functions with the keyword argument &lt;code>..., 'Preprocess', 'prp_fn'&lt;/code> in &lt;code>statind(...)&lt;/code>.&lt;/p>
+&lt;blockquote>
+&lt;p>💡&lt;strong>Hint:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>You may apply different preprocessing pipelines for different types of data by checking the content or file name.&lt;/li>
+&lt;li>Use &lt;code>prpfunctions()&lt;/code> to list all preprocessing functions that can be called.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>Here is the list of preprocessing functions:&lt;/p>
 &lt;div class="markdown">&lt;p>Hint: it has to contain importdata TODO: under construction&lt;/p>
 &lt;p>&lt;code>M_prp &amp;#61; no&amp;#40;fpath&amp;#41;&lt;/code> does no preprocessing, loads and returns the data of &lt;code>fpath&lt;/code> in the form of matrix.&lt;/p>
 &lt;p>Other functions might also depends on &lt;code>no&lt;/code>. For example, &lt;code>prpfunctions&lt;/code> is dependent on &lt;code>no&lt;/code> to get the directory of all functions for preprocessing. &lt;/p>
@@ -315,13 +324,13 @@ conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;ul>
 &lt;li>&lt;p>Apply filter&amp;#40;s&amp;#41; to time series loaded from &lt;code>dir_data&lt;/code>. Generally applying a filter very largely increase the computing time, so you may consider &lt;code>&amp;#39;SavePreprocessedData&amp;#39;&lt;/code>.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>Default is &lt;code>&amp;#123;&amp;#39;no&amp;#39;&amp;#125;&lt;/code>, where no filter will be applied.&lt;/p>
-&lt;/li>
-&lt;li>&lt;p>Supported arguments are &lt;code>&amp;#39;no&amp;#39;&lt;/code>, &lt;code>&amp;#39;ULF_A&amp;#39;&lt;/code> &amp;#40;a band pass filter of frequency range &lt;code>&amp;#91;0.001 0.003&amp;#93;&lt;/code> Hz&amp;#41;, &lt;code>&amp;#39;ULF_B&amp;#39;&lt;/code> &amp;#40;&lt;code>&amp;#91;0.001 0.01&amp;#93;&lt;/code> Hz&amp;#41;, and &lt;code>&amp;#39;ULF_C&amp;#39;&lt;/code> &amp;#40;&lt;code>&amp;#91;0.001 0.1&amp;#93;&lt;/code> Hz&amp;#41;.&lt;/p>
+&lt;li>&lt;p>Default is &lt;code>&amp;#123;&amp;#39;no&amp;#39;&amp;#125;&lt;/code>, which applies only minimal preprocessings.&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>Use &lt;code>prpfunctions&amp;#40;&amp;#41;&lt;/code> to list all available preprocessing functions.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>If multiple filters are applied, for example &lt;code>&amp;#123;&amp;#39;no&amp;#39;, &amp;#39;ULF_A&amp;#39;&amp;#125;&lt;/code>, then two sets of result according to no-filter data and ULF_A band passed data are going to be produced. &lt;/p>
+&lt;li>&lt;p>If multiple preprocessing functions are applied, for example &lt;code>&amp;#123;&amp;#39;no&amp;#39;, &amp;#39;ULF_A&amp;#39;&amp;#125;&lt;/code>, then two sets of result according to no-filter data and ULF_A band passed data are going to be produced. &lt;/p>
+&lt;/li>
+&lt;li>&lt;p>See &lt;a href="../doc_library/#data-preprocessing">Data Preprocessing&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -525,6 +534,7 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;div class="markdown">&lt;p>&lt;code>molscore3_parfor&lt;/code> is the parallel computing version of &lt;code>molscore3&lt;/code>, it takes the same input arguments and keyword options as &lt;code>molscore3&lt;/code>.&lt;/p>
 &lt;/div>
 &lt;h2 id="format">Format&lt;/h2>
+&lt;p>For a new type of input data you have to add new properties in &lt;code>fmt&lt;/code> and new cases in &lt;code>fmt&lt;/code>&amp;rsquo;s methods.&lt;/p>
 &lt;div class="markdown">&lt;p>&lt;code>fmt&lt;/code> is a class that &lt;/p>
 &lt;ol>
 &lt;li>&lt;p>stores all constant names&lt;/p>
@@ -533,8 +543,45 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;/li>
 &lt;/ol>
 &lt;p>that enalbes you to modify or extend some contants without breaking other functionalities.&lt;/p>
-&lt;p>&lt;code>fmt&lt;/code> also serves as &amp;quot;dictionaries&amp;quot; of names to corresponding variables.&lt;/p>
-&lt;p>&lt;strong>Functions&lt;/strong>:&lt;/p>
+&lt;p>MagTIP depends on &lt;code>fmt&lt;/code> to load a variety of imtermedate data, including earthquake catalog, station information table and the input data of the standard format. &lt;code>fmt&lt;/code> save constant names and variables as &lt;code>properties &amp;#40;Constant&amp;#41;&lt;/code> that they can be available in global scope. &lt;code>fmt&lt;/code> also have static methods for acquiring information such as the column indices indicating the time vectors and recorded values of the input data of different types.&lt;/p>
+&lt;p>&lt;code>properties &amp;#40;Constant&amp;#41;&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>&lt;code>InfoFileName_molscore &amp;#61; &amp;#39;&amp;#91;MolchanScore&amp;#93;Information.mat&amp;#39;&lt;/code>: name to the intermediate file in the session of training &amp;#40;model optimization&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>InfoFileName_anomalyind &amp;#61; &amp;#39;&amp;#91;tsAIN&amp;#93;Information.mat&amp;#39;&lt;/code>: name to the intermediate file in the session of calculating anomaly indices&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>InfoFileName_jointstation &amp;#61; &amp;#39;&amp;#91;JointStation&amp;#93;Information.mat&amp;#39;&lt;/code>: name to the intermediate file in the joint-station method session&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>InfoFileName_statind &amp;#61; &amp;#39;&amp;#91;StatisticIndex&amp;#93;Information.mat&amp;#39;&lt;/code>: name to the intermediate file in calculating Statistic Index&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>catalogFileName &amp;#61; &amp;#39;catalog.mat&amp;#39;&lt;/code>: file name to the earthquake catalog&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>stationLocationFileName &amp;#61; &amp;#39;station_location.mat&amp;#39;&lt;/code>: name to the file of station information table&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>tag_upperlowerthreshold &amp;#61; &amp;#39;ULthr&amp;#39;&lt;/code>: tag for upper- and -lower threshold defined by &lt;code>Athr&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datestrFormat &amp;#61; &amp;#39;yyyymmdd&amp;#39;&lt;/code>: the format for converting datetime to string tags &amp;#40;&lt;code>dt&lt;/code>&amp;#41; &lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datetimeInputFormat &amp;#61; &amp;#39;yyyyMMdd&amp;#39;&lt;/code>: the format for converting date strings &amp;#40;with tag &lt;code>dt&lt;/code>&amp;#41; to datetime&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datetimeIncrement&lt;/code>: the increment of datetime between two consecutive files of the same station and type.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>&lt;p>&lt;code>LatitudeLimit &amp;#61; &amp;#91;21.5 26&amp;#93;&lt;/code>: latitude limits of the Taiwan area&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>LongitudeLimit &amp;#61; &amp;#91;118 122.5&amp;#93;&lt;/code>: Longitude limits of the Taiwan area&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datatype_mag_1 &amp;#61; &amp;#123;&amp;#39;mFull&amp;#39;, &amp;#39;full&amp;#39;&amp;#125;&lt;/code>: &lt;code>&amp;quot;type&amp;quot;&lt;/code> tag for the full field geomagnetic data &amp;#40;old geomagnetic stations from 2006; &amp;#39;full&amp;#39; is for backward compatibility&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datatype_mag_3 &amp;#61; &amp;#123;&amp;#39;mTri&amp;#39;, &amp;#39;tri&amp;#39;&amp;#125;&lt;/code>: &lt;code>&amp;quot;type&amp;quot;&lt;/code> tag for the 3 component geomagnetic data &amp;#40;new geomagnetic stations from 2020; &amp;#39;tri&amp;#39; is for backward compatibility&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datatype_GEMS_HJ&lt;/code>: &lt;code>&amp;quot;type&amp;quot;&lt;/code> tag for the data of Hong-Jia Chen 2018&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>datatype_GEMS&lt;/code>: &lt;code>&amp;quot;type&amp;quot;&lt;/code> tag for the primitive of Geoelectric data&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>methods &amp;#40;Static&amp;#41;&lt;/code>:&lt;/p>
 &lt;ul>
 &lt;li>&lt;p>&lt;code>colindex2data&amp;#40;what_type&amp;#41;&lt;/code>: returns column indices to time and data part of the loaded matrix. Example: &lt;code>&amp;#91;colind_time, colind_data&amp;#93; &amp;#61; colindex2data&amp;#40;&amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code>&lt;/p>
 &lt;/li>
