@@ -87,6 +87,13 @@ conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
 
 
 ### Data Preprocessing
+Write your preprocessing function for example `prp_fn(filepath)` for file in the [Standard Data Format](../doc_tutorial/#standard-data-format). Put for example `"prp_fn.m"` under `"/src/preprocess"`. Use your custom preprocessing functions with the keyword argument `..., 'Preprocess', 'prp_fn'` in `statind(...)`.
+
+> 💡**Hint:**
+> - You may apply different preprocessing pipelines for different types of data by checking the content or file name.
+> - Use `prpfunctions()` to list all preprocessing functions that can be called.
+
+Here is the list of preprocessing functions: 
 
 
 <div class="markdown"><p>Hint: it has to contain importdata TODO: under construction</p>
@@ -126,13 +133,13 @@ conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
 <ul>
 <li><p>Apply filter&#40;s&#41; to time series loaded from <code>dir_data</code>. Generally  applying a filter very largely increase the computing time, so you  may consider <code>&#39;SavePreprocessedData&#39;</code>.</p>
 </li>
-<li><p>Default is <code>&#123;&#39;no&#39;&#125;</code>, where no filter will be applied.</p>
-</li>
-<li><p>Supported arguments are <code>&#39;no&#39;</code>, <code>&#39;ULF_A&#39;</code> &#40;a band pass filter of  frequency range <code>&#91;0.001 0.003&#93;</code> Hz&#41;, <code>&#39;ULF_B&#39;</code> &#40;<code>&#91;0.001 0.01&#93;</code> Hz&#41;,  and <code>&#39;ULF_C&#39;</code> &#40;<code>&#91;0.001 0.1&#93;</code> Hz&#41;.</p>
+<li><p>Default is <code>&#123;&#39;no&#39;&#125;</code>, which applies only minimal preprocessings.</p>
 </li>
 <li><p>Use <code>prpfunctions&#40;&#41;</code> to list all available preprocessing functions.</p>
 </li>
-<li><p>If multiple filters are applied, for example <code>&#123;&#39;no&#39;, &#39;ULF_A&#39;&#125;</code>, then  two sets of result according to no-filter data and ULF_A band passed data are going to be produced. </p>
+<li><p>If multiple preprocessing functions are applied, for example <code>&#123;&#39;no&#39;, &#39;ULF_A&#39;&#125;</code>, then two sets of result according to no-filter data and ULF_A band passed data are going to be produced. </p>
+</li>
+<li><p>See <a href="../doc_library/#data-preprocessing">Data Preprocessing</a>.</p>
 </li>
 </ul>
 </li>
@@ -358,6 +365,9 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 
 
 ## Format
+For a new type of input data you have to add new properties in `fmt` and new cases in `fmt`'s methods. 
+
+
 
 <div class="markdown"><p><code>fmt</code> is a class that </p>
 <ol>
@@ -367,8 +377,45 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 </li>
 </ol>
 <p>that enalbes you to modify or extend some contants without breaking other functionalities.</p>
-<p><code>fmt</code> also serves as &quot;dictionaries&quot; of names to corresponding variables.</p>
-<p><strong>Functions</strong>:</p>
+<p>MagTIP depends on <code>fmt</code> to load a variety of imtermedate data, including earthquake catalog, station information table and the input data of the standard format.  <code>fmt</code> save constant names and variables as <code>properties &#40;Constant&#41;</code> that they can be available in global scope. <code>fmt</code> also have static methods for acquiring information such as the column indices indicating the time vectors and recorded values of the input data of different types.</p>
+<p><code>properties &#40;Constant&#41;</code>:</p>
+<ul>
+<li><p><code>InfoFileName_molscore &#61; &#39;&#91;MolchanScore&#93;Information.mat&#39;</code>: name to the intermediate file in the session of training &#40;model optimization&#41;</p>
+</li>
+<li><p><code>InfoFileName_anomalyind &#61; &#39;&#91;tsAIN&#93;Information.mat&#39;</code>: name to the intermediate file in the session of calculating anomaly indices</p>
+</li>
+<li><p><code>InfoFileName_jointstation &#61; &#39;&#91;JointStation&#93;Information.mat&#39;</code>: name to the intermediate file in the joint-station method session</p>
+</li>
+<li><p><code>InfoFileName_statind &#61; &#39;&#91;StatisticIndex&#93;Information.mat&#39;</code>: name to the intermediate file in calculating Statistic Index</p>
+</li>
+<li><p><code>catalogFileName &#61; &#39;catalog.mat&#39;</code>: file name to the earthquake catalog</p>
+</li>
+<li><p><code>stationLocationFileName &#61; &#39;station_location.mat&#39;</code>: name to the file of station information table</p>
+</li>
+<li><p><code>tag_upperlowerthreshold &#61; &#39;ULthr&#39;</code>: tag for upper- and -lower threshold defined by <code>Athr</code></p>
+</li>
+<li><p><code>datestrFormat &#61; &#39;yyyymmdd&#39;</code>: the format for converting datetime to string tags &#40;<code>dt</code>&#41; </p>
+</li>
+<li><p><code>datetimeInputFormat &#61; &#39;yyyyMMdd&#39;</code>: the format for converting date strings &#40;with tag <code>dt</code>&#41; to datetime</p>
+</li>
+<li><p><code>datetimeIncrement</code>: the increment of datetime between two consecutive files of the same station and type.</p>
+</li>
+</ul>
+<ul>
+<li><p><code>LatitudeLimit &#61; &#91;21.5 26&#93;</code>: latitude limits of the Taiwan area</p>
+</li>
+<li><p><code>LongitudeLimit &#61; &#91;118 122.5&#93;</code>: Longitude limits of the Taiwan area</p>
+</li>
+<li><p><code>datatype_mag_1 &#61; &#123;&#39;mFull&#39;, &#39;full&#39;&#125;</code>: <code>&quot;type&quot;</code> tag for the full field geomagnetic data &#40;old geomagnetic stations from 2006; &#39;full&#39; is for backward compatibility&#41;</p>
+</li>
+<li><p><code>datatype_mag_3 &#61; &#123;&#39;mTri&#39;, &#39;tri&#39;&#125;</code>: <code>&quot;type&quot;</code> tag for the 3 component geomagnetic data &#40;new geomagnetic stations from 2020; &#39;tri&#39; is for backward compatibility&#41;</p>
+</li>
+<li><p><code>datatype_GEMS_HJ</code>: <code>&quot;type&quot;</code> tag for the data of Hong-Jia Chen 2018</p>
+</li>
+<li><p><code>datatype_GEMS</code>: <code>&quot;type&quot;</code> tag for the primitive of Geoelectric data</p>
+</li>
+</ul>
+<p><code>methods &#40;Static&#41;</code>:</p>
 <ul>
 <li><p><code>colindex2data&#40;what_type&#41;</code>: returns column indices to time and data part of the loaded matrix. Example: <code>&#91;colind_time, colind_data&#93; &#61; colindex2data&#40;&#39;GEMS0&#39;&#41;</code></p>
 </li>
