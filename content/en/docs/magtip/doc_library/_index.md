@@ -2,7 +2,7 @@
 weight: 20
 author: "Tsung-Hsi, Wu"
 title: "Library"
-date: "2022-04-29"
+date: "2022-05-03"
 linkTitle: "Library"
 ---
 
@@ -89,7 +89,8 @@ conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
 ### Data Preprocessing
 
 
-<div class="markdown"><p><code>M_prp &#61; no&#40;fpath&#41;</code> does no preprocessing, loads and returns the data of <code>fpath</code> in the form of matrix.</p>
+<div class="markdown"><p>Hint: it has to contain importdata TODO: under construction</p>
+<p><code>M_prp &#61; no&#40;fpath&#41;</code> does no preprocessing, loads and returns the data of <code>fpath</code> in the form of matrix.</p>
 <p>Other functions might also depends on <code>no</code>. For example, <code>prpfunctions</code> is dependent on <code>no</code> to get the directory of all functions for preprocessing. </p>
 </div>
 
@@ -150,6 +151,13 @@ conv_gemsdata&#40;dir_gems, saveto, dir_catalog&#41;;</code></pre>
 <li><p>Default is <code>&#91;datetime&#40;0001,1,1&#41;, datetime&#40;2999,12,31&#41;&#93;</code>, resulting  in no data selection by date time tag.</p>
 </li>
 </ul>
+</li>
+<li><p><code>&#39;SkipExist&#39;</code></p>
+<ul>
+<li><p>Set it <code>true</code> to skip calculations if in the current loop a file in <code>dir_stat</code> of the</p>
+</li>
+</ul>
+<p>same <code>&#39;stn&#39;</code> and <code>&#39;prp&#39;</code> already exists.</p>
 </li>
 </ul>
 </div>
@@ -373,6 +381,13 @@ molscore3&#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&#41;</code></pr
 </ul>
 </div>
 
+
+
+### Standard input-data name
+
+
+<div class="markdown"><p><code>&#91;fname&#93; &#61; standarddataname&#40;stnm, dtstr, type_j&#41;</code> returns the file name of the standard data format.  For example, <code>standarddataname&#40;&#39;HUAL&#39;, &#39;20120202&#39;, &#39;GEMS0&#39;&#41;</code> returns <code>stn&#91;HUAL&#93;dt&#91;20120202&#93;type&#91;GEMS0&#93;.mat</code>.</p>
+</div>
 
 
 
