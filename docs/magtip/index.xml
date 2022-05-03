@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doc-archive – MagTIP</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/</link><description>Recent content in MagTIP on doc-archive</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://CGRG-lab.github.io/doc-archive/docs/magtip/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Introduction and Tutorial</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</link><pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_tutorial/</guid><description>
 &lt;!--
 ```
 using HypertextTools
@@ -216,7 +216,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="plotEQKTIP_ex1.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
 &lt;!--
 `cd` to the folder where there is `.jmd`, and
 ```
@@ -282,7 +282,8 @@ dir_catalog &amp;#61; &amp;#37; for obtaining the station information &amp;#40;&
 conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;h3 id="data-preprocessing">Data Preprocessing&lt;/h3>
-&lt;div class="markdown">&lt;p>&lt;code>M_prp &amp;#61; no&amp;#40;fpath&amp;#41;&lt;/code> does no preprocessing, loads and returns the data of &lt;code>fpath&lt;/code> in the form of matrix.&lt;/p>
+&lt;div class="markdown">&lt;p>Hint: it has to contain importdata TODO: under construction&lt;/p>
+&lt;p>&lt;code>M_prp &amp;#61; no&amp;#40;fpath&amp;#41;&lt;/code> does no preprocessing, loads and returns the data of &lt;code>fpath&lt;/code> in the form of matrix.&lt;/p>
 &lt;p>Other functions might also depends on &lt;code>no&lt;/code>. For example, &lt;code>prpfunctions&lt;/code> is dependent on &lt;code>no&lt;/code> to get the directory of all functions for preprocessing. &lt;/p>
 &lt;/div>
 &lt;h3 id="statistical-index-calculation-statind">Statistical Index Calculation (&lt;code>statind&lt;/code>)&lt;/h3>
@@ -339,6 +340,13 @@ conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;li>&lt;p>Default is &lt;code>&amp;#91;datetime&amp;#40;0001,1,1&amp;#41;, datetime&amp;#40;2999,12,31&amp;#41;&amp;#93;&lt;/code>, resulting in no data selection by date time tag.&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;SkipExist&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>Set it &lt;code>true&lt;/code> to skip calculations if in the current loop a file in &lt;code>dir_stat&lt;/code> of the&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>same &lt;code>&amp;#39;stn&amp;#39;&lt;/code> and &lt;code>&amp;#39;prp&amp;#39;&lt;/code> already exists.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -537,6 +545,9 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;li>&lt;p>&lt;code>fmtfieldname &amp;#61; datatype_fieldname&amp;#40;what_type&amp;#41;&lt;/code>: returns the field name for &lt;code>fmt&lt;/code> that you can &lt;code>fmt.&amp;#40;fmtfieldname&amp;#41;&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;/div>
+&lt;h3 id="standard-input-data-name">Standard input-data name&lt;/h3>
+&lt;div class="markdown">&lt;p>&lt;code>&amp;#91;fname&amp;#93; &amp;#61; standarddataname&amp;#40;stnm, dtstr, type_j&amp;#41;&lt;/code> returns the file name of the standard data format. For example, &lt;code>standarddataname&amp;#40;&amp;#39;HUAL&amp;#39;, &amp;#39;20120202&amp;#39;, &amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code> returns &lt;code>stn&amp;#91;HUAL&amp;#93;dt&amp;#91;20120202&amp;#93;type&amp;#91;GEMS0&amp;#93;.mat&lt;/code>.&lt;/p>
 &lt;/div>
 &lt;h2 id="subfunctions">Subfunctions&lt;/h2>
 &lt;p>Subfunctions are those a user normally do not have a chance to use. However, if you are a developer, the information will be very helpful.&lt;/p>
