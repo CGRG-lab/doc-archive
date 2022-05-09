@@ -3,4 +3,13 @@
 &lt;li>&lt;a href="https://simpeg.xyz/">SimPEG &lt;/a> - An open source python package for simulation and gradient based parameter estimation in geophysical applications.&lt;/li>
 &lt;li>&lt;a href="https://www.pygimli.org/">pyGIMLi&lt;/a> - pyGIMLi is an open-source multi-method library for modelling and inversion in geophysics.&lt;/li>
 &lt;li>&lt;a href="https://docs.obspy.org/">ObsPy&lt;/a> - A Python Toolbox for seismology/seismological observatories.&lt;/li>
+&lt;li>&lt;a href="https://www.fatiando.org">Fatiando a Terra&lt;/a> - An open toolbox for the Geosciences.
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/fatiando/verde">Verde&lt;/a>: Gridding, machine learning style.&lt;/li>
+&lt;li>&lt;a href="https://github.com/fatiando/pooch">Pooch&lt;/a>: Easily download datasets.&lt;/li>
+&lt;li>&lt;a href="https://github.com/fatiando/harmonica">Harmonica&lt;/a>: All things potential fields.&lt;/li>
+&lt;li>&lt;a href="https://github.com/fatiando/boule">Boule&lt;/a>: Ellipsoids and normal gravity.&lt;/li>
+&lt;li>&lt;a href="https://github.com/fatiando/ensaio">Ensaio&lt;/a>: Practice datasets to probe your code.&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item></channel></rss>
