@@ -20,6 +20,7 @@ The repository publishes the document archive to the Github Pages website, provi
     ```shell
     git clone --recursive https://github.com/CGRG-lab/doc-archive.git
     ```
+1. Go to [Repository downloaded](#repository-downloaded) section and follow the instructions.
 
 ### Repository downloaded
 1. Open a terminal (Git Bash, Windows PowerShell, Command Prompt, etc.) and change the current working directory to `doc-archive` directory.
