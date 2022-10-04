@@ -96,7 +96,8 @@ Write your preprocessing function for example `prp_fn(filepath)` for file in the
 Here is the list of preprocessing functions: 
 
 
-<div class="markdown"><p>The preprocessing function that filter the loaded timeseries with <code>&#39;BP_35&#39;</code> band-pass filter. </p>
+<div class="markdown"><h4><code>BP_35.m</code></h4>
+<p>The preprocessing function that filter the loaded timeseries with <code>&#39;BP_35&#39;</code> band-pass filter. </p>
 <p><strong>Example</strong> Import data from <code>fpath</code> as <code>M</code>, create bandpass filter automatically for each data column in <code>M</code>, and output the filtered data as <code>M_out</code> having exactly the same column dimension as <code>M</code> &#40;but with rows possibly reduced&#41;:</p>
 <pre><code class="language-matlab">fpath &#61; &#39;D:\GeoMag &#40;main&#41;\GeoMag_GO\KUOL\stn&#91;KUOL&#93;dt&#91;20150714&#93;type&#91;GEMS&#93;.mat&#39;;
 M_out &#61; BP_35&#40;fpath&#41;;</code></pre>
@@ -111,6 +112,7 @@ M_out &#61; BP_35&#40;fpath, FOBJ&#41;;</code></pre>
 <li><p><code>generalfilterprocess</code> is the common core of <code>&#39;ULF_X&#39;</code> family; see also the doc therein.</p>
 </li>
 </ul>
+<h4><code>BP_40.m</code></h4>
 <p>The preprocessing function that filter the loaded timeseries with <code>&#39;BP_40&#39;</code> band-pass filter. </p>
 <p><strong>Example</strong> Import data from <code>fpath</code> as <code>M</code>, create bandpass filter automatically for each data column in <code>M</code>, and output the filtered data as <code>M_out</code> having exactly the same column dimension as <code>M</code> &#40;but with rows possibly reduced&#41;:</p>
 <pre><code class="language-matlab">fpath &#61; &#39;D:\GeoMag &#40;main&#41;\GeoMag_GO\KUOL\stn&#91;KUOL&#93;dt&#91;20150714&#93;type&#91;GEMS&#93;.mat&#39;;
@@ -126,7 +128,9 @@ M_out &#61; BP_40&#40;fpath, FOBJ&#41;;</code></pre>
 <li><p><code>generalfilterprocess</code> is the common core of <code>&#39;ULF_X&#39;</code> family; see also the doc therein.</p>
 </li>
 </ul>
+<h4><code>README.md</code></h4>
 <p>&lt;unsupported language&gt;</p>
+<h4><code>ULF_A.m</code></h4>
 <p>The preprocessing function that filter the loaded timeseries with <code>&#39;ULF_A&#39;</code> band-pass filter. </p>
 <p><strong>Example</strong> Import data from <code>fpath</code> as <code>M</code>, create bandpass filter automatically for each data column in <code>M</code>, and output the filtered data as <code>M_out</code> having exactly the same column dimension as <code>M</code> &#40;but with rows possibly reduced&#41;:</p>
 <pre><code class="language-matlab">fpath &#61; &#39;D:\GeoMag &#40;main&#41;\GeoMag_GO\KUOL\stn&#91;KUOL&#93;dt&#91;20150714&#93;type&#91;GEMS&#93;.mat&#39;;
@@ -142,11 +146,12 @@ M_out &#61; ULF_A&#40;fpath, FOBJ&#41;;</code></pre>
 <li><p><code>generalfilterprocess</code> is the common core of <code>&#39;ULF_X&#39;</code> family; see also the doc therein.</p>
 </li>
 </ul>
+<h4><code>ULF_B.m</code></h4>
 <p>See the doc of <code>&#39;ULF_A&#39;</code>.</p>
+<h4><code>no.m</code></h4>
 <p><code>M_prp &#61; no&#40;fpath&#41;</code> does no preprocessing, loads and returns the data of <code>fpath</code> in the form of matrix.</p>
 <p>Other functions might also depends on <code>no</code>. For example, <code>prpfunctions</code> is dependent on <code>no</code> to get the directory of all functions for preprocessing. </p>
 </div>
-
 
 
 
@@ -342,90 +347,7 @@ M_out &#61; ULF_A&#40;fpath, FOBJ&#41;;</code></pre>
 #### `statind_merge`
 
 
-<div class="markdown"><p><code>statind&#40;dir_data,dir_output&#41;</code> calculate daily statistics &#40;a statistical  quantity as an index of the day&#41; of the daily timeseries in <code>dir_data</code>.  The output variables are stored in <code>dir_output</code>.</p>
-<p><strong>Example</strong>:</p>
-<pre><code class="language-matlab">statind&#40;dir_data,dir_output,&#39;StatName&#39;,&#39;S&#39;,&#39;StatFunction&#39;,@skewness, &#39;Preprocess&#39;, &#123;&#39;ULF_A&#39;,&#39;ULF_B&#39;&#125;&#41;;</code></pre>
-<p>In which, <code>dir_data</code> is the directory for the time series in the standard format; <code>dir_output</code> is the <code>dir_stat</code> mentioned before.</p>
-<p><strong>Keyword Arguments</strong>:</p>
-<ul>
-<li><p><code>&#39;StatName&#39;</code></p>
-<ul>
-<li><p>The abbreviations for the name of statistical indices.  They can be arbitrarily defined but have to be the same number of  elements as that of <code>&#39;StatFunction&#39;</code>.</p>
-</li>
-<li><p>Default is <code>&#123;&#39;S&#39;,&#39;K&#39;&#125;</code> &#40;for Skewness and Kurtosis&#41;.</p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;StatFunction&#39;</code></p>
-<ul>
-<li><p>The function handle for calculating statistical index.</p>
-</li>
-<li><p>It has to be of the same number of elements as that of <code>&#39;StatName&#39;</code></p>
-</li>
-<li><p>Default is <code>&#123;@skewness,@kurtosis&#125;</code> for calling the <code>skewness&#40;&#41;</code>  and <code>kurtosis&#40;&#41;</code> functions.</p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;Preprocess&#39;</code></p>
-<ul>
-<li><p>Apply filter&#40;s&#41; to time series loaded from <code>dir_data</code>. Generally  applying a filter very largely increase the computing time, so you  may consider <code>&#39;SavePreprocessedData&#39;</code>.</p>
-</li>
-<li><p>Default is <code>&#123;&#39;no&#39;&#125;</code>, which applies only minimal preprocessings.</p>
-</li>
-<li><p>Use <code>prpfunctions&#40;&#41;</code> to list all available preprocessing functions.</p>
-</li>
-<li><p>If multiple preprocessing functions are applied, for example <code>&#123;&#39;no&#39;, &#39;ULF_A&#39;&#125;</code>, then two sets of result according to no-filter data and ULF_A band passed data are going to be produced. </p>
-</li>
-<li><p>See <a href="../doc_library/#data-preprocessing">Data Preprocessing</a>.</p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;SavePreprocessedData&#39;</code></p>
-<ul>
-<li><p>Save the preprocessed data to an alternative folder. Their directory is parallel to that of no-filter data.</p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;FilterByDatetime&#39;</code></p>
-<ul>
-<li><p>It should be a two element datetime array.</p>
-</li>
-<li><p>If applied, all files with date time tag not in the range will be ignored.</p>
-</li>
-<li><p>Default is <code>&#91;datetime&#40;0001,1,1&#41;, datetime&#40;2999,12,31&#41;&#93;</code>, resulting  in no data selection by date time tag.</p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;UpdateExisting&#39;</code></p>
-<ul>
-<li><p>If <code>true</code>, the array size in the existing statistic indices &#40;files starts with &quot;&#91;StatisticIndex&#93;&quot;&#41; will be extended, and the <code>DateTime</code> in <em>Information</em> file in the <code>dir_output</code> will all be updated to cover the datetime of the data in <code>dir_data</code>.</p>
-</li>
-<li><p>Default is <code>false</code>; that a complete new session starts with the old <code>Info</code> renamed.</p>
-</li>
-<li><p>Currently this option is not supported by <code>statind_parfor</code>. </p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;SkipExist&#39;</code></p>
-<ul>
-<li><p>Set it <code>true</code> to skip calculations if in the current loop a file in <code>dir_stat</code> of the</p>
-</li>
-</ul>
-<p>same <code>&#39;stn&#39;</code> and <code>&#39;prp&#39;</code> already exists. </p>
-<ul>
-<li><p>A typical scenario to use this option is when your last calculation is not completed yet.</p>
-</li>
-<li><p>Default is <code>false</code>. </p>
-</li>
-</ul>
-</li>
-<li><p><code>&#39;LoadFilters&#39;, dir_filter</code></p>
-<ul>
-<li><p>Load all filters in <code>dir_filter</code> once for performance. See <code>loadfilters</code>, <code>generalfilterprocess</code>.</p>
-</li>
-</ul>
-</li>
-</ul>
+<div class="markdown"><p><code>statind_merge&#40;dir_stat1,dir_stat2&#41;</code> merge statistcal indices of <code>dir_stat2</code> into <code>dir_stat1</code>. Contents in <code>S1</code> have higher priority to be  reserved than that in <code>S2</code> if there is overlapping.  Only files in <code>dir_stat1</code> will be modified.</p>
 </div>
 
 
