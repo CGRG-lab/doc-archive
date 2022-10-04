@@ -21,8 +21,3 @@ You need to get authorized in order to access these files. Please contact tsung.
 
 [Minutes](https://docs.google.com/document/d/1Fq0Tb3LUxGBHXpYb4RtB4JmZYohwVx-oRB-KyH_n9Dw/edit?usp=sharing)
 
-
-<!-- ### Slides (online)
-[20220421-DecisionTree-GoodBad]({{< relref "20220421-DecisionTree-GoodBad/index.html" >}})
-
-[20220512-DecisionTree-AddDayAccumPrecipitation]({{< relref "20220512-DecisionTree-AddDayAccumPrecipitation/index.html" >}}) -->
