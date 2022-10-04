@@ -216,7 +216,7 @@ You can convert the data by simply applying:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="plotEQKTIP_ex1.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>In this figure, the match diagram of EQK and TIP defined by the model of first rank is demonstrated. The intervals of black color denotes the days where there is no data in $T_\text{obs}$ at all (i.e. this model is invalid at these time) and hence TIP cannot be calculated.&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs: Library</title><link>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</link><pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate><guid>https://CGRG-lab.github.io/doc-archive/docs/magtip/doc_library/</guid><description>
 &lt;!--
 `cd` to the folder where there is `.jmd`, and
 ```
@@ -291,9 +291,101 @@ conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/ul>
 &lt;/blockquote>
 &lt;p>Here is the list of preprocessing functions:&lt;/p>
-&lt;div class="markdown">&lt;p>Hint: it has to contain importdata TODO: under construction&lt;/p>
+&lt;div class="markdown">&lt;p>The preprocessing function that filter the loaded timeseries with &lt;code>&amp;#39;BP_35&amp;#39;&lt;/code> band-pass filter. &lt;/p>
+&lt;p>&lt;strong>Example&lt;/strong> Import data from &lt;code>fpath&lt;/code> as &lt;code>M&lt;/code>, create bandpass filter automatically for each data column in &lt;code>M&lt;/code>, and output the filtered data as &lt;code>M_out&lt;/code> having exactly the same column dimension as &lt;code>M&lt;/code> &amp;#40;but with rows possibly reduced&amp;#41;:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">fpath &amp;#61; &amp;#39;D:\GeoMag &amp;#40;main&amp;#41;\GeoMag_GO\KUOL\stn&amp;#91;KUOL&amp;#93;dt&amp;#91;20150714&amp;#93;type&amp;#91;GEMS&amp;#93;.mat&amp;#39;;
+M_out &amp;#61; BP_35&amp;#40;fpath&amp;#41;;&lt;/code>&lt;/pre>
+&lt;p>Basically the same as above, but attempts to apply existing filters &amp;#40;e.g., &lt;code>&amp;#39;Filter&amp;#91;BP_35&amp;#93;samp&amp;#91;1&amp;#93;stp&amp;#91;093&amp;#93;.mat&amp;#39;&lt;/code>&amp;#41; in &lt;code>dir_filter&lt;/code> if possible:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">fpath &amp;#61; &amp;#39;D:\GeoMag &amp;#40;main&amp;#41;\GeoMag_GO\KUOL\stn&amp;#91;KUOL&amp;#93;dt&amp;#91;20150714&amp;#93;type&amp;#91;GEMS&amp;#93;.mat&amp;#39;;
+filtpaths &amp;#61; datalist&amp;#40;&amp;#39;Filter*.mat&amp;#39;, dir_filter&amp;#41;;
+FOBJ &amp;#61; loadfilters&amp;#40;filtpaths&amp;#41;; &amp;#37; load all filters as a struct FOBJ
+M_out &amp;#61; BP_35&amp;#40;fpath, FOBJ&amp;#41;;&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>&lt;p>See &lt;code>fmt&lt;/code> for the frequency range of &lt;code>&amp;#39;BP_35&amp;#39;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>generalfilterprocess&lt;/code> is the common core of &lt;code>&amp;#39;ULF_X&amp;#39;&lt;/code> family; see also the doc therein.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The preprocessing function that filter the loaded timeseries with &lt;code>&amp;#39;BP_40&amp;#39;&lt;/code> band-pass filter. &lt;/p>
+&lt;p>&lt;strong>Example&lt;/strong> Import data from &lt;code>fpath&lt;/code> as &lt;code>M&lt;/code>, create bandpass filter automatically for each data column in &lt;code>M&lt;/code>, and output the filtered data as &lt;code>M_out&lt;/code> having exactly the same column dimension as &lt;code>M&lt;/code> &amp;#40;but with rows possibly reduced&amp;#41;:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">fpath &amp;#61; &amp;#39;D:\GeoMag &amp;#40;main&amp;#41;\GeoMag_GO\KUOL\stn&amp;#91;KUOL&amp;#93;dt&amp;#91;20150714&amp;#93;type&amp;#91;GEMS&amp;#93;.mat&amp;#39;;
+M_out &amp;#61; BP_40&amp;#40;fpath&amp;#41;;&lt;/code>&lt;/pre>
+&lt;p>Basically the same as above, but attempts to apply existing filters &amp;#40;e.g., &lt;code>&amp;#39;Filter&amp;#91;BP_40&amp;#93;samp&amp;#91;1&amp;#93;stp&amp;#91;093&amp;#93;.mat&amp;#39;&lt;/code>&amp;#41; in &lt;code>dir_filter&lt;/code> if possible:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">fpath &amp;#61; &amp;#39;D:\GeoMag &amp;#40;main&amp;#41;\GeoMag_GO\KUOL\stn&amp;#91;KUOL&amp;#93;dt&amp;#91;20150714&amp;#93;type&amp;#91;GEMS&amp;#93;.mat&amp;#39;;
+filtpaths &amp;#61; datalist&amp;#40;&amp;#39;Filter*.mat&amp;#39;, dir_filter&amp;#41;;
+FOBJ &amp;#61; loadfilters&amp;#40;filtpaths&amp;#41;; &amp;#37; load all filters as a struct FOBJ
+M_out &amp;#61; BP_40&amp;#40;fpath, FOBJ&amp;#41;;&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>&lt;p>See &lt;code>fmt&lt;/code> for the frequency range of &lt;code>&amp;#39;BP_40&amp;#39;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>generalfilterprocess&lt;/code> is the common core of &lt;code>&amp;#39;ULF_X&amp;#39;&lt;/code> family; see also the doc therein.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&amp;lt;unsupported language&amp;gt;&lt;/p>
+&lt;p>The preprocessing function that filter the loaded timeseries with &lt;code>&amp;#39;ULF_A&amp;#39;&lt;/code> band-pass filter. &lt;/p>
+&lt;p>&lt;strong>Example&lt;/strong> Import data from &lt;code>fpath&lt;/code> as &lt;code>M&lt;/code>, create bandpass filter automatically for each data column in &lt;code>M&lt;/code>, and output the filtered data as &lt;code>M_out&lt;/code> having exactly the same column dimension as &lt;code>M&lt;/code> &amp;#40;but with rows possibly reduced&amp;#41;:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">fpath &amp;#61; &amp;#39;D:\GeoMag &amp;#40;main&amp;#41;\GeoMag_GO\KUOL\stn&amp;#91;KUOL&amp;#93;dt&amp;#91;20150714&amp;#93;type&amp;#91;GEMS&amp;#93;.mat&amp;#39;;
+M_out &amp;#61; ULF_A&amp;#40;fpath&amp;#41;;&lt;/code>&lt;/pre>
+&lt;p>Basically the same as above, but attempts to apply existing filters &amp;#40;e.g., &lt;code>&amp;#39;Filter&amp;#91;ULF_A&amp;#93;samp&amp;#91;1&amp;#93;stp&amp;#91;093&amp;#93;.mat&amp;#39;&lt;/code>&amp;#41; in &lt;code>dir_filter&lt;/code> if possible:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">fpath &amp;#61; &amp;#39;D:\GeoMag &amp;#40;main&amp;#41;\GeoMag_GO\KUOL\stn&amp;#91;KUOL&amp;#93;dt&amp;#91;20150714&amp;#93;type&amp;#91;GEMS&amp;#93;.mat&amp;#39;;
+filtpaths &amp;#61; datalist&amp;#40;&amp;#39;Filter*.mat&amp;#39;, dir_filter&amp;#41;;
+FOBJ &amp;#61; loadfilters&amp;#40;filtpaths&amp;#41;; &amp;#37; load all filters as a struct FOBJ
+M_out &amp;#61; ULF_A&amp;#40;fpath, FOBJ&amp;#41;;&lt;/code>&lt;/pre>
+&lt;ul>
+&lt;li>&lt;p>See &lt;code>fmt&lt;/code> for the frequency range of &lt;code>&amp;#39;ULF_A&amp;#39;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>generalfilterprocess&lt;/code> is the common core of &lt;code>&amp;#39;ULF_X&amp;#39;&lt;/code> family; see also the doc therein.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>See the doc of &lt;code>&amp;#39;ULF_A&amp;#39;&lt;/code>.&lt;/p>
 &lt;p>&lt;code>M_prp &amp;#61; no&amp;#40;fpath&amp;#41;&lt;/code> does no preprocessing, loads and returns the data of &lt;code>fpath&lt;/code> in the form of matrix.&lt;/p>
 &lt;p>Other functions might also depends on &lt;code>no&lt;/code>. For example, &lt;code>prpfunctions&lt;/code> is dependent on &lt;code>no&lt;/code> to get the directory of all functions for preprocessing. &lt;/p>
+&lt;/div>
+&lt;h4 id="generalfilterprocess">&lt;code>generalfilterprocess&lt;/code>&lt;/h4>
+&lt;div class="markdown">&lt;p>Given &lt;code>prp_tag&lt;/code>, &lt;code>generalfilterprocess&amp;#40;prp_tag, fpath &amp;#91;, FOBJ&amp;#93;&amp;#41;&lt;/code> load data from &lt;code>fpath&lt;/code>, filter only the data column and return the data as &lt;code>M_prp&lt;/code>. The frequency range is inquiried through &lt;code>fmt.filterRange&lt;/code> or &lt;code>FOBJ.&amp;#40;prp_tag&amp;#41;.&amp;#40;fs_tag&amp;#41;&lt;/code>.&lt;/p>
+&lt;p>If &lt;code>FOBJ&lt;/code> is provided, &lt;code>generalfilterprocess&lt;/code> attempts to do filtering with filters in &lt;code>FOBJ&lt;/code>; if there is no adequete filter in &lt;code>FOBJ&lt;/code>, it applys &lt;code>filterthedata&lt;/code> that generates filter for file &lt;code>fpath&lt;/code> with warning message.&lt;/p>
+&lt;p>See docs in:&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>&lt;code>loadfilters&lt;/code> for information about &lt;code>FOBJ&lt;/code>, &lt;code>fs_tag&lt;/code> and &lt;code>prp_tag&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>fmt&lt;/code> for &lt;code>fmt.filterRange&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>filterthedata&lt;/code> for automatically create a filter and do filtering&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>fillNaN&lt;/code> for interpolation &amp;#40;which is required before any filtering&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>autobandpassfilter&lt;/code> for quickly making and saving filters.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h4 id="loadfilters">&lt;code>loadfilters&lt;/code>&lt;/h4>
+&lt;div class="markdown">&lt;p>&lt;code>F &amp;#61; loadfilters&amp;#40;filtpaths&amp;#41;&lt;/code> load filters as a nested structure, that &lt;code>opts &amp;#61; F.&amp;#40;prp_tag&amp;#41;.&amp;#40;fs_tag&amp;#41;&lt;/code> is compatible to &lt;code>signal.internal.filteringfcns.filterData&lt;/code> in &lt;code>bandpass&lt;/code>. In which, &lt;code>prp_tag&lt;/code> should be in the list of &lt;code>prpfunctions&amp;#40;&amp;#41;&lt;/code> and &lt;code>fs_tag&lt;/code> is the sampling frequency prefixed by &amp;quot;fs&amp;quot; &amp;#40;e.g., &amp;#39;fs15&amp;#39; for 15Hz&amp;#41;.&lt;/p>
+&lt;p>The simplest way to create and save a filter is apply &lt;code>bandpass&lt;/code> to data with a certain set of parameters, set debug point inside &lt;code>bandpass&lt;/code>, and save &lt;code>opts&lt;/code> in the debug scope. For canoical approaches, see &lt;a href="https://www.mathworks.com/discovery/filter-design.html">Filter Design in Matlab&lt;/a>.&lt;/p>
+&lt;p>The filters should named as &amp;#39;Filter&amp;#91;ULF_A&amp;#93;samp&amp;#91;15&amp;#93;....mat&amp;#39; for example.&lt;/p>
+&lt;p>The input &lt;code>filtpaths&lt;/code> should be a &lt;code>struct&lt;/code> having &lt;code>name&lt;/code> for file names and &lt;code>fullpath&lt;/code> for file paths.&lt;/p>
+&lt;p>See also:&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>&lt;code>prpfunctions&amp;#40;&amp;#41;&lt;/code>: list all preprocessing functions that might support &lt;code>F&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>signal.internal.filteringfcns.filterData&lt;/code> &amp;#40;Signal processing package of matlab&amp;#41;&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>statind&amp;#40;__&amp;#41;&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h4 id="quality-control">Quality control&lt;/h4>
+&lt;h5 id="qualitycontrol">&lt;code>qualitycontrol&lt;/code>&lt;/h5>
+&lt;div class="markdown">&lt;p>Quality control of geomagnetic data of CWB. FIXME: Rename this for geomagnetic only.&lt;/p>
+&lt;/div>
+&lt;h5 id="checkdatevec">&lt;code>checkdatevec&lt;/code>&lt;/h5>
+&lt;div class="markdown">&lt;p>&lt;code>checkdatevec&amp;#40;M, colind_dt, today_date&amp;#41;&lt;/code> check if &lt;code>M&amp;#40;:,colind_dt&amp;#41;&lt;/code> lay in the range of today &amp;#40;&lt;code>today_date&lt;/code>&amp;#41;.&lt;/p>
+&lt;/div>
+&lt;h5 id="edgetruncate">&lt;code>edgetruncate&lt;/code>&lt;/h5>
+&lt;div class="markdown">&lt;p>Make values of column variable who are outliers AND belong the first/last 10&amp;#37;. That is, the data at two edges &amp;#40;with edge width 10&amp;#37; of number of rows&amp;#41; will be replaced by NaN if they are outlier. This function was intended to remove edge effect after filtering.&lt;/p>
+&lt;/div>
+&lt;h5 id="estimatesupposedpts">&lt;code>estimatesupposedpts&lt;/code>&lt;/h5>
+&lt;div class="markdown">&lt;p>&lt;code>&amp;#91;fs, dt, supposedpts&amp;#93; &amp;#61; estimatesupposedpts&amp;#40;M, colind_dt,what_type, fpath&amp;#41;&lt;/code> estimates the sampling frequency &lt;code>fs&lt;/code>, temporal interspace &lt;code>dt&lt;/code>, and the supposed number of points per day &lt;code>supposedpts&lt;/code>.&lt;/p>
+&lt;p>Noted that &lt;code>fs&lt;/code> is rounded to integer, i.e., &lt;code>fs &amp;#61; round&amp;#40;1/dt&amp;#41;&lt;/code>, &lt;code>supposedpts &amp;#61; fs * 86400&lt;/code>, &lt;/p>
 &lt;/div>
 &lt;h3 id="statistical-index-calculation-statind">Statistical Index Calculation (&lt;code>statind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>statind&amp;#40;dir_data,dir_output&amp;#41;&lt;/code> calculate daily statistics &amp;#40;a statistical quantity as an index of the day&amp;#41; of the daily timeseries in &lt;code>dir_data&lt;/code>. The output variables are stored in &lt;code>dir_output&lt;/code>.&lt;/p>
@@ -350,12 +442,34 @@ conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;UpdateExisting&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>If &lt;code>true&lt;/code>, the array size in the existing statistic indices &amp;#40;files starts with &amp;quot;&amp;#91;StatisticIndex&amp;#93;&amp;quot;&amp;#41; will be extended, and the &lt;code>DateTime&lt;/code> in &lt;em>Information&lt;/em> file in the &lt;code>dir_output&lt;/code> will all be updated to cover the datetime of the data in &lt;code>dir_data&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>false&lt;/code>; that a complete new session starts with the old &lt;code>Info&lt;/code> renamed.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Currently this option is not supported by &lt;code>statind_parfor&lt;/code>. &lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>&lt;p>&lt;code>&amp;#39;SkipExist&amp;#39;&lt;/code>&lt;/p>
 &lt;ul>
 &lt;li>&lt;p>Set it &lt;code>true&lt;/code> to skip calculations if in the current loop a file in &lt;code>dir_stat&lt;/code> of the&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>same &lt;code>&amp;#39;stn&amp;#39;&lt;/code> and &lt;code>&amp;#39;prp&amp;#39;&lt;/code> already exists.&lt;/p>
+&lt;p>same &lt;code>&amp;#39;stn&amp;#39;&lt;/code> and &lt;code>&amp;#39;prp&amp;#39;&lt;/code> already exists. &lt;/p>
+&lt;ul>
+&lt;li>&lt;p>A typical scenario to use this option is when your last calculation is not completed yet.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>false&lt;/code>. &lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;LoadFilters&amp;#39;, dir_filter&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>Load all filters in &lt;code>dir_filter&lt;/code> once for performance. See &lt;code>loadfilters&lt;/code>, &lt;code>generalfilterprocess&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -364,6 +478,99 @@ conv_gemsdata&amp;#40;dir_gems, saveto, dir_catalog&amp;#41;;&lt;/code>&lt;/pre>
 &lt;img src="struct_stat.png" alt="">&lt;/li>
 &lt;/ul>
 &lt;div class="markdown">&lt;p>&lt;code>statind_parfor&lt;/code> is the parallel computing version of &lt;code>statind&lt;/code>, it takes the same input arguments and keyword options as &lt;code>statind&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Keyword Arguments&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>&lt;code>&amp;#39;NumCore&amp;#39;&lt;/code>: Assign specific how many CPU workers to be used in the paralell pool.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>0&lt;/code>, that the number of CPU cores to be used for paralell computing is automatically decided.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h4 id="statind_merge">&lt;code>statind_merge&lt;/code>&lt;/h4>
+&lt;div class="markdown">&lt;p>&lt;code>statind&amp;#40;dir_data,dir_output&amp;#41;&lt;/code> calculate daily statistics &amp;#40;a statistical quantity as an index of the day&amp;#41; of the daily timeseries in &lt;code>dir_data&lt;/code>. The output variables are stored in &lt;code>dir_output&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example&lt;/strong>:&lt;/p>
+&lt;pre>&lt;code class="language-matlab">statind&amp;#40;dir_data,dir_output,&amp;#39;StatName&amp;#39;,&amp;#39;S&amp;#39;,&amp;#39;StatFunction&amp;#39;,@skewness, &amp;#39;Preprocess&amp;#39;, &amp;#123;&amp;#39;ULF_A&amp;#39;,&amp;#39;ULF_B&amp;#39;&amp;#125;&amp;#41;;&lt;/code>&lt;/pre>
+&lt;p>In which, &lt;code>dir_data&lt;/code> is the directory for the time series in the standard format; &lt;code>dir_output&lt;/code> is the &lt;code>dir_stat&lt;/code> mentioned before.&lt;/p>
+&lt;p>&lt;strong>Keyword Arguments&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>&lt;code>&amp;#39;StatName&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>The abbreviations for the name of statistical indices. They can be arbitrarily defined but have to be the same number of elements as that of &lt;code>&amp;#39;StatFunction&amp;#39;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>&amp;#123;&amp;#39;S&amp;#39;,&amp;#39;K&amp;#39;&amp;#125;&lt;/code> &amp;#40;for Skewness and Kurtosis&amp;#41;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;StatFunction&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>The function handle for calculating statistical index.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>It has to be of the same number of elements as that of &lt;code>&amp;#39;StatName&amp;#39;&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>&amp;#123;@skewness,@kurtosis&amp;#125;&lt;/code> for calling the &lt;code>skewness&amp;#40;&amp;#41;&lt;/code> and &lt;code>kurtosis&amp;#40;&amp;#41;&lt;/code> functions.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;Preprocess&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>Apply filter&amp;#40;s&amp;#41; to time series loaded from &lt;code>dir_data&lt;/code>. Generally applying a filter very largely increase the computing time, so you may consider &lt;code>&amp;#39;SavePreprocessedData&amp;#39;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>&amp;#123;&amp;#39;no&amp;#39;&amp;#125;&lt;/code>, which applies only minimal preprocessings.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Use &lt;code>prpfunctions&amp;#40;&amp;#41;&lt;/code> to list all available preprocessing functions.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>If multiple preprocessing functions are applied, for example &lt;code>&amp;#123;&amp;#39;no&amp;#39;, &amp;#39;ULF_A&amp;#39;&amp;#125;&lt;/code>, then two sets of result according to no-filter data and ULF_A band passed data are going to be produced. &lt;/p>
+&lt;/li>
+&lt;li>&lt;p>See &lt;a href="../doc_library/#data-preprocessing">Data Preprocessing&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;SavePreprocessedData&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>Save the preprocessed data to an alternative folder. Their directory is parallel to that of no-filter data.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;FilterByDatetime&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>It should be a two element datetime array.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>If applied, all files with date time tag not in the range will be ignored.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>&amp;#91;datetime&amp;#40;0001,1,1&amp;#41;, datetime&amp;#40;2999,12,31&amp;#41;&amp;#93;&lt;/code>, resulting in no data selection by date time tag.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;UpdateExisting&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>If &lt;code>true&lt;/code>, the array size in the existing statistic indices &amp;#40;files starts with &amp;quot;&amp;#91;StatisticIndex&amp;#93;&amp;quot;&amp;#41; will be extended, and the &lt;code>DateTime&lt;/code> in &lt;em>Information&lt;/em> file in the &lt;code>dir_output&lt;/code> will all be updated to cover the datetime of the data in &lt;code>dir_data&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>false&lt;/code>; that a complete new session starts with the old &lt;code>Info&lt;/code> renamed.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Currently this option is not supported by &lt;code>statind_parfor&lt;/code>. &lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;SkipExist&amp;#39;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>Set it &lt;code>true&lt;/code> to skip calculations if in the current loop a file in &lt;code>dir_stat&lt;/code> of the&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>same &lt;code>&amp;#39;stn&amp;#39;&lt;/code> and &lt;code>&amp;#39;prp&amp;#39;&lt;/code> already exists. &lt;/p>
+&lt;ul>
+&lt;li>&lt;p>A typical scenario to use this option is when your last calculation is not completed yet.&lt;/p>
+&lt;/li>
+&lt;li>&lt;p>Default is &lt;code>false&lt;/code>. &lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;p>&lt;code>&amp;#39;LoadFilters&amp;#39;, dir_filter&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;p>Load all filters in &lt;code>dir_filter&lt;/code> once for performance. See &lt;code>loadfilters&lt;/code>, &lt;code>generalfilterprocess&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
 &lt;/div>
 &lt;h3 id="anomaly-index-number-calculation-anomalyind">Anomaly Index Number Calculation (&lt;code>anomalyind&lt;/code>)&lt;/h3>
 &lt;div class="markdown">&lt;p>&lt;code>anomalyind&amp;#40;dir_stat,dir_output&amp;#41;&lt;/code> calculates anomaly index number &amp;#40;AIN&amp;#41; according to a list of &amp;#36;A_\text&amp;#123;thr&amp;#125;&amp;#36;; &lt;code>dir_out&lt;/code> is where the output variables stored. &lt;/p>
@@ -587,7 +794,7 @@ molscore3&amp;#40;dir_tsAIN,dir_molchan,dir_catalog,dir_jointstation&amp;#41;&lt
 &lt;/li>
 &lt;li>&lt;p>&lt;code>filterRange&amp;#40;filter_tag&amp;#41;&lt;/code>: returns two values indicating the lower and upper limit of the filter, in the unit of Hz. Example: &lt;code>fmt.filterRange&amp;#40;ULF_A&amp;#41;&lt;/code>.&lt;/p>
 &lt;/li>
-&lt;li>&lt;p>&lt;code>expecteddatapoint&amp;#40;what_type&amp;#41;&lt;/code>: returns the expected number of data point of a specific file type. Example: &lt;code>totalpts &amp;#61; expecteddatapoint&amp;#40;&amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code>; and you can derive sampling frequency &lt;code>fs&lt;/code> by &lt;code>fs &amp;#61; totalpts/86400&lt;/code>.&lt;/p>
+&lt;li>&lt;p>&lt;code>datasampfreq&amp;#40;what_type&amp;#41;&lt;/code>: returns the expected Sampling Frequency of a specific file/data type. Example: &lt;code>fs &amp;#61; datasampfreq&amp;#40;&amp;#39;GEMS0&amp;#39;&amp;#41;&lt;/code>. You can obtain expected data points of the day by &lt;code>supposedpts &amp;#61; fs*86400&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>&lt;code>fmtfieldname &amp;#61; datatype_fieldname&amp;#40;what_type&amp;#41;&lt;/code>: returns the field name for &lt;code>fmt&lt;/code> that you can &lt;code>fmt.&amp;#40;fmtfieldname&amp;#41;&lt;/code>.&lt;/p>
 &lt;/li>
@@ -1062,8 +1269,11 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/li>
 &lt;/ol>
 &lt;/li>
-&lt;li>&lt;p>&amp;#39;PlotEpicenter&amp;#39;: Whether to plot the epicenter&amp;#40;s&amp;#41; of the target earthquakes on the map.&lt;/p>
+&lt;li>&lt;p>&amp;#39;PlotEpicenter&amp;#39;: Whether to plot the epicenter&amp;#40;s&amp;#41; of the target&lt;/p>
 &lt;/li>
+&lt;/ul>
+&lt;p>earthquakes on the map. &lt;code>plotEpicenter,&amp;#39;all&amp;#39;&lt;/code> to plot events not in Rc&lt;/p>
+&lt;ul>
 &lt;li>&lt;p>&amp;#39;Rigorous&amp;#39;: Whether to drop &amp;#40;ignore&amp;#41; the probability forecasts that are not in the range of the forecasting phases. Default is true. Generally the leading time window &amp;#40;&lt;code>Tlead&lt;/code>&amp;#41; is different among models, and the probability can be calculated as far as the &lt;code>Tlead&lt;/code> of at least one model covered. However, for the dates out of the forecasting phase, only part of the models are applied thus the probability forecast is weaker.&lt;/p>
 &lt;/li>
 &lt;li>&lt;p>&amp;#39;TargetPattern&amp;#39;: the pattern for filtering the files in &lt;code>dir_jointstation&lt;/code>. Default is to look up all files that fits the pattern &amp;quot;&amp;#91;JointStation&amp;#93;&lt;em>.mat&amp;quot;. For example, you can manually specify it as &amp;quot;&lt;/em>&amp;#91;ULF&lt;em>A&amp;#93;&amp;quot; to give plots of that based on ULF&lt;/em>A only. The pattern should always begin with &amp;quot;&lt;em>&amp;quot; and the last cahracter can never be &amp;quot;&lt;/em>&amp;quot;. For multiple filtering at once &amp;#40;e.g., &lt;code>&amp;#39;*&amp;#91;ULF_B&amp;#93;*&amp;#91;Tpred-1&amp;#93;&amp;#39;&lt;/code>&amp;#41;, join the pattern with &amp;quot;*&amp;quot; and the order is important.&lt;/p>
@@ -1093,7 +1303,7 @@ loadAIN&amp;#40;dir_tsAIN,BestModelNames,TimeRange&amp;#41;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;h3 id="others">Others&lt;/h3>
 &lt;h4 id="reconstruct-molchaninformationmat-constructmolinfo">Reconstruct &lt;code>[Molchan]Information.mat&lt;/code> (&lt;code>constructMolInfo&lt;/code>)&lt;/h4>
-&lt;div class="markdown">&lt;p>&lt;code>constructMolInfo&amp;#40;dir_molchan,InfoId&amp;#41;&lt;/code> construct the &amp;#39;&amp;#91;MolchanScore&amp;#93;Information.mat&amp;#39; according to existing &amp;#91;Molchanscore&amp;#93;___.mat files if possible. Use this function only if instructed by error message.&lt;/p>
+&lt;div class="markdown">&lt;p>&lt;code>constructMolInfo&amp;#40;dir_molchan,InfoId&amp;#41;&lt;/code> construct the &amp;#39;&amp;#91;MolchanScore&amp;#93;Information.mat&amp;#39; according to existing &amp;#91;Molchanscore&amp;#93;___.mat files if possible. Use this function only when you are instructed by error messages.&lt;/p>
 &lt;/div>
 &lt;h4 id="calculating-fitting-degrees">Calculating Fitting Degrees&lt;/h4>
 &lt;h5 id="calcfittingdegree">&lt;code>calcFittingDegree&lt;/code>&lt;/h5>
